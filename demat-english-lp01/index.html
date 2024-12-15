@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="nofollow, noindex" />
+    <link
+      rel="icon"
+      href="https://dematopen.com/wp-content/uploads/2023/05/cropped-DematOpen-Logo-e1683015043100-180x180.webp"
+      type="image/png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demat Account Landing Page</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1E90FF",
+              secondary: "#1D2433",
+              textColor: "#4A5568",
+              lightGray: "#F9FAFB",
+              darkGray: "#4B5563",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .hero-bg {
+        background-image: url("https://via.placeholder.com/1920x1080.png?text=Demat+Account+Illustration");
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+      .grayscale {
+        filter: grayscale(100%);
+      }
+      .grayscale:hover {
+        filter: grayscale(0%);
+        transition: filter 0.3s ease-in-out;
+      }
+      .testimonial-slider {
+        position: relative;
+        overflow: hidden;
+      }
+      .testimonial-slider .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .testimonial-slider .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+      }
+      .testimonial-slider .navigation-manual {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      .testimonial-slider .manual-btn {
+        border: 2px solid #1e90ff;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+        margin: 0 5px;
+      }
+      .testimonial-slider .manual-btn:hover {
+        background: #1e90ff;
+        transform: scale(1.2);
+        color: white;
+      }
+      .client-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+      }
+      .client-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .industries-container {
+        overflow: hidden;
+        position: relative;
+      }
+      .industries-row {
+        display: flex;
+        gap: 2rem;
+      }
+      .industry-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 150px;
+      }
+      .industry-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+      .industry-name {
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+      }
+      .hidden {
+        display: none;
+      }
+
+      /* sticky section css */
+      .glowing-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        border: 2px solid green;
+        padding: 10px;
+        z-index: 1000;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 0 0 10px #00ff00;
+        box-sizing: border-box; /* Ensures proper box model calculations */
+      }
+
+      .glowing-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 5px;
+        animation: glowing-animation 2s infinite;
+        box-shadow: 0 0 20px 3px #c586c0;
+      }
+
+      /* Animation for the glow effect */
+      @keyframes glowing-animation {
+        0%,
+        100% {
+          box-shadow: 0 0 15px 3px #c586c0;
+        }
+        25% {
+          box-shadow: 0 0 15px 3px cyan;
+        }
+        50% {
+          box-shadow: 0 0 15px 3px limegreen;
+        }
+        75% {
+          box-shadow: 0 0 15px 3px yellow;
+        }
+      }
+
+      /* Demat account highlight */
+
+      .highlight {
+        background-color: yellow; /* Example highlight color */
+        padding: 0 0.2em; /* Add padding to prevent overlap */
+        box-decoration-break: clone; /* Ensure background color wraps correctly */
+        -webkit-box-decoration-break: clone; /* For Safari */
+      }
+      /* Custom Button */
+      .custom-btn {
+        display: inline-block;
+        background-color: #ffe161;
+        color: #614f00;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem; /* Increased font size */
+        padding: 1rem 0;
+        width: 100%; /* Button width covers 80-90% of the section */
+        max-width: 600px; /* Optional: max width for better control */
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin: 0 auto; /* Centers the button */
+        font-weight: bold; /* Set font weight to bold */
+      }
+
+      .custom-btn:hover {
+        background-color: #ffd10a;
+        color: #000;
+      }
+
+      /* Custom Text */
+      .custom-text {
+        color: #fff;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .custom-btn {
+          font-size: 0.8rem; /* Slightly smaller for medium screens */
+          font-weight: bold;
+          padding: 0.5rem 0;
+          width: 95%; /* Ensure button is responsive across medium screens */
+        }
+
+        .custom-text {
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .custom-btn {
+          font-size: 1rem; /* Adjusted for small screens */
+          padding: 0.8rem 0;
+          font-weight: bold;
+          width: 90%; /* Ensures the button doesn't overflow on small screens */
+        }
+
+        .custom-text {
+          font-size: 12px;
+        }
+      }
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T32SP7N");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body class="font-poppins text-textColor">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T32SP7N"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <div>
+          <a href="https://link.upstox.com/An1dd8kyV36CJdHt7">
+            <img
+              src="https://dematopen.com/wp-content/uploads/2024/08/d1-logo2.png"
+              alt="Demat Account Logo"
+              class="h-10"
+            />
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#features" class="hover:text-primary transition font-medium"
+            >Features</a
+          >
+          <a href="#benefits" class="hover:text-primary transition font-medium"
+            >Benefits</a
+          >
+          <a href="#faqs" class="hover:text-primary transition font-medium"
+            >FAQs</a
+          >
+          <a
+            href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+            class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition font-semibold"
+          >
+            Open Account
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Menu -->
+        <button
+          class="md:hidden block text-primary text-2xl"
+          id="menu-toggle"
+          aria-label="Toggle Navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <div
+        class="hidden flex-col items-start space-y-4 px-6 py-4 bg-white shadow-lg md:hidden"
+        id="mobile-menu"
+      >
+        <a
+          href="#features"
+          class="block w-full text-primary hover:text-blue-600 font-medium text-lg"
+          >Features</a
+        >
+        <a
+          href="#benefits"
+          class="block w-full text-primary hover:text-blue-600 font-medium text-lg"
+          >Benefits</a
+        >
+        <a
+          href="#faqs"
+          class="block w-full text-primary hover:text-blue-600 font-medium text-lg"
+          >FAQs</a
+        >
+        <a
+          href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+          class="block w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition font-semibold text-center"
+        >
+          👉 100% Secure, Start Now! 🚀
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-24 md:pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 items-center gap-12">
+          <div class="space-y-6">
+            <h1 class="text-4xl md:text-5xl font-bold leading-snug">
+              Open Your Free
+              <span class="highlight inline-block bg-yellow-300 px-1"
+                >Demat Account</span
+              >
+              and Secure Your Future.
+            </h1>
+            <p class="text-lg text-gray-600">
+              Start investing with no AMC charges, an easy paperless process,
+              and ₹20/Order brokerage.
+            </p>
+            <div class="flex flex-wrap gap-4 mt-6">
+              <a
+                href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+                class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition font-semibold"
+              >
+                Open Free Demat Account <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a
+                href="#features"
+                class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold"
+              >
+                Explore Features
+              </a>
+            </div>
+            <div class="flex items-center justify-between gap-4 pt-6">
+              <!-- Highlight 1 -->
+              <div class="flex items-center gap-2">
+                <i
+                  class="fas fa-check-circle text-primary text-base md:text-lg"
+                ></i>
+                <span class="text-xs md:text-sm font-medium text-gray-700">
+                  Trusted by Over 1 Crore Investors
+                </span>
+              </div>
+
+              <!-- Highlight 2 -->
+              <div class="flex items-center gap-2">
+                <i
+                  class="fas fa-shield-alt text-primary text-base md:text-lg"
+                ></i>
+                <span class="text-xs md:text-sm font-medium text-gray-700">
+                  SEBI, NSE, BSE, and CDSL Registered
+                </span>
+              </div>
+
+              <!-- Highlight 3 -->
+              <div class="flex items-center gap-2">
+                <i class="fas fa-headset text-primary text-base md:text-lg"></i>
+                <span class="text-xs md:text-sm font-medium text-gray-700">
+                  24/7 Customer Support
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <a href="https://link.upstox.com/An1dd8kyV36CJdHt7">
+              <img
+                src="https://dematopen.com/wp-content/uploads/2021/10/JSHA.webp"
+                alt="Demat Account"
+                class="rounded-2xl shadow-lg"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Amazing Features of Demat Account
+          </h2>
+          <p class="text-gray-600">
+            Make trading and investing easy with Upstox.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature Block -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-money-bill-wave text-4xl text-green-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Free Account Opening</h3>
+            <p class="text-gray-600">
+              Open a Demat account for free. Register in minutes and start
+              investing.
+            </p>
+          </div>
+          <!-- Feature Block -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-balance-scale text-4xl text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Lifetime Free AMC</h3>
+            <p class="text-gray-600">
+              Enjoy no maintenance charges on your Demat account. Benefit from
+              lifetime free AMC.
+            </p>
+          </div>
+          <!-- Feature Block -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-users text-4xl text-purple-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">₹20 Per Order Brokerage</h3>
+            <p class="text-gray-600">
+              Pay only ₹20 per order for buying and selling shares. Save on
+              every order.
+            </p>
+          </div>
+          <!-- Feature Block -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-headset text-4xl text-yellow-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">
+              IPO and Mutual Fund Investment
+            </h3>
+            <p class="text-gray-600">
+              Invest in IPOs and mutual funds without any additional charges.
+              All options on a single platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Why Choose Upstox?
+          </h2>
+          <p class="text-gray-600">
+            Upstox brings you modern, affordable, and reliable Demat Account
+            features. Join today for smart investing.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-users text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">
+              Zero Account Opening Fees
+            </h3>
+            <p class="text-gray-600">
+              Open your Demat Account for free and start trading. No hidden
+              charges, only transparent services.
+            </p>
+          </div>
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-headset text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">24/7 Customer Support</h3>
+            <p class="text-gray-600">
+              Get help whenever you need it. Our team is available 24/7. Get
+              instant assistance anytime.
+            </p>
+          </div>
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-chart-line text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Low Brokerage Fees</h3>
+            <p class="text-gray-600">
+              Trade with just ₹20 per order brokerage fee. Less cost, more
+              profit on every order.
+            </p>
+          </div>
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-lock text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Secure and Reliable</h3>
+            <p class="text-gray-600">
+              Secure your investments with modern security measures. Trade with
+              data encryption and reliability.
+            </p>
+          </div>
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-check-double text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Compliance Assured</h3>
+            <p class="text-gray-600">
+              Compliant with all government and SEBI regulations. Ensure
+              transparency and compliance.
+            </p>
+          </div>
+          <!-- Benefit Block -->
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-red-50 rounded-full"
+            >
+              <i class="fas fa-bullseye text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Easy Interface</h3>
+            <p class="text-gray-600">
+              Our user-friendly platform makes your trading experience simple
+              and hassle-free. Invest smartly with ease.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Open a Demat Account -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          How to Open a Demat Account?
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-download text-4xl text-green-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Download the App</h3>
+            <p class="text-gray-600">Download the Upstox app.</p>
+          </div>
+          <!-- Step 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-mobile-alt text-4xl text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Sign Up</h3>
+            <p class="text-gray-600">
+              Sign up with your mobile number and email.
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-id-card text-4xl text-purple-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Enter PAN and Aadhaar</h3>
+            <p class="text-gray-600">
+              Provide your PAN and Aadhaar card details.
+            </p>
+          </div>
+          <!-- Step 4 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-user-check text-4xl text-yellow-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Complete eKYC</h3>
+            <p class="text-gray-600">Complete the eKYC process.</p>
+          </div>
+          <!-- Step 5 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-upload text-4xl text-red-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Upload Documents</h3>
+            <p class="text-gray-600">Upload the required documents.</p>
+          </div>
+          <!-- Step 6 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-clock text-4xl text-teal-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Activate Account</h3>
+            <p class="text-gray-600">Activate your account in 10 minutes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documents Required -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Documents Required</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Document 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-id-card text-4xl text-green-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Identity Proof</h3>
+            <p class="text-gray-600">PAN Card</p>
+          </div>
+          <!-- Document 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-home text-4xl text-blue-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Address Proof</h3>
+            <p class="text-gray-600">Aadhaar Card</p>
+          </div>
+          <!-- Document 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-users text-4xl text-purple-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Nominee Addition</h3>
+            <p class="text-gray-600">Nominee's Proof of Identity</p>
+          </div>
+          <!-- Document 4 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-pen text-4xl text-yellow-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Signature</h3>
+            <p class="text-gray-600">Sign on a White paper</p>
+          </div>
+          <!-- Document 5 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <i class="fas fa-check text-4xl text-red-500 mb-4"></i>
+            <h3 class="text-xl font-semibold mb-2">Cancelled Cheque</h3>
+            <p class="text-gray-600">Only if bank verification fails</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Information Section -->
+    <!-- Additional Information Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Additional Information
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Info Block 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2022/09/What-is-a-Demat-Account--768x307.webp"
+              alt="What is a Demat Account"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">What is a Demat Account?</h3>
+            <p class="text-gray-600">
+              A Demat Account is a digital account that holds your shares and
+              securities in an electronic format.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                A Demat Account, short for Dematerialized Account, allows
+                investors to hold their shares and securities electronically
+                instead of physical certificates. This makes it easier to manage
+                and trade securities. Essentially, it's like a bank account but
+                for your investments. Instead of keeping physical share
+                certificates, all your investments are stored digitally in your
+                Demat Account. This not only makes it convenient but also
+                reduces the risk of loss or damage to physical certificates.
+              </p>
+            </div>
+          </div>
+          <!-- Info Block 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2022/09/Difference-Between-Trading-Account-Demat-Account-1.webp"
+              alt="Difference Between Trading and Demat Account"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">
+              Difference Between Trading and Demat Account
+            </h3>
+            <p class="text-gray-600">
+              Understand the key differences between a Trading Account and a
+              Demat Account.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                A Trading Account is used for buying and selling securities,
+                while a Demat Account is used to hold those securities
+                electronically. Both are essential for trading in the stock
+                market. Think of it like this: the Trading Account is your tool
+                for making transactions (buying and selling), while the Demat
+                Account is your storage for the securities you own. You need
+                both to participate in the stock market effectively.
+              </p>
+            </div>
+          </div>
+          <!-- Info Block 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2021/10/JSHA.webp"
+              alt="Behind the Scenes Process in Market"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">
+              Behind the Scenes Process in Market
+            </h3>
+            <p class="text-gray-600">
+              Learn about the behind-the-scenes processes that occur in the
+              market.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                The market involves various behind-the-scenes processes such as
+                order matching, settlement, and clearing. These processes ensure
+                smooth and secure trading. When you place an order to buy or
+                sell shares, these processes ensure that the transaction is
+                completed accurately and securely. Order matching ensures that
+                your buy or sell order is matched with a corresponding sell or
+                buy order. Settlement involves the actual transfer of shares and
+                funds between the buyer and seller. Clearing is the process that
+                ensures all transactions are properly accounted for and settled.
+              </p>
+            </div>
+          </div>
+          <!-- Info Block 4 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2022/09/Add-a-subheading.webp"
+              alt="Secure Login Process"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Secure Login Process</h3>
+            <p class="text-gray-600">
+              Ensure your account is secure with our robust login process.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                Our secure login process includes multi-factor authentication
+                and encryption to protect your account from unauthorized access.
+                Multi-factor authentication adds an extra layer of security by
+                requiring you to provide two or more forms of identification
+                before accessing your account. Encryption ensures that your data
+                is protected and cannot be easily accessed by unauthorized
+                parties. This combination of security measures helps keep your
+                investments safe.
+              </p>
+            </div>
+          </div>
+          <!-- Info Block 5 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2021/10/sasas-e1596217268903.webp"
+              alt="BSE NSE SEBI APPROVED"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">BSE NSE SEBI APPROVED</h3>
+            <p class="text-gray-600">
+              We are approved by BSE, NSE, and SEBI for secure and reliable
+              trading.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                Upstox is regulated and approved by leading financial
+                authorities, ensuring compliance and security for all
+                transactions. BSE (Bombay Stock Exchange), NSE (National Stock
+                Exchange), and SEBI (Securities and Exchange Board of India) are
+                regulatory bodies that oversee the stock market in India. Their
+                approval ensures that our platform meets the highest standards
+                of security and compliance, giving you peace of mind when
+                trading.
+              </p>
+            </div>
+          </div>
+          <!-- Info Block 6 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition"
+          >
+            <img
+              src="https://dematopen.com/wp-content/uploads/2021/10/z1-1.webp"
+              alt="Paperless Demat Account"
+              class="rounded-2xl shadow-lg mb-4"
+            />
+            <h3 class="text-xl font-semibold mb-2">Paperless Demat Account</h3>
+            <p class="text-gray-600">
+              Experience the convenience of a paperless Demat Account opening
+              process.
+            </p>
+            <div
+              class="mt-4 text-primary font-semibold cursor-pointer md:text-left"
+              onclick="toggleDetails(this)"
+            >
+              Show More
+            </div>
+            <div class="hidden mt-4 text-gray-700">
+              <p>
+                Our paperless process allows you to open a Demat Account
+                entirely online, eliminating the need for physical documents and
+                speeding up the process. This means you can complete the entire
+                account opening process from the comfort of your home, without
+                the hassle of submitting physical paperwork. It's faster, more
+                convenient, and environmentally friendly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-12 bg-white">
+      <div class="container mx-auto p-6 rounded-lg shadow-md">
+        <h2 class="text-3xl font-bold text-center mb-8">FAQs</h2>
+        <p class="text-center mb-6">Open a Demat account with Upstox</p>
+        <div class="faq-section space-y-4">
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">What is a Demat Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                A Demat Account is like a bank account where you can securely
+                hold your purchased shares. It is essential for investing in the
+                stock market.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">Why Open a Demat Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                Without a Demat Account, you cannot invest in the stock market.
+                It holds your purchased shares electronically, ensuring
+                long-term investor security and trust.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">When to Open a Demat Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                You can open a Demat Account anytime, especially when you want
+                to invest in the stock market. Nowadays, you can open it online
+                and for free.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">How to Open a Demat Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                Opening a Demat Account is quite simple. You can do it online
+                and need to choose your Depository Participant. You will need to
+                upload documents like PAN card, Aadhaar card, savings bank
+                account, and signature photo.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What are the Benefits of a Demat Account?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                The benefits of a Demat Account are: essential for investing in
+                the stock market. Holds purchased shares electronically. Ensures
+                long-term investor security and trust.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">Where to Open a Demat Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                You can open a Demat Account on reliable platforms like Upstox.
+                Upstox is a renowned stock broking company with over 1 crore
+                active customers.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What Documents are Required to Open a Demat Account?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                To open a Demat Account, you will need the following documents:
+                PAN card, Aadhaar card, savings bank account, and signature
+                photo.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What are the Benefits of Opening a Demat Account with
+                Upstox?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                The benefits of opening a Demat Account with Upstox are: Free
+                account opening, Zero AMC for life, Low brokerage charges,
+                Online and paperless process, Trading facilities in various
+                segments.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What is the Process to Open a Demat Account?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                The process to open a Demat Account is as follows: 1. Download
+                the Upstox app and enter your mobile number. 2. Confirm with
+                OTP. 3. Enter email ID and confirm with OTP. 4. Enter PAN number
+                and date of birth. 5. Share Aadhaar details. 6. Enter bank
+                account information and basic details. 7. Read all instructions
+                and check the checkbox. 8. Complete Online In-Person
+                Verification (IPV). 9. Upload all documents. 10. Click on e-Sign
+                on Aadhaar and enter the security code. 11. Review the form and
+                click on "Sign In Now". 12. Verify Aadhaar number with OTP and
+                submit.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">Is Upstox Safe?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                Yes, Upstox is one of the safest platforms. It is registered
+                with SEBI, BSE, NSE, MCX, and CDSL.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What Else Can Be Held in a Demat Account Besides Shares?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                In a Demat Account, you can hold Mutual Funds, Stocks, ETFs,
+                Bonds, etc.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">What is a Trading Account?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                A Trading Account acts as a bridge between your Demat Account
+                and bank account, allowing you to trade in the market. It
+                enables you to place Buy Sell Orders in the stock market.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What is the Use of a Demat Account in the Stock Market?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                A Demat Account is used to hold and eventually sell the shares
+                purchased in the stock market.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold">How is a Demat Account Chosen?</span>
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                A Demat Account can be chosen based on the reliability of the
+                brokerage firm, minimum brokerage charges, and annual
+                maintenance fees.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item border-b py-4">
+            <button
+              class="flex justify-between w-full items-center"
+              onclick="toggleAnswer(this)"
+            >
+              <span class="font-semibold"
+                >What is Required to Open a Demat Account?</span
+              >
+              <i
+                class="fas fa-chevron-down transform transition-transform duration-300"
+              ></i>
+            </button>
+            <div class="answer hidden mt-2 text-gray-700">
+              <p>
+                To open a Demat Account, you need to fill out an online form
+                with details and upload necessary personal documents, after
+                which the Demat Account starts upon e-verification.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-6">
+          <a
+            href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+            class="bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700"
+          >
+            Click to Open Demat Account
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="bg-primary text-white py-12">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          Start Today and Take the First Step Towards Secure and Profitable
+          Investing with Upstox!
+        </h2>
+        <a
+          href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+          class="mt-8 bg-yellow-400 text-black px-6 py-3 rounded-full font-bold"
+        >
+          👉 Open Account with Upstox
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+      <div class="text-gray-800 text-xs mb-24">
+        <p>
+          <strong>Disclaimer: </strong>We are Upstox's authorized Authorized
+          Partner, and we have permission from Upstox to open Demat accounts.
+          Please note that the information provided on this platform is not
+          investment advice. We do not provide any investment advice or tips.
+          All investment decisions should be made with caution and thorough
+          consideration.
+        </p>
+        <p>
+          We comply with the guidelines and regulations set by Upstox, the
+          National Stock Exchange of India (NSE), and the Securities and
+          Exchange Board of India (SEBI).
+        </p>
+      </div>
+    </div>
+
+    <!-- Sticky Header -->
+
+    <div class="glowing-footer md:block lg:hidden">
+      <a
+        href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+        target="_blank"
+        rel="nofollow"
+        class="custom-btn"
+      >
+        👉 100% Secure, Sign Up Now! 🚀
+      </a>
+      <p class="custom-text">
+        Open your account instantly! 100% Secure, Start Now!
+      </p>
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle and Form Handling -->
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      // Toggle mobile menu visibility
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent closing when clicking the toggle button
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu on click outside
+      document.addEventListener("click", (e) => {
+        if (
+          !mobileMenu.classList.contains("hidden") &&
+          !mobileMenu.contains(e.target) &&
+          e.target !== menuToggle
+        ) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // Close mobile menu on scroll
+      window.addEventListener("scroll", () => {
+        if (!mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+        }
+      });
+
+      // FAQ Toggle
+
+      function toggleAnswer(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("i");
+        if (answer.classList.contains("hidden")) {
+          answer.classList.remove("hidden");
+          icon.classList.remove("fa-chevron-down");
+          icon.classList.add("fa-chevron-up");
+        } else {
+          answer.classList.add("hidden");
+          icon.classList.remove("fa-chevron-up");
+          icon.classList.add("fa-chevron-down");
+        }
+      }
+    </script>
+
+    <!-- AOS Library Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+    </script>
+    <!-- Additional Info -->
+    <script>
+      function toggleDetails(button) {
+        const details = button.nextElementSibling;
+        if (details.classList.contains("hidden")) {
+          details.classList.remove("hidden");
+          button.textContent = "Show Less";
+        } else {
+          details.classList.add("hidden");
+          button.textContent = "Show More";
+        }
+      }
+    </script>
+  </body>
+</html>
