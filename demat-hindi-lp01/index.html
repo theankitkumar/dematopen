@@ -28,13 +28,14 @@
             },
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
+              noto: ["Noto Sans", "sans-serif"],
             },
           },
         },
       };
     </script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -141,6 +142,7 @@
         border-radius: 5px 5px 0 0;
         box-shadow: 0 0 10px #00ff00;
         box-sizing: border-box; /* Ensures proper box model calculations */
+        height: 60px; /* Adjusted height */
       }
 
       .glowing-footer::before {
@@ -179,8 +181,8 @@
         background-color: #ffe161;
         color: #614f00;
         font-family: "Poppins", sans-serif;
-        font-size: 1.5rem; /* Increased font size */
-        padding: 1rem 0;
+        font-size: 1.2rem; /* Adjusted font size */
+        padding: 0.8rem 0;
         width: 100%; /* Button width covers 80-90% of the section */
         max-width: 600px; /* Optional: max width for better control */
         border-radius: 5px;
