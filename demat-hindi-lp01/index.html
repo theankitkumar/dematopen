@@ -1034,21 +1034,22 @@
       </div>
     </div>
 
-    <!-- Sticky Header -->
-
-    <div class="glowing-footer md:block lg:hidden">
-      <a
-        href="https://link.upstox.com/An1dd8kyV36CJdHt7"
-        target="_blank"
-        rel="nofollow"
-        class="custom-btn"
-      >
-        👉 100% सुरक्षित, अभी SignUp करें! 🚀
-      </a>
-      <p class="custom-text">
-        अपना खाता तुरंत खोलें! 100% सुरक्षित, अभी शुरुआत करें!
-      </p>
-    </div>
+    <!-- Template for the Sticky Fixed Element Mobile -->
+    <template id="sticky-footer-template">
+      <div class="glowing-footer md:block lg:hidden">
+        <a
+          href="https://link.upstox.com/An1dd8kyV36CJdHt7"
+          target="_blank"
+          rel="nofollow"
+          class="custom-btn"
+        >
+          👉 100% सुरक्षित, अभी SignUp करें! 🚀
+        </a>
+        <p class="custom-text">
+          अपना खाता तुरंत खोलें! 100% सुरक्षित, अभी शुरुआत करें!
+        </p>
+      </div>
+    </template>
 
     <!-- JavaScript for Mobile Menu Toggle and Form Handling -->
     <script>
@@ -1104,6 +1105,28 @@
         duration: 800,
         easing: "ease-in-out",
         once: true,
+      });
+    </script>
+
+    <!-- sticky element js -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const template = document.getElementById("sticky-footer-template");
+        const stickyFooter = template.content.cloneNode(true);
+        const body = document.body;
+
+        const loadStickyFooter = () => {
+          const scrollPosition = window.scrollY + window.innerHeight;
+          const pageHeight = document.documentElement.scrollHeight;
+          const threshold = 0.15; // 15% of the page height
+
+          if (scrollPosition >= pageHeight * threshold) {
+            body.appendChild(stickyFooter);
+            window.removeEventListener("scroll", loadStickyFooter);
+          }
+        };
+
+        window.addEventListener("scroll", loadStickyFooter);
       });
     </script>
   </body>
