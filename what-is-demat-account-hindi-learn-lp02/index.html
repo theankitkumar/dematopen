@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -509,76 +507,100 @@
 </div>
 
 
-  <!-- Hero Section -->
-<section class="pt-24 md:pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
-  <div class="container mx-auto px-4">
+<!-- Hero Section -->
+<section class="relative pt-24 md:pt-32 pb-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative">
     <div class="grid md:grid-cols-2 items-center gap-12">
       <!-- Left Column: Content -->
-      <div class="space-y-6 text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-          Free में खोलें अपना
-          <span class="text-primary">Demat Account</span> और बनाएं अपने भविष्य को सुरक्षित।
-        </h1>
-        <p class="text-lg text-gray-600">
-          बिना AMC चार्ज, आसान Paperless प्रोसेस, और ₹20/Order ब्रोकरेज के साथ निवेश की शुरुआत करें।
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a
-            href="https://upstox.com/open-account/?f=xMlY"
-            class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition font-semibold"
-          >
-            Open Free Demat Account <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-          <a
-            href="#features"
-            class="border border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition font-semibold"
-          >
-            Explore Features
-          </a>
+      <div class="space-y-8 text-center md:text-left">
+        <!-- Trust Badges -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm">
+          <i class="fas fa-shield-alt text-primary"></i>
+          <span class="text-sm font-medium">SEBI Registered • NSE • BSE • CDSL</span>
         </div>
-        <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-6">
-          <!-- Highlight 1 -->
-          <div class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-primary text-base md:text-lg"></i>
-            <span class="text-xs md:text-sm font-medium text-gray-700">
-              Trusted by Over 1 Crore Investors
+
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            <span class="text-gray-900">मुफ्त में खोलें</span><br/>
+            <span class="text-primary relative">
+              Demat Account
+              <svg class="absolute w-full -bottom-2 left-0 text-primary/20" height="8">
+                <path d="M0 4 Q 50 0, 100 4 Q 150 8, 200 4" stroke="currentColor" stroke-width="4" fill="none"/>
+              </svg>
             </span>
+          </h1>
+
+          <p class="text-xl text-gray-600">
+            ₹0 AMC • ₹20/Order फ्लैट ब्रोकरेज<br/>
+            <span class="font-semibold text-gray-800">3 मिनट</span> में पेपरलेस अकाउंट खोलें
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="https://upstox.com/open-account/?f=xMlY" 
+               class="group bg-primary text-white px-8 py-4 rounded-xl hover:bg-blue-600 transition shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30">
+              <div class="flex items-center justify-center gap-3">
+                <span class="font-semibold">अभी खाता खोलें</span>
+                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+              </div>
+            </a>
+            <a href="#features" 
+               class="border-2 border-primary text-primary px-8 py-4 rounded-xl hover:bg-primary hover:text-white transition font-semibold">
+              सुविधाएं देखें
+            </a>
           </div>
-          <!-- Highlight 2 -->
-          <div class="flex items-center gap-2">
-            <i class="fas fa-shield-alt text-primary text-base md:text-lg"></i>
-            <span class="text-xs md:text-sm font-medium text-gray-700">
-              SEBI, NSE, BSE, and CDSL Registered
-            </span>
-          </div>
-          <!-- Highlight 3 -->
-          <div class="flex items-center gap-2">
-            <i class="fas fa-headset text-primary text-base md:text-lg"></i>
-            <span class="text-xs md:text-sm font-medium text-gray-700">
-              24/7 Customer Support
-            </span>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="space-y-4">
+          <div class="flex flex-wrap gap-6 items-center justify-center md:justify-start">
+            <div class="flex items-center gap-2">
+              <div class="bg-green-100 p-2 rounded-lg">
+                <i class="fas fa-users text-green-600 text-xl"></i>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-bold text-xl">1 करोड़+</span>
+                <span class="text-sm text-gray-600">सक्रिय निवेशक</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="bg-yellow-100 p-2 rounded-lg">
+                <i class="fas fa-star text-yellow-400 text-xl"></i>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-bold text-xl">4.8/5</span>
+                <span class="text-sm text-gray-600">Google Play रेटिंग</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Right Column: Image -->
       <div class="relative">
-        <a href="https://upstox.com/open-account/?f=xMlY">
-          <img
-            src="https://dematopen.com/wp-content/uploads/2021/10/What-is-a-Demat-Account-1.webp"
-            alt="Demat Account"
-            class="rounded-2xl shadow-lg w-full"
-          />
-        </a>
-        <!-- Badge Overlay -->
-        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full shadow-lg px-6 py-2 flex items-center gap-2">
-          <i class="fas fa-star text-yellow-400"></i>
-          <span class="text-sm font-semibold">4.8/5 Rating on Google Play</span>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <a href="https://upstox.com/open-account/?f=xMlY">
+            <img
+              src="https://dematopen.com/wp-content/uploads/2021/10/What-is-a-Demat-Account-1.webp"
+              alt="Demat Account Opening"
+              class="w-full transform hover:scale-105 transition duration-700"
+            />
+          </a>
         </div>
+
+        
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- Features Section -->
 <section id="features" class="py-20 bg-gray-50">
@@ -646,6 +668,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Benefits Section -->
     <section id="benefits" class="py-20 bg-white">
@@ -815,6 +838,7 @@
         </div>
       </div>
     </section>
+
 
 <!-- Documents Required -->
     <section class="py-12 bg-white">
@@ -1210,44 +1234,91 @@
     </div>
 
   
-   <!-- Mobile Sticky CTA -->
-   <template id="sticky-footer-template">
-    <div class="glowing-footer fixed bottom-0 left-0 w-full z-50 py-3 px-4 text-center block sm:hidden">
-      <a
-        href="https://upstox.com/open-account/?f=xMlY"
-        target="_blank"
-        rel="nofollow"
-        class="custom-btn"
-      >
-      👉 100% सुरक्षित, अभी SignUp करें! 🚀
-      </a>
-      <p class="custom-text">
-        अपना Demat A/c तुरंत खोलें! 100% सुरक्षित, अभी शुरुआत करें!
-      </p>
+<!-- Mobile Sticky CTA -->
+<template id="sticky-footer-template">
+  <div class="fixed bottom-0 left-0 w-full z-50 bg-white shadow-lg border-t border-gray-200 p-4 block sm:hidden">
+    <!-- Progress Bar -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gray-100">
+      <div id="scroll-progress" class="h-full bg-primary transition-all duration-300"></div>
     </div>
-  </template>
     
-      <!-- Sticky element banner js -->
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const template = document.getElementById("sticky-footer-template");
-          const stickyFooter = template.content.cloneNode(true);
-          const body = document.body;
-    
-          const loadStickyFooter = () => {
-            const scrollPosition = window.scrollY + window.innerHeight;
-            const pageHeight = document.documentElement.scrollHeight;
-            const threshold = 0.15; // 15% of the page height
-    
-            if (scrollPosition >= pageHeight * threshold) {
-              body.appendChild(stickyFooter);
-              window.removeEventListener("scroll", loadStickyFooter);
-            }
-          };
-    
-          window.addEventListener("scroll", loadStickyFooter);
-        });
-      </script>
+    <!-- Main Content -->
+    <div class="flex flex-col gap-3">
+      <!-- Primary Action -->
+      <a href="https://upstox.com/open-account/?f=xMlY" 
+         target="_blank" 
+         rel="nofollow"
+         class="w-full py-3 px-4 bg-primary hover:bg-blue-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2">
+        <span class="animate-bounce">👉</span>
+        <span>अभी खाता खोलें - Free में!</span>
+        <span class="animate-pulse">🚀</span>
+      </a>
+      
+      <!-- Trust Indicators -->
+      <div class="flex items-center justify-center gap-4 text-sm text-textColor">
+        <div class="flex items-center gap-1">
+          <i class="fas fa-shield-alt text-primary"></i>
+          <span>100% सुरक्षित</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <i class="fas fa-bolt text-primary"></i>
+          <span>2 मिनट में खोलें</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <i class="fas fa-check-circle text-primary"></i>
+          <span>SEBI रजिस्टर्ड</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const template = document.getElementById("sticky-footer-template");
+  const stickyFooter = template.content.cloneNode(true);
+  const body = document.body;
+
+  // Enhanced scroll handling with progress bar
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollPercent = (scrollPosition / (docHeight - windowHeight)) * 100;
+    const threshold = 15; // Show after 15% scroll
+
+    if (scrollPosition > (docHeight - windowHeight) * (threshold/100)) {
+      if (!document.querySelector(".sticky-footer-mounted")) {
+        body.appendChild(stickyFooter);
+        document.querySelector(".sticky-footer-mounted")?.remove();
+        const newFooter = document.querySelector("[id^='sticky-footer-template']");
+        if (newFooter) newFooter.classList.add("sticky-footer-mounted");
+      }
+      
+      // Update progress bar
+      const progressBar = document.getElementById("scroll-progress");
+      if (progressBar) {
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+    }
+  };
+
+  // Throttle scroll event
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Initial check
+  handleScroll();
+});
+</script>
 
 
     <!-- JavaScript for Mobile Menu Toggle and Form Handling -->
