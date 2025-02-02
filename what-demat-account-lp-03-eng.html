@@ -55,6 +55,8 @@
         display: inline-block;
         animation: pointRight 1s ease-in-out infinite;
       }
+
+      
     </style>
 
     <!-- Google Tag Manager -->
@@ -296,6 +298,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- What is Demat Account Section -->
     <section
@@ -1742,6 +1745,12 @@
       </div>
     </section>
 
+
+
+<!-- Notification Container -->
+<div id="notification-container" class="fixed z-50 max-w-sm w-full pointer-events-none sm:right-5 sm:top-5 top-2 right-2 left-2 sm:left-auto"></div>
+
+
     <!-- footer -->
     <footer class="bg-darkGray text-white pt-12 pb-6">
       <div class="container mx-auto px-6">
@@ -1931,189 +1940,195 @@
       }
     </script>
 
-    <!-- Notification System -->
-    <script>
-      const NOTIFICATION_DATA = {
-        cities: [
-          "Mumbai",
-          "Delhi",
-          "Bangalore",
-          "Chennai",
-          "Hyderabad",
-          "Kolkata",
-          "Pune",
-          "Ahmedabad",
-          "Surat",
-          "Jaipur",
-          "Gurgaon",
-          "Noida",
-          "Lucknow",
-          "Shimla",
-          "Panchkula",
-          "Solapur",
-          "Latur",
-          "Karjat",
-          "Kangra",
-          "Kolhapur",
-          "Ludhiana",
-          "Alibaug",
-          "Madurai",
-          "Vadodara",
-          "Rajkot",
-          "Bhopal",
-          "Jhansi",
-          "Indore",
-          "Patna",
-          "Kanpur",
-          "Nagpur",
-          "Agra",
-          "Varanasi",
-          "Meerut",
-          "Jabalpur",
-          "Coimbatore",
-          "Thiruvananthapuram",
-          "Mysore",
-          "Amritsar",
-          "Dehradun",
-          "Guwahati",
-          "Raipur",
-          "Nashik",
-          "Udaipur",
-          "Jodhpur",
-          "Ranchi",
-          "Chandigarh",
-          "Durgapur",
-          "Vijayawada",
-          "Aurangabad",
-          "Gwalior",
-          "Thrissur",
-        ],
-        names: [
-          "Aarav Kumar",
-          "Rohan Sharma",
-          "Vikram Singh",
-          "Arjun Patel",
-          "Rahul Gupta",
-          "Siddharth Verma",
-          "Pranav Joshi",
-          "Aditya Mehta",
-          "Ravi Kapoor",
-          "Karan Reddy",
-          "Raj Malhotra",
-          "Mohan Chopra",
-          "Gautam Khanna",
-          "Nitin Agarwal",
-          "Vivek Rao",
-          "Deepak Yadav",
-          "Priya Desai",
-          "Meera Khan",
-          "Anjali Mishra",
-          "Neha Bhatt",
-          "Sameer Thakur",
-          "Amit Srivastava",
-          "Rakesh Jain",
-          "Sanjay Tiwari",
-          "Manish Dixit",
-          "Rohit Bhatia",
-          "Shivani Verma",
-          "Ankur Kumar",
-          "Pooja Sharma",
-          "Sonia Verma",
-          "Ritu Gupta",
-          "Nisha Patel",
-        ],
-      };
+   <!-- Notification System -->
+<script>
+  const NOTIFICATION_DATA = {
+    cities: [
+      "Mumbai", "Delhi", "Bangalore", "Chennai", "Hyderabad", "Kolkata", "Pune",
+      "Ahmedabad", "Surat", "Jaipur", "Gurgaon", "Noida", "Lucknow", "Shimla",
+      "Panchkula", "Solapur", "Latur", "Karjat", "Kangra", "Kolhapur", "Ludhiana",
+      "Alibaug", "Madurai", "Vadodara", "Rajkot", "Bhopal", "Jhansi", "Indore",
+      "Patna", "Kanpur", "Nagpur", "Agra", "Varanasi", "Meerut", "Jabalpur",
+      "Coimbatore", "Thiruvananthapuram", "Mysore", "Amritsar", "Dehradun",
+      "Guwahati", "Raipur", "Nashik", "Udaipur", "Jodhpur", "Ranchi", "Chandigarh",
+      "Durgapur", "Vijayawada", "Aurangabad", "Gwalior", "Thrissur"
+    ],
+    names: [
+      "Aarav Kumar", "Rohan Sharma", "Vikram Singh", "Arjun Patel", "Rahul Gupta",
+      "Siddharth Verma", "Pranav Joshi", "Aditya Mehta", "Ravi Kapoor", "Karan Reddy",
+      "Raj Malhotra", "Mohan Chopra", "Gautam Khanna", "Nitin Agarwal", "Vivek Rao",
+      "Deepak Yadav", "Priya Desai", "Meera Khan", "Anjali Mishra", "Neha Bhatt",
+      "Sameer Thakur", "Amit Srivastava", "Rakesh Jain", "Sanjay Tiwari", "Manish Dixit",
+      "Rohit Bhatia", "Shivani Verma", "Ankur Kumar", "Pooja Sharma", "Sonia Verma",
+      "Ritu Gupta", "Nisha Patel"
+    ]
+  };
 
-      const NOTIFICATION_CONFIG = {
-        displayDuration: 5000, // 5 seconds
-        initialDelay: 10000, // 10 seconds
-        interval: { min: 15000, max: 25000 }, // 15-25 seconds
-      };
+ 
+  class EnhancedNotificationSystem {
+  constructor(config = {}) {
+    this.config = {
+      displayDuration: 5000,
+      initialDelay: 10000,
+      interval: { min: 12000, max: 25000 },
+      maxNotifications: 3,
+      ...config
+    };
+    
+    this.container = document.getElementById('notification-container');
+    this.activeNotifications = new Set();
+    this.queue = [];
+    this.initialize();
+  }
 
-      class NotificationSystem {
-        constructor() {
-          this.activeNotifications = new Set();
-          this.initialize();
-        }
+  static getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
 
-        static getRandomElement(array) {
-          return array[Math.floor(Math.random() * array.length)];
-        }
+  static formatTimeAgo(minutes) {
+    if (minutes < 60) {
+      return `${minutes} minutes ago`;
+    }
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h${remainingMinutes > 0 ? ` ${remainingMinutes}m` : ''} ago`;
+  }
 
-        static formatTimeAgo(minutes) {
-          if (minutes < 60) {
-            return `${minutes} min`;
-          }
-          const hours = Math.floor(minutes / 60);
-          const remainingMinutes = minutes % 60;
-          return `${hours} hr${hours > 1 ? "s" : ""} ${
-            remainingMinutes > 0 ? ` ${remainingMinutes} min` : ""
-          }`;
-        }
+  createNotificationElement() {
+    const minutesAgo = Math.floor(Math.random() * 36) + 5;
+    const name = EnhancedNotificationSystem.getRandomElement(NOTIFICATION_DATA.names);
+    const city = EnhancedNotificationSystem.getRandomElement(NOTIFICATION_DATA.cities);
+    const timeAgo = EnhancedNotificationSystem.formatTimeAgo(minutesAgo);
 
-        createNotification() {
-          const minutesAgo = Math.floor(Math.random() * 36) + 5; // Changed to 5-40 minutes
-          const name = NotificationSystem.getRandomElement(
-            NOTIFICATION_DATA.names
-          );
-          const city = NotificationSystem.getRandomElement(
-            NOTIFICATION_DATA.cities
-          );
-          const timeAgo = NotificationSystem.formatTimeAgo(minutesAgo);
+    const notification = document.createElement('div');
+    notification.className = `
+      notification
+      mb-3
+      p-4
+      bg-secondary
+      rounded-lg
+      shadow-lg
+      transform
+      transition-all
+      duration-300
+      ease-in-out
+      translate-x-full
+      opacity-0
+      hover:shadow-xl
+      hover:scale-102
+      cursor-default
+      pointer-events-auto
+      max-w-sm
+      w-full
+      border
+      border-gray-700/50
+    `;
 
-          const notification = document.createElement("div");
-          notification.className =
-            "fixed top-16 left-2 right-2 z-50 w-auto p-3 bg-indigo-600 text-white rounded-lg shadow-lg transform transition-transform duration-300 ease-out translate-y-0 opacity-100";
-
-          notification.innerHTML = `
-          <div class="flex items-center gap-2">
-            <div class="flex-shrink-0 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <div class="flex-1">
-              <p class="text-sm font-semibold">${name}</p>
-              <p class="text-xs opacity-90">From ${city} Opened Demat A/c ${timeAgo} ago</p>
-            </div>
+    notification.innerHTML = `
+      <div class="flex items-start gap-3">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-user-check text-primary text-sm"></i>
           </div>
-        `;
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex justify-between items-start">
+            <p class="text-sm font-semibold text-white truncate">
+              ${name}
+            </p>
+            <span class="text-xs text-gray-400 whitespace-nowrap ml-2">
+              ${timeAgo}
+            </span>
+          </div>
+          <p class="mt-1 text-sm text-gray-300">
+            Opened Demat Account from ${city} 🎉
+          </p>
+        </div>
+        <button class="flex-shrink-0 text-gray-400 hover:text-gray-200 transition-colors">
+          <i class="fas fa-times text-xs"></i>
+        </button>
+      </div>
+    `;
 
-          return notification;
+    // Add click handler to close button
+    notification.querySelector('button').addEventListener('click', () => {
+      this.removeNotification(notification);
+    });
+
+    return notification;
+  }
+
+  async showNotification() {
+    if (this.activeNotifications.size >= this.config.maxNotifications) {
+      this.queue.push(() => this.showNotification());
+      return;
+    }
+
+    const notification = this.createNotificationElement();
+    this.container.appendChild(notification);
+    this.activeNotifications.add(notification);
+
+    // Trigger animation
+    await new Promise(resolve => requestAnimationFrame(resolve));
+    notification.classList.remove('translate-x-full', 'opacity-0');
+
+    // Auto-remove after duration
+    setTimeout(() => {
+      this.removeNotification(notification);
+    }, this.config.displayDuration);
+  }
+
+  async removeNotification(notification) {
+    notification.classList.add('translate-x-full', 'opacity-0');
+    
+    await new Promise(resolve => {
+      notification.addEventListener('transitionend', resolve, { once: true });
+    });
+
+    this.container.removeChild(notification);
+    this.activeNotifications.delete(notification);
+
+    // Process queue
+    if (this.queue.length > 0) {
+      const nextNotification = this.queue.shift();
+      nextNotification();
+    }
+  }
+
+  initialize() {
+    // Start showing notifications after initial delay
+    setTimeout(() => {
+      this.showNotification();
+      
+      // Set up interval for subsequent notifications
+      setInterval(() => {
+        if (!document.hidden) {
+          this.showNotification();
         }
+      }, Math.random() * 
+        (this.config.interval.max - this.config.interval.min) + 
+        this.config.interval.min
+      );
+    }, this.config.initialDelay);
 
-        showNotification() {
-          const notification = this.createNotification();
-          document.body.appendChild(notification);
-          this.activeNotifications.add(notification);
+    // Pause animations when tab is not visible
+    document.addEventListener('visibilitychange', () => {
+      this.container.style.animationPlayState = document.hidden ? 'paused' : 'running';
+    });
+  }
+}
 
-          setTimeout(() => {
-            notification.classList.add("translate-y-20", "opacity-0");
-            setTimeout(() => {
-              if (document.body.contains(notification)) {
-                document.body.removeChild(notification);
-              }
-              this.activeNotifications.delete(notification);
-            }, 300);
-          }, NOTIFICATION_CONFIG.displayDuration);
-        }
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  window.notificationSystem = new EnhancedNotificationSystem({
+    displayDuration: 5000,
+    initialDelay: 10000,
+    interval: { min: 16000, max: 25000 },
+    maxNotifications: 3
+  });
+});
+</script>
 
-        initialize() {
-          setTimeout(() => {
-            this.showNotification();
-            setInterval(() => {
-              if (!document.hidden) {
-                this.showNotification();
-              }
-            }, Math.random() * (NOTIFICATION_CONFIG.interval.max - NOTIFICATION_CONFIG.interval.min) + NOTIFICATION_CONFIG.interval.min);
-          }, NOTIFICATION_CONFIG.initialDelay);
-        }
-      }
 
-      // Initialize the notification system when the DOM is ready
-      document.addEventListener("DOMContentLoaded", () => {
-        window.notificationSystem = new NotificationSystem();
-      });
-    </script>
   </body>
 </html>
