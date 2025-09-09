@@ -1505,7 +1505,7 @@
             const loadStickyFooter = () => {
                 const scrollPosition = window.scrollY + window.innerHeight;
                 const pageHeight = document.documentElement.scrollHeight;
-                const threshold = 0.05; // 5% of the page height
+                const threshold = 0.10; // 10% of the page height
 
                 if (scrollPosition >= pageHeight * threshold) {
                     body.appendChild(stickyFooter);
