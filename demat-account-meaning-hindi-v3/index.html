@@ -113,9 +113,6 @@
                             '0%': { transform: 'scale(0.95)', opacity: 0 },
                             '100%': { transform: 'scale(1)', opacity: 1 }
                         }
-                    },
-                    backdropBlur: {
-                        xs: '2px'
                     }
                 }
             }
@@ -146,18 +143,6 @@
             scroll-behavior: smooth;
         }
         
-        /* Glass morphism effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
         
         /* Enhanced button styles */
         .btn-success {
@@ -306,7 +291,7 @@
     <div class="progress-bar" id="progress-bar"></div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 glass backdrop-blur-md">
+    <nav class="fixed w-full top-0 z-50 bg-white/95 border-b border-neutral-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -341,7 +326,7 @@
         </div>
         
         <!-- Mobile Navigation -->
-        <div class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-neutral-200" id="mobile-menu">
+        <div class="md:hidden hidden bg-white/95 border-t border-neutral-200" id="mobile-menu">
             <div class="px-4 py-4 space-y-4">
                 <a href="#features" class="block text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">Features</a>
                 <a href="#process" class="block text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors">Process</a>
@@ -368,7 +353,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <div class="inline-flex items-center space-x-2 bg-white/10 px-4 py-2 rounded-full mb-6">
                     <i class="fas fa-graduation-cap text-accent-400"></i>
                     <span class="text-sm font-semibold">Complete Beginner's Guide</span>
                 </div>
@@ -385,7 +370,7 @@
             <!-- Interactive Guide Grid -->
             <div class="grid lg:grid-cols-3 gap-8 mb-16">
                 <!-- What is Demat Account - Detailed -->
-                <div class="lg:col-span-2 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                <div class="lg:col-span-2 bg-white/5 rounded-2xl p-8 border border-white/10">
                     <div class="flex items-start space-x-4 mb-6">
                         <div class="w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-vault text-white text-xl"></i>
@@ -471,7 +456,7 @@
             <!-- Detailed Q&A Section -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <!-- Trading Account Explanation -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-exchange-alt text-white"></i>
                     </div>
@@ -487,7 +472,7 @@
                 </div>
 
                 <!-- Why Need Both -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-question-circle text-white"></i>
                     </div>
@@ -509,7 +494,7 @@
                 </div>
 
                 <!-- How to Choose -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-search text-white"></i>
                     </div>
@@ -524,7 +509,7 @@
                 </div>
 
                 <!-- Eligibility -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-user-check text-white"></i>
                     </div>
@@ -539,7 +524,7 @@
                 </div>
 
                 <!-- Documents Required -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-file-alt text-white"></i>
                     </div>
@@ -554,7 +539,7 @@
                 </div>
 
                 <!-- Charges Breakdown -->
-                <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 card-hover">
+                <div class="bg-white/5 rounded-xl p-6 border border-white/10 card-hover">
                     <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
                         <i class="fas fa-rupee-sign text-white"></i>
                     </div>
@@ -580,7 +565,7 @@
             </div>
 
             <!-- Step by Step Process -->
-            <div class="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-12">
+            <div class="bg-gradient-to-r from-white/5 to-white/10 rounded-2xl p-8 border border-white/10 mb-12">
                 <h3 class="text-2xl font-bold mb-8 text-center">
                     <i class="fas fa-route text-accent-400 mr-3"></i>
                     Step-by-Step Account Opening Process
@@ -1387,7 +1372,7 @@
             </p>
             
             <!-- Urgency element -->
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-8 inline-block">
+            <div class="bg-white/10 rounded-xl p-4 mb-8 inline-block">
                 <div class="flex items-center justify-center space-x-4 text-sm">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-clock text-warning-400"></i>
@@ -1448,7 +1433,7 @@
     <!-- Template for the Sticky Fixed Element Mobile -->
     <template id="sticky-footer-template">
       <!-- Modern Sticky CTA -->
-      <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-md glass border border-white/20 rounded-2xl shadow-strong px-4 py-3 z-50 backdrop-blur-xl">
+      <div class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-md bg-white border border-neutral-200 rounded-2xl shadow-strong px-4 py-3 z-50">
         <div class="flex items-center justify-between">
           <!-- Left: Offer -->
           <div>
@@ -1463,17 +1448,14 @@
               <i class="fas fa-shield-check text-green-500"></i>
               <span>100% Secure</span>
             </div>
-            <!-- Partnership Disclosure -->
-            <div class="text-xs text-neutral-500 mt-1">
-              <span>via Upstox Partner</span>
-            </div>
+           
           </div>
 
           <!-- Right: CTA -->
           <a href="https://upstox.com/open-account/?f=xMlY"
              target="_blank"
              rel="noopener"
-             class="btn-success px-4 py-3 text-xs font-bold rounded-xl pulse-glow flex items-center space-x-1 shadow-lg">
+             class="btn-success bg-white px-4 py-3 text-xs font-bold rounded-xl pulse-glow flex items-center space-x-1 shadow-lg">
             <i class="fas fa-rocket"></i>
             <span>OPEN NOW</span>
           </a>
