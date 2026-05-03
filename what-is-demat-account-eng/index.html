@@ -168,6 +168,43 @@
   .phone-glow {
     background: radial-gradient(40% 50% at 50% 50%, rgba(212,162,76,.25), transparent 70%);
   }
+
+  /* Sticky bottom CTA */
+  .sticky-cta {
+    position: fixed;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%) translateY(120%);
+    z-index: 50;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .4s ease;
+    opacity: 0;
+    pointer-events: none;
+    width: calc(100% - 24px);
+    max-width: 720px;
+  }
+  .sticky-cta.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sticky-cta.hide {
+    transform: translateX(-50%) translateY(160%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pulse-dot {
+    animation: pulseDot 1.6s ease-in-out infinite;
+  }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .55; transform: scale(.85); }
+  }
+
+  /* Slight body padding when sticky shown so final CTA isn't blocked on mobile */
+  @media (max-width: 640px) {
+    body.sticky-on { padding-bottom: 88px; }
+  }
 </style>
 </head>
 
@@ -197,15 +234,15 @@
       <div class="w-9 h-9 rounded-lg bg-ink grid place-items-center">
         <i class="fa-solid fa-seedling text-gold text-sm"></i>
       </div>
-      <span class="display text-xl font-semibold">Niveshak<span class="text-forest-600"></span></span>
+      <span class="display text-xl font-semibold">Niveshak<span class="text-forest-600">.</span></span>
     </a>
     <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-ink/70">
       <a href="#basics" class="hover:text-ink">Basics</a>
       <a href="#how-it-works" class="hover:text-ink">How It Works</a>
-      <a href="#open" class="hover:text-ink">Open Account</a>
+      <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" class="hover:text-ink">Open Account</a>
       <a href="#faq" class="hover:text-ink">FAQ</a>
     </nav>
-    <a href="https://upstox.com/open-demat-account/?f=54EE"
+    <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank"
        class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold shadow-soft">
       Open Free Account
       <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -813,7 +850,7 @@
         </ul>
 
         <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+          <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
              class="btn-primary inline-flex items-center gap-2 px-7 py-4 rounded-full font-semibold shadow-glow text-base">
             <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
             Open Free Demat Account
@@ -863,7 +900,7 @@
               SEBI Reg. | NSDL/CDSL | Member of NSE, BSE, MCX
             </div>
 
-            <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+            <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
                class="btn-primary mt-6 inline-flex w-full justify-center items-center gap-2 px-6 py-3.5 rounded-full font-semibold">
               Get Started — It's Free <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
@@ -983,7 +1020,7 @@
     </p>
 
     <div class="mt-10 flex flex-wrap justify-center gap-4">
-      <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+      <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
          class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base shadow-glow">
         <i class="fa-solid fa-rocket text-sm"></i>
         Open Free Demat Account
@@ -1012,7 +1049,7 @@
           <div class="w-9 h-9 rounded-lg bg-forest-700 grid place-items-center">
             <i class="fa-solid fa-seedling text-gold text-sm"></i>
           </div>
-          <span class="display text-xl font-semibold text-cream">DematOpen<span class="text-gold"></span></span>
+          <span class="display text-xl font-semibold text-cream">DematOpen<span class="text-gold">.</span></span>
         </a>
         <p class="mt-4 text-sm max-w-md leading-relaxed">
           Helping first-time Indian investors take the leap with confidence. Education, clarity, and zero confusion — that's our promise.
@@ -1026,7 +1063,7 @@
       </div>
     </div>
     <div class="mt-10 pt-6 border-t border-forest-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-      <p>© 2026 DematOpen Built for Indian beginners.</p>
+      <p>© 2026 DematOpen. Built for Indian beginners.</p>
       <div class="flex items-center gap-5">
         <a href="#" class="hover:text-cream">Privacy</a>
         <a href="#" class="hover:text-cream">Terms</a>
@@ -1035,6 +1072,73 @@
     </div>
   </div>
 </footer>
+
+<!-- =================== STICKY BOTTOM CTA =================== -->
+<div id="stickyCta" class="sticky-cta px-2">
+  <div class="bg-ink/95 backdrop-blur-md text-cream rounded-full shadow-glow border border-forest-700/60 flex items-center gap-2 sm:gap-3 pl-3 pr-2 py-2">
+    <!-- left: live indicator + copy -->
+    <div class="flex items-center gap-2.5 min-w-0 flex-1">
+      <span class="relative flex shrink-0 w-2.5 h-2.5">
+        <span class="absolute inset-0 rounded-full bg-coral pulse-dot"></span>
+      </span>
+      <div class="min-w-0">
+        <p class="text-[13px] sm:text-sm font-semibold leading-tight truncate">
+          Open Free Demat <span class="hidden sm:inline">Account in 10 mins</span>
+        </p>
+        <p class="text-[11px] text-cream/55 leading-tight truncate">₹0 opening · SEBI regulated</p>
+      </div>
+    </div>
+
+    <!-- CTA button -->
+    <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+       class="btn-primary inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full text-[13px] sm:text-sm font-semibold shrink-0">
+      Start Free
+      <i class="fa-solid fa-arrow-right text-[10px]"></i>
+    </a>
+
+    <!-- close -->
+    <button id="stickyClose" aria-label="Dismiss"
+            class="w-7 h-7 rounded-full grid place-items-center text-cream/50 hover:text-cream hover:bg-forest-800 shrink-0 transition">
+      <i class="fa-solid fa-xmark text-xs"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const cta = document.getElementById('stickyCta');
+    const closeBtn = document.getElementById('stickyClose');
+    const body = document.body;
+    let dismissed = sessionStorage.getItem('sticky_cta_dismissed') === '1';
+
+    function update() {
+      if (dismissed) return;
+      const scrolled = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      // Show after user scrolls ~25% of page; hide near very bottom (final CTA already visible)
+      const shouldShow = scrolled > 600 && scrolled < (docH - 400);
+      if (shouldShow) {
+        cta.classList.add('show');
+        cta.classList.remove('hide');
+        body.classList.add('sticky-on');
+      } else {
+        cta.classList.remove('show');
+        body.classList.remove('sticky-on');
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    closeBtn.addEventListener('click', function () {
+      dismissed = true;
+      sessionStorage.setItem('sticky_cta_dismissed', '1');
+      cta.classList.remove('show');
+      cta.classList.add('hide');
+      body.classList.remove('sticky-on');
+    });
+  })();
+</script>
 
 </body>
 </html>
