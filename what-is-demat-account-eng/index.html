@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Start Investing in Indian Stock Market — Beginner's Guide | Open Free Demat Account</title>
+<meta name="description" content="Learn how to start investing in the Indian stock market in simple steps. Open a free demat account in 10 minutes. Built for absolute beginners." />
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Fonts: Fraunces (display) + Plus Jakarta Sans (body) — distinctive, premium fintech feel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          ink: '#0B1F1A',
+          cream: '#FAF7F2',
+          paper: '#F4EFE6',
+          forest: {
+            50:  '#EAF5EE',
+            100: '#CFE7D7',
+            500: '#15805A',
+            600: '#0F6B4B',
+            700: '#0A5037',
+            800: '#073B29',
+            900: '#052A1D',
+          },
+          gold: '#D4A24C',
+          coral: '#E86A4F',
+        },
+        boxShadow: {
+          card: '0 1px 0 rgba(11,31,26,.04), 0 12px 32px -12px rgba(11,31,26,.12)',
+          soft: '0 1px 0 rgba(11,31,26,.04), 0 6px 18px -8px rgba(11,31,26,.10)',
+          glow: '0 18px 60px -20px rgba(15,107,75,.45)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #FAF7F2;
+    color: #0B1F1A;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Subtle paper grain texture */
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: .6;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  /* Display typography */
+  .display { font-family: 'Fraunces', serif; font-feature-settings: 'ss01' on; letter-spacing: -0.02em; }
+  .italic-fr { font-style: italic; font-family: 'Fraunces', serif; }
+
+  /* Marquee ticker */
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    animation: ticker 40s linear infinite;
+    width: max-content;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* Reveal on load — staggered */
+  .reveal { opacity: 0; transform: translateY(14px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  /* Number counter style */
+  .num-stamp {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* Diagonal divider */
+  .diag-top {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, black 40px);
+            mask-image: linear-gradient(180deg, transparent 0, black 40px);
+  }
+
+  /* Custom underline accent */
+  .uline {
+    background-image: linear-gradient(transparent 62%, rgba(212,162,76,.45) 62%, rgba(212,162,76,.45) 90%, transparent 90%);
+    background-repeat: no-repeat;
+    padding: 0 .15em;
+  }
+
+  /* Step connector */
+  .step-line::after {
+    content:''; position:absolute; left: 28px; top: 56px; bottom: -28px; width: 2px;
+    background: repeating-linear-gradient(180deg, #0F6B4B 0 4px, transparent 4px 8px);
+    opacity: .35;
+  }
+  .step-line:last-child::after { display:none; }
+
+  /* FAQ */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(45deg); }
+  .chev { transition: transform .25s ease; }
+
+  /* Glow halo */
+  .halo {
+    background: radial-gradient(60% 60% at 50% 40%, rgba(21,128,90,.18), transparent 70%);
+  }
+
+  /* Subtle border for cards */
+  .ring-ink { box-shadow: inset 0 0 0 1px rgba(11,31,26,.08); }
+
+  /* Hover lift */
+  .lift { transition: transform .35s ease, box-shadow .35s ease; }
+  .lift:hover { transform: translateY(-3px); }
+
+  /* CTA button shimmer */
+  .btn-primary {
+    position: relative;
+    background: linear-gradient(135deg, #0F6B4B 0%, #15805A 60%, #0A5037 100%);
+    color: #FAF7F2;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-primary::after {
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.22) 50%, transparent 70%);
+    transform: translateX(-110%);
+    transition: transform .9s ease;
+  }
+  .btn-primary:hover::after { transform: translateX(110%); }
+
+  /* Decorative chart svg colors via current */
+  .chartline { stroke: #0F6B4B; }
+
+  /* Section labels */
+  .eyebrow {
+    font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+    font-weight: 700; color: #0F6B4B;
+  }
+
+  /* Phone mockup glow */
+  .phone-glow {
+    background: radial-gradient(40% 50% at 50% 50%, rgba(212,162,76,.25), transparent 70%);
+  }
+</style>
+</head>
+
+<body class="font-sans text-ink">
+
+<!-- =================== TOP TICKER =================== -->
+<div class="bg-ink text-cream py-2.5 overflow-hidden border-b border-forest-800">
+  <div class="ticker-track text-[12px] tracking-wide">
+    <!-- repeated twice for seamless loop -->
+    <span class="flex items-center gap-2"><i class="fa-solid fa-arrow-trend-up text-forest-100"></i> NIFTY 50 <span class="text-forest-100">+0.84%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-circle text-coral text-[6px]"></i> SENSEX <span class="text-forest-100">+0.71%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-gold"></i> BANK NIFTY <span class="text-forest-100">+1.12%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-forest-100"></i> SEBI Regulated</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-gold"></i> ₹0 Account Opening</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-arrow-trend-up text-forest-100"></i> NIFTY 50 <span class="text-forest-100">+0.84%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-circle text-coral text-[6px]"></i> SENSEX <span class="text-forest-100">+0.71%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-gold"></i> BANK NIFTY <span class="text-forest-100">+1.12%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-forest-100"></i> SEBI Regulated</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-gold"></i> ₹0 Account Opening</span>
+  </div>
+</div>
+
+<!-- =================== NAV =================== -->
+<header class="sticky top-0 z-40 backdrop-blur-md bg-cream/80 border-b border-ink/5">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3.5 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-lg bg-ink grid place-items-center">
+        <i class="fa-solid fa-seedling text-gold text-sm"></i>
+      </div>
+      <span class="display text-xl font-semibold">Niveshak<span class="text-forest-600"></span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-ink/70">
+      <a href="#basics" class="hover:text-ink">Basics</a>
+      <a href="#how-it-works" class="hover:text-ink">How It Works</a>
+      <a href="#open" class="hover:text-ink">Open Account</a>
+      <a href="#faq" class="hover:text-ink">FAQ</a>
+    </nav>
+    <a href="https://upstox.com/open-demat-account/?f=54EE"
+       class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold shadow-soft">
+      Open Free Account
+      <i class="fa-solid fa-arrow-right text-xs"></i>
+    </a>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="relative overflow-hidden grain">
+  <!-- decorative bg -->
+  <div class="absolute -top-40 -right-32 w-[520px] h-[520px] halo blur-2xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 -left-20 w-[420px] h-[420px] halo blur-2xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 sm:pt-20 pb-20 sm:pb-28 relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-7 reveal" style="animation-delay:.05s">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest-50 border border-forest-100 text-forest-700 text-[12px] font-semibold tracking-wide">
+          <span class="w-1.5 h-1.5 rounded-full bg-forest-500 animate-pulse"></span>
+          BEGINNER'S GUIDE — INDIA EDITION
+        </div>
+
+        <h1 class="display mt-5 text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.02] font-semibold">
+          Start investing in stocks
+          <span class="italic-fr text-forest-700">— even if</span>
+          you've <span class="uline">never</span> done it before.
+        </h1>
+
+        <p class="mt-6 text-lg sm:text-xl text-ink/70 max-w-xl leading-relaxed">
+          No jargon. No confusion. No big amounts needed.
+          Learn the basics in 5 minutes and open your free Demat account in under 15.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="https://upstox.com/open-demat-account/?f=54EE" class="btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold shadow-glow">
+            <i class="fa-solid fa-rocket text-sm"></i>
+            Start Your Investment Journey
+          </a>
+          <a href="#basics" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold text-ink/80 border border-ink/15 hover:bg-ink/5">
+            <i class="fa-solid fa-book-open text-sm"></i>
+            Learn the Basics First
+          </a>
+        </div>
+
+        <!-- Trust row -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink/65">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-forest-600"></i> SEBI Regulated</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-forest-600"></i> ₹0 Opening Charges</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-forest-600"></i> Open in 10–15 mins</div>
+        </div>
+      </div>
+
+      <!-- RIGHT — visual mock -->
+      <div class="lg:col-span-5 reveal" style="animation-delay:.25s">
+        <div class="relative">
+          <div class="absolute inset-0 phone-glow blur-xl"></div>
+
+          <!-- Card stack -->
+          <div class="relative bg-white rounded-3xl shadow-card p-6 ring-ink">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-[11px] tracking-widest text-ink/50 font-semibold">YOUR PORTFOLIO</p>
+                <p class="display text-3xl font-semibold mt-1">₹ 1,24,580</p>
+                <p class="text-sm text-forest-600 font-semibold mt-1">
+                  <i class="fa-solid fa-arrow-up text-[10px]"></i> ₹ 14,200 (12.8%) this year
+                </p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-forest-50 grid place-items-center">
+                <i class="fa-solid fa-chart-line text-forest-600"></i>
+              </div>
+            </div>
+
+            <!-- mini chart -->
+            <svg viewBox="0 0 320 110" class="mt-5 w-full">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#15805A" stop-opacity=".3"/>
+                  <stop offset="100%" stop-color="#15805A" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,80 C30,72 50,90 80,70 C110,52 140,60 170,42 C200,28 230,48 260,30 C285,16 305,22 320,12 L320,110 L0,110 Z" fill="url(#g1)"/>
+              <path d="M0,80 C30,72 50,90 80,70 C110,52 140,60 170,42 C200,28 230,48 260,30 C285,16 305,22 320,12" fill="none" stroke="#0F6B4B" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="320" cy="12" r="4" fill="#D4A24C"/>
+            </svg>
+
+            <!-- holdings -->
+            <div class="mt-5 space-y-3">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-paper">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-white grid place-items-center text-[10px] font-bold text-forest-700 ring-ink">REL</div>
+                  <div>
+                    <p class="text-sm font-semibold">Reliance Inds.</p>
+                    <p class="text-[11px] text-ink/50">12 shares</p>
+                  </div>
+                </div>
+                <span class="text-sm font-semibold text-forest-600">+8.4%</span>
+              </div>
+              <div class="flex items-center justify-between p-3 rounded-xl bg-paper">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-white grid place-items-center text-[10px] font-bold text-forest-700 ring-ink">TCS</div>
+                  <div>
+                    <p class="text-sm font-semibold">Tata Consultancy</p>
+                    <p class="text-[11px] text-ink/50">8 shares</p>
+                  </div>
+                </div>
+                <span class="text-sm font-semibold text-forest-600">+15.2%</span>
+              </div>
+              <div class="flex items-center justify-between p-3 rounded-xl bg-paper">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-lg bg-white grid place-items-center text-[10px] font-bold text-forest-700 ring-ink">HDF</div>
+                  <div>
+                    <p class="text-sm font-semibold">HDFC Bank</p>
+                    <p class="text-[11px] text-ink/50">15 shares</p>
+                  </div>
+                </div>
+                <span class="text-sm font-semibold text-forest-600">+4.1%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating badge -->
+          <div class="absolute -top-5 -left-5 bg-ink text-cream rounded-2xl px-4 py-3 shadow-card rotate-[-4deg] hidden sm:block">
+            <p class="text-[10px] tracking-widest text-gold font-bold">START SMALL</p>
+            <p class="display text-lg font-semibold">From ₹100</p>
+          </div>
+          <div class="absolute -bottom-5 -right-3 bg-gold text-ink rounded-2xl px-4 py-3 shadow-card rotate-[3deg] hidden sm:block">
+            <p class="text-[10px] tracking-widest font-bold">SETUP TIME</p>
+            <p class="display text-lg font-semibold">10 mins ⚡</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- stats strip -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 reveal" style="animation-delay:.45s">
+      <div class="p-5 rounded-2xl bg-white ring-ink">
+        <p class="num-stamp text-3xl text-forest-700">15Cr+</p>
+        <p class="text-xs text-ink/60 mt-1">Indians invest in stocks</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white ring-ink">
+        <p class="num-stamp text-3xl text-forest-700">₹0</p>
+        <p class="text-xs text-ink/60 mt-1">Account opening fee</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white ring-ink">
+        <p class="num-stamp text-3xl text-forest-700">12%</p>
+        <p class="text-xs text-ink/60 mt-1">Avg. long-term Nifty return*</p>
+      </div>
+      <div class="p-5 rounded-2xl bg-white ring-ink">
+        <p class="num-stamp text-3xl text-forest-700">10 min</p>
+        <p class="text-xs text-ink/60 mt-1">To open your account</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHAT IS DEMAT =================== -->
+<section id="basics" class="py-20 sm:py-28 bg-paper">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <p class="eyebrow">Step 01 — The Foundation</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+          What exactly <em class="italic-fr text-forest-700">is</em> a Demat account?
+        </h2>
+        <p class="mt-5 text-ink/70 text-lg leading-relaxed">
+          Think of it as a <span class="font-semibold text-ink">bank account — but for shares</span>.
+          Just like your savings account holds rupees,
+          a Demat account holds your stocks safely in digital form.
+        </p>
+
+        <div class="mt-6 p-5 rounded-2xl bg-white ring-ink">
+          <p class="text-sm font-semibold flex items-center gap-2 text-forest-700">
+            <i class="fa-solid fa-lightbulb"></i> Simple analogy
+          </p>
+          <p class="text-ink/70 text-[15px] mt-2 leading-relaxed">
+            <span class="font-semibold">Bank account</span> → stores your money 💰<br/>
+            <span class="font-semibold">Demat account</span> → stores your shares 📈<br/>
+            That's literally it. No more, no less.
+          </p>
+        </div>
+      </div>
+
+      <!-- right cards -->
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        <div class="p-6 rounded-2xl bg-white shadow-soft lift">
+          <div class="w-11 h-11 rounded-xl bg-forest-50 grid place-items-center mb-4">
+            <i class="fa-solid fa-vault text-forest-600"></i>
+          </div>
+          <h3 class="font-semibold display text-xl">Safe Digital Storage</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Your shares live in electronic form — no paper certificates, no risk of loss or theft.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft lift">
+          <div class="w-11 h-11 rounded-xl bg-forest-50 grid place-items-center mb-4">
+            <i class="fa-solid fa-bolt text-forest-600"></i>
+          </div>
+          <h3 class="font-semibold display text-xl">Instant Buy & Sell</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Buy or sell shares with a single tap. Settlement happens automatically in the background.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-soft lift">
+          <div class="w-11 h-11 rounded-xl bg-forest-50 grid place-items-center mb-4">
+            <i class="fa-solid fa-mobile-screen text-forest-600"></i>
+          </div>
+          <h3 class="font-semibold display text-xl">Manage From Phone</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Track your portfolio, see profits, get reports — all from one app, anytime, anywhere.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-ink text-cream shadow-soft lift">
+          <div class="w-11 h-11 rounded-xl bg-forest-700 grid place-items-center mb-4">
+            <i class="fa-solid fa-shield-halved text-gold"></i>
+          </div>
+          <h3 class="font-semibold display text-xl">SEBI Regulated</h3>
+          <p class="text-sm text-cream/75 mt-2 leading-relaxed">All Demat accounts in India are regulated by SEBI and held with NSDL or CDSL — highly secure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== DEMAT vs TRADING =================== -->
+<section class="py-20 sm:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="eyebrow">Clearing The Confusion</p>
+      <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+        Demat <span class="italic-fr text-forest-700">vs</span> Trading account?
+      </h2>
+      <p class="mt-4 text-ink/70 text-lg">Most beginners mix these up. Here's the simple truth — you need <span class="font-semibold">both</span>, and they work together.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <!-- Demat -->
+      <div class="relative p-7 sm:p-8 rounded-3xl bg-white shadow-card ring-ink overflow-hidden">
+        <div class="absolute top-0 right-0 w-36 h-36 halo blur-2xl"></div>
+        <div class="relative">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-forest-700 grid place-items-center">
+              <i class="fa-solid fa-vault text-cream"></i>
+            </div>
+            <div>
+              <p class="text-[11px] tracking-widest text-ink/50 font-bold">THE STORAGE BOX</p>
+              <h3 class="display text-2xl font-semibold">Demat Account</h3>
+            </div>
+          </div>
+          <p class="mt-5 text-ink/70 leading-relaxed">Holds your shares safely in digital form — like a locker for your investments.</p>
+          <ul class="mt-5 space-y-2.5 text-sm">
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-forest-600 mt-1"></i> Stores shares, bonds, mutual funds</li>
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-forest-600 mt-1"></i> Held with NSDL or CDSL</li>
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-forest-600 mt-1"></i> Used to <em>own</em> securities</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Trading -->
+      <div class="relative p-7 sm:p-8 rounded-3xl bg-ink text-cream shadow-card overflow-hidden">
+        <div class="absolute top-0 right-0 w-36 h-36 bg-gold/20 blur-2xl rounded-full"></div>
+        <div class="relative">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-gold grid place-items-center">
+              <i class="fa-solid fa-arrow-right-arrow-left text-ink"></i>
+            </div>
+            <div>
+              <p class="text-[11px] tracking-widest text-gold font-bold">THE ACTION DESK</p>
+              <h3 class="display text-2xl font-semibold">Trading Account</h3>
+            </div>
+          </div>
+          <p class="mt-5 text-cream/75 leading-relaxed">Used to <em>buy and sell</em> shares on the stock exchange. It's where the action happens.</p>
+          <ul class="mt-5 space-y-2.5 text-sm">
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold mt-1"></i> Places buy/sell orders</li>
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold mt-1"></i> Linked to your bank account</li>
+            <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-gold mt-1"></i> Used to <em>transact</em> securities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- explainer -->
+    <div class="mt-6 p-6 rounded-2xl bg-forest-50 border border-forest-100 flex flex-col sm:flex-row sm:items-center gap-4">
+      <i class="fa-solid fa-circle-info text-forest-700 text-xl"></i>
+      <p class="text-ink/80 text-[15px]">
+        <span class="font-semibold">In one line:</span> Trading account is the <em>door</em> you walk through to buy stocks — Demat account is the <em>cupboard</em> where those stocks are kept. Most brokers (like Upstox) give you both together.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== HOW STOCK MARKET WORKS =================== -->
+<section id="how-it-works" class="py-20 sm:py-28 bg-ink text-cream relative overflow-hidden">
+  <!-- bg pattern -->
+  <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#FAF7F2"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dots)"/>
+  </svg>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="eyebrow text-gold">The Flow Behind Every Trade</p>
+      <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05] text-cream">
+        How the stock market <span class="italic-fr text-gold">actually</span> works
+      </h2>
+      <p class="mt-4 text-cream/70 text-lg">Here's what happens in 2 seconds when you tap "Buy" — broken down so it finally makes sense.</p>
+    </div>
+
+    <!-- Flow -->
+    <div class="mt-14 grid md:grid-cols-4 gap-4">
+      <!-- step -->
+      <div class="relative p-6 rounded-2xl bg-forest-800/40 border border-forest-700/60">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center"><i class="fa-solid fa-user text-gold"></i></div>
+          <span class="num-stamp text-3xl text-cream/30">01</span>
+        </div>
+        <h4 class="display text-xl font-semibold mt-4">You</h4>
+        <p class="text-sm text-cream/60 mt-1">Tap "Buy 5 shares of TCS" in your broker app.</p>
+        <i class="fa-solid fa-arrow-right hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-gold"></i>
+      </div>
+
+      <div class="relative p-6 rounded-2xl bg-forest-800/40 border border-forest-700/60">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center"><i class="fa-solid fa-headset text-gold"></i></div>
+          <span class="num-stamp text-3xl text-cream/30">02</span>
+        </div>
+        <h4 class="display text-xl font-semibold mt-4">Broker</h4>
+        <p class="text-sm text-cream/60 mt-1">Forwards your order to the stock exchange instantly.</p>
+        <i class="fa-solid fa-arrow-right hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-gold"></i>
+      </div>
+
+      <div class="relative p-6 rounded-2xl bg-forest-800/40 border border-forest-700/60">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center"><i class="fa-solid fa-building-columns text-gold"></i></div>
+          <span class="num-stamp text-3xl text-cream/30">03</span>
+        </div>
+        <h4 class="display text-xl font-semibold mt-4">Exchange</h4>
+        <p class="text-sm text-cream/60 mt-1">NSE / BSE matches your buy order with a seller.</p>
+        <i class="fa-solid fa-arrow-right hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-gold"></i>
+      </div>
+
+      <div class="relative p-6 rounded-2xl bg-gold text-ink">
+        <div class="flex items-center justify-between">
+          <div class="w-12 h-12 rounded-xl bg-ink grid place-items-center"><i class="fa-solid fa-vault text-gold"></i></div>
+          <span class="num-stamp text-3xl text-ink/30">04</span>
+        </div>
+        <h4 class="display text-xl font-semibold mt-4">Demat Account</h4>
+        <p class="text-sm text-ink/70 mt-1">Shares land safely in your Demat. You're a shareholder! 🎉</p>
+      </div>
+    </div>
+
+    <!-- bottom line -->
+    <p class="text-center mt-10 text-cream/60 text-sm">
+      <i class="fa-solid fa-stopwatch text-gold mr-2"></i>
+      Total time: under 2 seconds. The whole system runs on automated, regulated infrastructure.
+    </p>
+  </div>
+</section>
+
+<!-- =================== WHY YOU NEED DEMAT (BENEFITS) =================== -->
+<section class="py-20 sm:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-10 items-end mb-12">
+      <div class="lg:col-span-7">
+        <p class="eyebrow">Why It Matters</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+          Why you <em class="italic-fr text-forest-700">actually</em> need a Demat account
+        </h2>
+      </div>
+      <p class="lg:col-span-5 text-ink/70 text-lg">Beyond the technical stuff — here's what it unlocks for your money and your future.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Benefit 1 -->
+      <div class="group p-7 rounded-2xl bg-white ring-ink lift relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-forest-50 group-hover:scale-110 transition"></div>
+        <div class="relative">
+          <i class="fa-solid fa-seedling text-2xl text-forest-700"></i>
+          <h3 class="display text-xl font-semibold mt-4">Beat Inflation</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Money in a savings account loses value to inflation. Stocks have historically outpaced it by a wide margin.</p>
+        </div>
+      </div>
+      <!-- Benefit 2 -->
+      <div class="group p-7 rounded-2xl bg-white ring-ink lift relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-forest-50 group-hover:scale-110 transition"></div>
+        <div class="relative">
+          <i class="fa-solid fa-chart-line text-2xl text-forest-700"></i>
+          <h3 class="display text-xl font-semibold mt-4">Grow Your Wealth</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Compounding is the 8th wonder. Even ₹500/month invested early can become lakhs over time.</p>
+        </div>
+      </div>
+      <!-- Benefit 3 -->
+      <div class="group p-7 rounded-2xl bg-white ring-ink lift relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-forest-50 group-hover:scale-110 transition"></div>
+        <div class="relative">
+          <i class="fa-solid fa-hand-holding-dollar text-2xl text-forest-700"></i>
+          <h3 class="display text-xl font-semibold mt-4">Earn Dividends</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Many companies pay you a share of their profits — credited straight to your bank, every year.</p>
+        </div>
+      </div>
+      <!-- Benefit 4 -->
+      <div class="group p-7 rounded-2xl bg-white ring-ink lift relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-forest-50 group-hover:scale-110 transition"></div>
+        <div class="relative">
+          <i class="fa-solid fa-gauge-high text-2xl text-forest-700"></i>
+          <h3 class="display text-xl font-semibold mt-4">Total Liquidity</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">Need cash? Sell anytime during market hours. Money hits your bank in 1 working day.</p>
+        </div>
+      </div>
+      <!-- Benefit 5 -->
+      <div class="group p-7 rounded-2xl bg-white ring-ink lift relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-forest-50 group-hover:scale-110 transition"></div>
+        <div class="relative">
+          <i class="fa-solid fa-coins text-2xl text-forest-700"></i>
+          <h3 class="display text-xl font-semibold mt-4">Start Tiny</h3>
+          <p class="text-sm text-ink/65 mt-2 leading-relaxed">You don't need lakhs. Start with as little as ₹100. Grow your investments at your own pace.</p>
+        </div>
+      </div>
+      <!-- Benefit 6 (CTA card) -->
+      <a href="https://upstox.com/open-demat-account/?f=54EE" class="p-7 rounded-2xl bg-ink text-cream lift relative overflow-hidden flex flex-col justify-between min-h-[200px]">
+        <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-gold/15 blur-2xl rounded-full"></div>
+        <div class="relative">
+          <i class="fa-solid fa-arrow-up-right-from-square text-gold text-xl"></i>
+          <h3 class="display text-xl font-semibold mt-4">Ready to begin?</h3>
+          <p class="text-sm text-cream/70 mt-2">Open your free Demat account in under 15 minutes.</p>
+        </div>
+        <div class="relative mt-4 inline-flex items-center gap-2 text-gold font-semibold">
+          Open Free Account <i class="fa-solid fa-arrow-right text-xs"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== HOW TO OPEN ACCOUNT =================== -->
+<section class="py-20 sm:py-28 bg-paper">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- left intro -->
+      <div class="lg:col-span-5 lg:sticky lg:top-28 self-start">
+        <p class="eyebrow">The Setup</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+          Open your account in <em class="italic-fr text-forest-700">5 small steps</em>
+        </h2>
+        <p class="mt-5 text-ink/70 text-lg leading-relaxed">No queues. No paperwork. No branch visits. The whole thing happens on your phone in 10–15 minutes.</p>
+
+        <div class="mt-7 p-5 rounded-2xl bg-white ring-ink">
+          <p class="text-sm font-semibold text-ink flex items-center gap-2"><i class="fa-solid fa-id-card text-forest-700"></i> Keep these handy</p>
+          <ul class="text-sm text-ink/70 mt-3 space-y-1.5">
+            <li>• PAN Card</li>
+            <li>• Aadhaar (linked to mobile)</li>
+            <li>• Bank account details</li>
+            <li>• A signature on white paper</li>
+          </ul>
+        </div>
+
+        <a href="https://upstox.com/open-demat-account/?f=54EE" class="btn-primary mt-7 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold shadow-glow">
+          <i class="fa-solid fa-bolt text-sm"></i> Begin Investing Today
+        </a>
+      </div>
+
+      <!-- steps -->
+      <div class="lg:col-span-7 space-y-5">
+        <!-- Step -->
+        <div class="step-line relative pl-16 pb-2">
+          <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-white ring-ink grid place-items-center">
+            <span class="num-stamp text-xl text-forest-700">01</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white shadow-soft">
+            <h3 class="display text-xl font-semibold">Enter your mobile & email</h3>
+            <p class="text-sm text-ink/65 mt-1.5">Verify with an OTP. Takes 30 seconds.</p>
+          </div>
+        </div>
+
+        <div class="step-line relative pl-16 pb-2">
+          <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-white ring-ink grid place-items-center">
+            <span class="num-stamp text-xl text-forest-700">02</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white shadow-soft">
+            <h3 class="display text-xl font-semibold">Add PAN & Aadhaar</h3>
+            <p class="text-sm text-ink/65 mt-1.5">Auto-fetched and verified using DigiLocker. No typing needed.</p>
+          </div>
+        </div>
+
+        <div class="step-line relative pl-16 pb-2">
+          <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-white ring-ink grid place-items-center">
+            <span class="num-stamp text-xl text-forest-700">03</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white shadow-soft">
+            <h3 class="display text-xl font-semibold">Link your bank</h3>
+            <p class="text-sm text-ink/65 mt-1.5">Connect any savings account where you want money to come in & out.</p>
+          </div>
+        </div>
+
+        <div class="step-line relative pl-16 pb-2">
+          <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-white ring-ink grid place-items-center">
+            <span class="num-stamp text-xl text-forest-700">04</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-white shadow-soft">
+            <h3 class="display text-xl font-semibold">Quick selfie & e-sign</h3>
+            <p class="text-sm text-ink/65 mt-1.5">A short video verification + Aadhaar OTP signs your form. That's it.</p>
+          </div>
+        </div>
+
+        <div class="step-line relative pl-16">
+          <div class="absolute left-0 top-0 w-14 h-14 rounded-2xl bg-forest-700 grid place-items-center shadow-glow">
+            <span class="num-stamp text-xl text-gold">05</span>
+          </div>
+          <div class="p-6 rounded-2xl bg-ink text-cream shadow-soft">
+            <h3 class="display text-xl font-semibold">You're in. Start investing.</h3>
+            <p class="text-sm text-cream/70 mt-1.5">Account activates in a few hours. Add ₹100 → buy your first share. 🎉</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHAT TO CHECK BEFORE CHOOSING =================== -->
+<section class="py-20 sm:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="eyebrow">Smart Choices</p>
+      <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+        4 things to check before <em class="italic-fr text-forest-700">choosing</em> a broker
+      </h2>
+      <p class="mt-4 text-ink/70 text-lg">All Demat accounts look the same on the surface. These four things separate the good from the painful.</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-6 rounded-2xl bg-white ring-ink lift">
+        <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center mb-4">
+          <i class="fa-solid fa-indian-rupee-sign text-cream"></i>
+        </div>
+        <h3 class="display text-lg font-semibold">Charges</h3>
+        <p class="text-sm text-ink/65 mt-2 leading-relaxed">Look for ₹0 account opening, low brokerage on trades, and zero hidden fees.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white ring-ink lift">
+        <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center mb-4">
+          <i class="fa-solid fa-mobile-screen-button text-cream"></i>
+        </div>
+        <h3 class="display text-lg font-semibold">Easy App</h3>
+        <p class="text-sm text-ink/65 mt-2 leading-relaxed">As a beginner, the app should feel simple — not like a pilot's cockpit.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white ring-ink lift">
+        <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center mb-4">
+          <i class="fa-solid fa-headset text-cream"></i>
+        </div>
+        <h3 class="display text-lg font-semibold">Support</h3>
+        <p class="text-sm text-ink/65 mt-2 leading-relaxed">Real human help when something goes wrong. Chat, call, email — fast.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-white ring-ink lift">
+        <div class="w-12 h-12 rounded-xl bg-forest-700 grid place-items-center mb-4">
+          <i class="fa-solid fa-shield-halved text-cream"></i>
+        </div>
+        <h3 class="display text-lg font-semibold">Security</h3>
+        <p class="text-sm text-ink/65 mt-2 leading-relaxed">SEBI-registered, NSDL/CDSL-backed, 2-factor auth. Non-negotiable basics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== BEST OPTION (Recommendation / Affiliate) =================== -->
+<section id="open" class="py-20 sm:py-28 bg-paper relative overflow-hidden">
+  <div class="absolute -top-20 right-0 w-[400px] h-[400px] halo blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <!-- copy -->
+      <div class="lg:col-span-6">
+        <p class="eyebrow">Our Recommendation</p>
+        <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+          The smoothest way to <em class="italic-fr text-forest-700">start</em> as a beginner
+        </h2>
+        <p class="mt-5 text-ink/70 text-lg leading-relaxed">
+          After comparing major Indian brokers on fees, app simplicity, and beginner experience,
+          <span class="font-semibold text-ink">Upstox</span> consistently stands out for first-time investors.
+        </p>
+
+        <ul class="mt-7 space-y-3.5">
+          <li class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-full bg-forest-700 grid place-items-center mt-0.5 shrink-0"><i class="fa-solid fa-check text-cream text-xs"></i></span>
+            <p class="text-ink/80"><span class="font-semibold text-ink">₹0 account opening</span> — start completely free, no commitment.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-full bg-forest-700 grid place-items-center mt-0.5 shrink-0"><i class="fa-solid fa-check text-cream text-xs"></i></span>
+            <p class="text-ink/80"><span class="font-semibold text-ink">Low brokerage</span> on every trade — keeps more money in your pocket.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-full bg-forest-700 grid place-items-center mt-0.5 shrink-0"><i class="fa-solid fa-check text-cream text-xs"></i></span>
+            <p class="text-ink/80"><span class="font-semibold text-ink">Beginner-first app</span> — clean design, no overwhelming jargon.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-full bg-forest-700 grid place-items-center mt-0.5 shrink-0"><i class="fa-solid fa-check text-cream text-xs"></i></span>
+            <p class="text-ink/80"><span class="font-semibold text-ink">10-minute setup</span> — fully digital with Aadhaar e-KYC.</p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-full bg-forest-700 grid place-items-center mt-0.5 shrink-0"><i class="fa-solid fa-check text-cream text-xs"></i></span>
+            <p class="text-ink/80"><span class="font-semibold text-ink">SEBI registered</span>, backed by Ratan Tata & Tiger Global. Trusted by 1Cr+ Indians.</p>
+          </li>
+        </ul>
+
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+             class="btn-primary inline-flex items-center gap-2 px-7 py-4 rounded-full font-semibold shadow-glow text-base">
+            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            Open Free Demat Account
+          </a>
+          <p class="text-xs text-ink/55">* Affiliate disclosure: we may earn a small referral if you sign up via our link — at no cost to you.</p>
+        </div>
+      </div>
+
+      <!-- card visual -->
+      <div class="lg:col-span-6">
+        <div class="relative">
+          <div class="bg-white rounded-3xl shadow-card p-7 ring-ink">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-coral grid place-items-center">
+                  <i class="fa-solid fa-bolt text-cream"></i>
+                </div>
+                <div>
+                  <p class="display text-xl font-semibold">Upstox</p>
+                  <p class="text-xs text-ink/55">Demat + Trading Account</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-forest-50 text-forest-700 text-[11px] font-bold tracking-widest">RECOMMENDED</span>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-paper">
+                <p class="text-[11px] tracking-widest text-ink/50 font-semibold">OPENING</p>
+                <p class="display text-2xl font-semibold text-forest-700">₹ 0</p>
+              </div>
+              <div class="p-4 rounded-xl bg-paper">
+                <p class="text-[11px] tracking-widest text-ink/50 font-semibold">SETUP TIME</p>
+                <p class="display text-2xl font-semibold text-forest-700">10 min</p>
+              </div>
+              <div class="p-4 rounded-xl bg-paper">
+                <p class="text-[11px] tracking-widest text-ink/50 font-semibold">EQUITY DELIVERY</p>
+                <p class="display text-2xl font-semibold text-forest-700">₹ 20*</p>
+              </div>
+              <div class="p-4 rounded-xl bg-paper">
+                <p class="text-[11px] tracking-widest text-ink/50 font-semibold">USERS</p>
+                <p class="display text-2xl font-semibold text-forest-700">1Cr+</p>
+              </div>
+            </div>
+
+            <div class="mt-5 flex items-center gap-2 text-xs text-ink/60">
+              <i class="fa-solid fa-shield-halved text-forest-600"></i>
+              SEBI Reg. | NSDL/CDSL | Member of NSE, BSE, MCX
+            </div>
+
+            <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+               class="btn-primary mt-6 inline-flex w-full justify-center items-center gap-2 px-6 py-3.5 rounded-full font-semibold">
+              Get Started — It's Free <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+          <div class="absolute -top-4 -right-4 bg-gold text-ink rounded-2xl px-4 py-2.5 shadow-card rotate-[5deg]">
+            <p class="text-[10px] tracking-widest font-bold">JOIN</p>
+            <p class="display text-sm font-semibold">1Cr+ Indians</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section id="faq" class="py-20 sm:py-28 bg-cream">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center">
+      <p class="eyebrow">Real Doubts, Real Answers</p>
+      <h2 class="display text-4xl sm:text-5xl font-semibold mt-3 leading-[1.05]">
+        Common <em class="italic-fr text-forest-700">questions</em> beginners ask
+      </h2>
+    </div>
+
+    <div class="mt-12 space-y-3">
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">Is investing in stocks actually safe?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          The platform is very safe — Demat accounts are SEBI-regulated, your shares sit with NSDL/CDSL (govt-backed depositories). Stock <em>prices</em> can rise and fall, but for long-term investors in good companies, history shows the market grows. Start small while you learn.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">Is opening a Demat account really free?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          Yes — top brokers like Upstox charge <span class="font-semibold">₹0</span> for account opening. There's a small annual maintenance fee (AMC) typically charged from the second year, and brokerage on trades — all clearly listed upfront. No surprises.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">Can a complete beginner really start?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          Absolutely. Modern apps are built for beginners — clean design, simple words, in-app learning. You don't need a finance degree. Start by buying 1 share of a company you already use (think Reliance, ITC, HDFC Bank) and learn as you go.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">How much money do I need to start?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          As little as <span class="font-semibold">₹100</span>. Many shares cost less than that. Or start a SIP in mutual funds for ₹500/month directly from the same Demat app. The earlier you start — even with small amounts — the more compounding works for you.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">Are there any hidden charges?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          Reputable SEBI-registered brokers list every fee transparently — brokerage, AMC, GST, STT (govt tax), exchange charges. Always read the pricing page once. No "surprise" deductions if you stick with established platforms like Upstox or Zerodha.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-2xl ring-ink open:shadow-soft">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-semibold pr-6">What if I lose money?</span>
+          <span class="chev w-9 h-9 rounded-full bg-forest-50 grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-forest-700"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-ink/70 leading-relaxed text-[15px]">
+          Short-term ups and downs are normal — even pros face them. The trick is investing for the long term (5+ years), spreading money across different companies, and not panic-selling. Start with small amounts you're emotionally okay seeing fluctuate.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FINAL CTA =================== -->
+<section class="py-24 sm:py-32 bg-ink text-cream relative overflow-hidden">
+  <!-- decorative gradient -->
+  <div class="absolute -top-32 -left-20 w-[500px] h-[500px] rounded-full bg-forest-700/30 blur-3xl"></div>
+  <div class="absolute -bottom-40 -right-20 w-[500px] h-[500px] rounded-full bg-gold/15 blur-3xl"></div>
+
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
+    <p class="eyebrow text-gold">Your First Step</p>
+    <h2 class="display text-4xl sm:text-6xl font-semibold mt-4 leading-[1.05]">
+      The best time to start was 5 years ago.
+      <span class="italic-fr text-gold block mt-2">The next best time is today.</span>
+    </h2>
+    <p class="mt-6 text-cream/70 text-lg max-w-2xl mx-auto">
+      Open your free Demat account in the next 10 minutes — and buy your first share before the day ends. Your future self will thank you.
+    </p>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a href="https://upstox.com" target="_blank" rel="noopener sponsored"
+         class="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base shadow-glow">
+        <i class="fa-solid fa-rocket text-sm"></i>
+        Open Free Demat Account
+      </a>
+      <a href="#basics"
+         class="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold border border-cream/20 hover:bg-cream/5">
+        Read the Guide Again
+      </a>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-cream/55">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-gold"></i> SEBI Regulated</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-lock text-gold"></i> 100% Secure</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-gold"></i> ₹0 to Open</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold"></i> 1Cr+ Investors</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-ink border-t border-forest-800 text-cream/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
+    <div class="grid sm:grid-cols-2 gap-8 items-start">
+      <div>
+        <a href="#" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-lg bg-forest-700 grid place-items-center">
+            <i class="fa-solid fa-seedling text-gold text-sm"></i>
+          </div>
+          <span class="display text-xl font-semibold text-cream">DematOpen<span class="text-gold"></span></span>
+        </a>
+        <p class="mt-4 text-sm max-w-md leading-relaxed">
+          Helping first-time Indian investors take the leap with confidence. Education, clarity, and zero confusion — that's our promise.
+        </p>
+      </div>
+      <div class="text-sm sm:text-right">
+        <p class="text-cream/40 text-[11px] tracking-widest font-bold mb-2">DISCLAIMER</p>
+        <p class="leading-relaxed">
+          Investments in the stock market are subject to market risks. Returns are not guaranteed. Past performance does not predict future results. Read all scheme-related documents before investing. This page contains affiliate links — we may earn a referral if you sign up.
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-forest-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <p>© 2026 DematOpen Built for Indian beginners.</p>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-cream">Privacy</a>
+        <a href="#" class="hover:text-cream">Terms</a>
+        <a href="#" class="hover:text-cream">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
