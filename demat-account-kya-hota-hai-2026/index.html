@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Demat Account क्या है? — शेयर मार्केट में निवेश कैसे शुरू करें | Beginner Guide</title>
+<meta name="description" content="Demat account क्या है, कैसे काम करता है, और मुफ्त में कैसे खोलें — सब कुछ हिंदी में, बिल्कुल आसान भाषा में। सिर्फ 10 मिनट में अपना account खोलें।" />
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Fonts: Tiro Devanagari Hindi (display) + Hind (body) — premium Hindi pairing -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          hindi: ['Hind', 'system-ui', 'sans-serif'],
+          display: ['Bricolage Grotesque', 'Tiro Devanagari Hindi', 'serif'],
+          tiro: ['Tiro Devanagari Hindi', 'serif'],
+        },
+        colors: {
+          // Warm sunrise palette — different from prior designs
+          night: '#1A1530',
+          midnight: '#0F0A24',
+          cream: '#FFF8EE',
+          milk: '#FBF3E2',
+          peach: '#FFD4B8',
+          coral: '#FF6B47',
+          marigold: '#F4A340',
+          saffron: '#E8732A',
+          turmeric: '#FFC857',
+          mint: '#3DB67E',
+          deepmint: '#1E7A52',
+          ink: '#2A1F4A',
+        },
+        boxShadow: {
+          'pop': '6px 6px 0 rgba(26,21,48,1)',
+          'pop-sm': '4px 4px 0 rgba(26,21,48,1)',
+          'pop-coral': '6px 6px 0 rgba(255,107,71,1)',
+          'soft': '0 4px 20px -4px rgba(26,21,48,.15)',
+          'glow-coral': '0 14px 40px -10px rgba(255,107,71,.45)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #FFF8EE;
+    color: #1A1530;
+    font-family: 'Hind', system-ui, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .display { font-family: 'Bricolage Grotesque', system-ui, sans-serif; letter-spacing: -0.025em; line-height: 1.05; }
+  .tiro { font-family: 'Tiro Devanagari Hindi', serif; }
+  .hindi-bold { font-weight: 700; letter-spacing: -0.005em; }
+
+  /* Sunrise gradient background */
+  .sunrise-bg {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255,200,87,.35), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 30%, rgba(255,107,71,.18), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 20% 60%, rgba(244,163,64,.15), transparent 60%),
+      #FFF8EE;
+  }
+
+  /* Paper texture */
+  .grain { position: relative; }
+  .grain::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: .7;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+
+  /* Marker underline */
+  .marker {
+    background: linear-gradient(180deg, transparent 60%, rgba(255,200,87,.55) 60%, rgba(255,200,87,.55) 95%, transparent 95%);
+    padding: 0 .15em;
+  }
+  .marker-coral {
+    background: linear-gradient(180deg, transparent 65%, rgba(255,107,71,.35) 65%, rgba(255,107,71,.35) 95%, transparent 95%);
+    padding: 0 .15em;
+  }
+
+  /* Neo-brutal pop card */
+  .pop-card {
+    border: 2px solid #1A1530;
+    box-shadow: 6px 6px 0 #1A1530;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .pop-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #1A1530;
+  }
+
+  .pop-btn {
+    border: 2px solid #1A1530;
+    box-shadow: 4px 4px 0 #1A1530;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .pop-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #1A1530;
+  }
+  .pop-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 #1A1530;
+  }
+
+  /* Number stamp */
+  .num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(20px); animation: rise 1s cubic-bezier(.2,.7,.2,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  /* Wiggle animation for emojis */
+  .wiggle { animation: wiggle 2.5s ease-in-out infinite; transform-origin: bottom center; }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(5deg); }
+  }
+
+  /* Float animation */
+  .float { animation: float 4s ease-in-out infinite; }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* FAQ */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .chev { transform: rotate(45deg); }
+  .chev { transition: transform .25s ease; }
+
+  /* Marquee */
+  .marquee {
+    display: flex; gap: 2.5rem;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Step connector */
+  .dotted-line {
+    background-image: radial-gradient(circle, #1A1530 1.5px, transparent 1.5px);
+    background-size: 8px 8px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  /* Sticky bottom CTA */
+  .sticky-cta {
+    position: fixed;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%) translateY(120%);
+    z-index: 50;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .4s ease;
+    opacity: 0;
+    pointer-events: none;
+    width: calc(100% - 24px);
+    max-width: 700px;
+  }
+  .sticky-cta.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+  @keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .55; transform: scale(.85); }
+  }
+  @media (max-width: 640px) {
+    body.sticky-on { padding-bottom: 88px; }
+  }
+
+  /* Hand-drawn arrow path */
+  .draw-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s ease-out forwards;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* Sun rotation */
+  .sun-rotate { animation: spin 30s linear infinite; transform-origin: center; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MSJJXZ5V');</script>
+<!-- End Google Tag Manager -->
+
+</head>
+
+<body class="font-hindi text-night">
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSJJXZ5V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- =================== TOP TICKER =================== -->
+<div class="bg-night text-cream py-2 overflow-hidden border-b-2 border-night">
+  <div class="marquee text-[12px] font-medium">
+    <span class="flex items-center gap-2"><i class="fa-solid fa-arrow-trend-up text-mint"></i> NIFTY <span class="text-mint">+0.84%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-fire text-coral"></i> SENSEX <span class="text-mint">+0.71%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-turmeric"></i> SEBI Approved</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-turmeric"></i> ₹0 Account Opening</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-turmeric"></i> 100% Online Process</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-arrow-trend-up text-mint"></i> NIFTY <span class="text-mint">+0.84%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-fire text-coral"></i> SENSEX <span class="text-mint">+0.71%</span></span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-turmeric"></i> SEBI Approved</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-turmeric"></i> ₹0 Account Opening</span>
+    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-turmeric"></i> 100% Online Process</span>
+  </div>
+</div>
+
+<!-- =================== NAV =================== -->
+<header class="sticky top-0 z-40 backdrop-blur-md bg-cream/85 border-b-2 border-night">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-3.5 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <div class="w-10 h-10 rounded-xl bg-coral border-2 border-night grid place-items-center shadow-pop-sm">
+        <i class="fa-solid fa-chart-line text-cream text-sm"></i>
+      </div>
+      <span class="display text-xl font-bold tracking-tight">निवेशक<span class="text-coral">.</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-night/70">
+      <a href="#kya-hai" class="hover:text-night">Demat क्या है</a>
+      <a href="#kaise-kaam" class="hover:text-night">कैसे काम करता है</a>
+      <a href="#open" class="hover:text-night">Account खोलें</a>
+      <a href="#faq" class="hover:text-night">सवाल जवाब</a>
+    </nav>
+    <a href="#open"
+       class="pop-btn bg-coral text-cream inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-bold">
+      <span>Free खोलें</span>
+      <i class="fa-solid fa-arrow-right text-xs"></i>
+    </a>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="sunrise-bg relative overflow-hidden grain">
+  <!-- Decorative SVG sun -->
+  <svg class="absolute -top-32 -right-32 w-[500px] h-[500px] sun-rotate opacity-40" viewBox="0 0 200 200">
+    <g fill="none" stroke="#F4A340" stroke-width="1.5">
+      <circle cx="100" cy="100" r="40"/>
+      <circle cx="100" cy="100" r="60"/>
+      <circle cx="100" cy="100" r="80"/>
+      <circle cx="100" cy="100" r="95"/>
+    </g>
+  </svg>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-12 sm:pt-16 pb-20 sm:pb-24 relative">
+
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+      <!-- LEFT -->
+      <div class="lg:col-span-7 reveal">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-night text-cream px-3 py-1.5 rounded-full text-[12px] font-semibold tracking-wide">
+          <span class="w-1.5 h-1.5 rounded-full bg-turmeric animate-pulse"></span>
+          BEGINNER के लिए — हिंदी में
+        </div>
+
+        <h1 class="display mt-5 text-[44px] sm:text-[60px] lg:text-[72px] font-extrabold leading-[1.02]">
+          शेयर मार्केट में
+          <span class="block">पैसा कमाना है?</span>
+          <span class="block tiro italic text-coral mt-1">सही जगह आए हो 👋</span>
+        </h1>
+
+        <p class="mt-6 text-lg sm:text-xl text-night/75 max-w-xl leading-relaxed">
+          न कोई जटिल भाषा, न ही बड़ी रकम की ज़रूरत।
+          <span class="hindi-bold text-night">5 मिनट में सब समझो</span>, और
+          <span class="marker hindi-bold">10 मिनट में</span> अपना free demat account खोलो।
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#open" class="pop-btn bg-coral text-cream inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base">
+            <i class="fa-solid fa-rocket text-sm"></i>
+            Free Account खोलें
+          </a>
+          <a href="#kya-hai" class="pop-btn bg-cream text-night inline-flex items-center gap-2 px-7 py-4 rounded-full font-bold text-base">
+            <i class="fa-solid fa-book-open text-sm"></i>
+            पहले समझें
+          </a>
+        </div>
+
+        <!-- Trust row -->
+        <div class="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-night/70">
+          <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-deepmint"></i> SEBI Approved</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-deepmint"></i> ₹0 Charges</div>
+          <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-deepmint"></i> 10 मिनट में तैयार</div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Custom Illustration -->
+      <div class="lg:col-span-5 reveal" style="animation-delay:.2s">
+        <div class="relative">
+
+          <!-- Main illustration card -->
+          <div class="relative bg-cream pop-card rounded-3xl p-6 sm:p-7">
+
+            <!-- Header: like a phone app -->
+            <div class="flex items-center justify-between mb-5">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-coral"></div>
+                <div class="w-2 h-2 rounded-full bg-turmeric"></div>
+                <div class="w-2 h-2 rounded-full bg-mint"></div>
+              </div>
+              <span class="text-[10px] tracking-widest text-night/50 font-bold">DEMAT APP</span>
+            </div>
+
+            <!-- Portfolio illustration -->
+            <div class="bg-night rounded-2xl p-5 text-cream relative overflow-hidden">
+              <!-- bg pattern -->
+              <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 200 100" preserveAspectRatio="none">
+                <path d="M0,80 Q40,40 80,55 T160,30 T240,15" stroke="#FFC857" stroke-width="0.5" fill="none"/>
+                <path d="M0,90 Q40,60 80,70 T160,50 T240,40" stroke="#FF6B47" stroke-width="0.5" fill="none"/>
+              </svg>
+
+              <div class="relative">
+                <p class="text-[10px] tracking-widest text-cream/50 font-bold">आपका Portfolio</p>
+                <p class="display text-3xl sm:text-4xl font-extrabold mt-1">₹ 1,24,580</p>
+                <div class="mt-1 inline-flex items-center gap-1.5 bg-mint/20 text-mint px-2 py-0.5 rounded-full text-xs font-semibold">
+                  <i class="fa-solid fa-arrow-trend-up text-[10px]"></i> +12.8% इस साल
+                </div>
+
+                <!-- Mini chart -->
+                <svg viewBox="0 0 280 70" class="mt-4 w-full">
+                  <defs>
+                    <linearGradient id="hg" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#FFC857" stop-opacity=".5"/>
+                      <stop offset="100%" stop-color="#FFC857" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,55 C30,48 50,60 80,42 C110,28 140,38 170,22 C200,12 230,18 280,8 L280,70 L0,70 Z" fill="url(#hg)"/>
+                  <path d="M0,55 C30,48 50,60 80,42 C110,28 140,38 170,22 C200,12 230,18 280,8" fill="none" stroke="#FFC857" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="280" cy="8" r="4" fill="#FF6B47"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Stocks list -->
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-milk border border-night/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-coral grid place-items-center text-[10px] font-extrabold text-cream">REL</div>
+                  <span class="text-sm font-semibold">Reliance</span>
+                </div>
+                <span class="text-sm font-bold text-deepmint">+8.4%</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-milk border border-night/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-marigold grid place-items-center text-[10px] font-extrabold text-night">TCS</div>
+                  <span class="text-sm font-semibold">TCS</span>
+                </div>
+                <span class="text-sm font-bold text-deepmint">+15.2%</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-milk border border-night/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-mint grid place-items-center text-[10px] font-extrabold text-cream">HDF</div>
+                  <span class="text-sm font-semibold">HDFC Bank</span>
+                </div>
+                <span class="text-sm font-bold text-deepmint">+4.1%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating sticker 1 -->
+          <div class="absolute -top-6 -left-4 sm:-left-8 bg-turmeric pop-card rounded-2xl px-3 py-2 rotate-[-8deg] float">
+            <p class="text-[10px] tracking-widest font-extrabold text-night">शुरू करें</p>
+            <p class="display text-base font-extrabold text-night">सिर्फ ₹100 से</p>
+          </div>
+
+          <!-- Floating sticker 2 -->
+          <div class="absolute -bottom-5 -right-4 bg-mint pop-card rounded-2xl px-3 py-2 rotate-[6deg] float" style="animation-delay:1s">
+            <p class="text-[10px] tracking-widest font-extrabold text-cream">SETUP</p>
+            <p class="display text-base font-extrabold text-cream">10 मिनट ⚡</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 reveal" style="animation-delay:.4s">
+      <div class="pop-card bg-cream p-5 rounded-2xl">
+        <div class="flex items-baseline gap-1">
+          <p class="display text-3xl sm:text-4xl font-extrabold text-coral">15</p>
+          <p class="display text-xl font-bold text-night">करोड़+</p>
+        </div>
+        <p class="text-xs text-night/65 mt-1 font-medium">भारतीय निवेश करते हैं</p>
+      </div>
+      <div class="pop-card bg-cream p-5 rounded-2xl">
+        <p class="display text-3xl sm:text-4xl font-extrabold text-coral">₹0</p>
+        <p class="text-xs text-night/65 mt-1 font-medium">Account opening fee</p>
+      </div>
+      <div class="pop-card bg-cream p-5 rounded-2xl">
+        <p class="display text-3xl sm:text-4xl font-extrabold text-coral">12%</p>
+        <p class="text-xs text-night/65 mt-1 font-medium">Long-term औसत return*</p>
+      </div>
+      <div class="pop-card bg-cream p-5 rounded-2xl">
+        <p class="display text-3xl sm:text-4xl font-extrabold text-coral">10 min</p>
+        <p class="text-xs text-night/65 mt-1 font-medium">Account खुलने का समय</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== DEMAT KYA HAI =================== -->
+<section id="kya-hai" class="py-20 sm:py-28 bg-cream relative">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <!-- Eyebrow -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-night text-turmeric px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">पहला सवाल</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Demat Account
+        <span class="tiro italic text-coral">क्या होता है?</span>
+      </h2>
+      <p class="mt-4 text-night/70 text-lg max-w-2xl mx-auto">सीधी सी बात — एक उदाहरण से समझो</p>
+    </div>
+
+    <!-- BIG ANALOGY CARD -->
+    <div class="grid md:grid-cols-2 gap-5 items-stretch">
+
+      <!-- Bank account -->
+      <div class="pop-card bg-milk rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 wiggle text-5xl">💰</div>
+        <p class="text-[11px] tracking-widest text-night/50 font-bold">EXAMPLE 1</p>
+        <h3 class="display text-3xl font-extrabold mt-2">Bank Account</h3>
+        <p class="text-night/70 mt-3">पैसे रखने के लिए होता है। जब चाहो डालो, जब चाहो निकालो।</p>
+
+        <!-- Visual: rupee notes stacked -->
+        <div class="mt-6 flex flex-wrap gap-1.5">
+          <span class="px-3 py-1.5 bg-mint/20 text-deepmint rounded-md text-xs font-bold border border-deepmint/20">₹500</span>
+          <span class="px-3 py-1.5 bg-mint/20 text-deepmint rounded-md text-xs font-bold border border-deepmint/20">₹2000</span>
+          <span class="px-3 py-1.5 bg-mint/20 text-deepmint rounded-md text-xs font-bold border border-deepmint/20">₹100</span>
+          <span class="px-3 py-1.5 bg-mint/20 text-deepmint rounded-md text-xs font-bold border border-deepmint/20">₹500</span>
+        </div>
+        <p class="mt-4 text-sm text-night/60 italic">→ इसमें cash/digital पैसा रहता है</p>
+      </div>
+
+      <!-- Demat account -->
+      <div class="pop-card bg-night text-cream rounded-3xl p-7 sm:p-8 relative overflow-hidden">
+        <div class="absolute top-4 right-4 wiggle text-5xl" style="animation-delay:.5s">📈</div>
+        <p class="text-[11px] tracking-widest text-turmeric font-bold">EXAMPLE 2</p>
+        <h3 class="display text-3xl font-extrabold mt-2">Demat Account</h3>
+        <p class="text-cream/75 mt-3">बिल्कुल वैसा ही — लेकिन इसमें <span class="hindi-bold text-turmeric">शेयर</span> रखे जाते हैं, पैसे नहीं।</p>
+
+        <!-- Visual: stock tickers -->
+        <div class="mt-6 flex flex-wrap gap-1.5">
+          <span class="px-3 py-1.5 bg-turmeric/15 text-turmeric rounded-md text-xs font-bold border border-turmeric/30">RELIANCE</span>
+          <span class="px-3 py-1.5 bg-turmeric/15 text-turmeric rounded-md text-xs font-bold border border-turmeric/30">TCS</span>
+          <span class="px-3 py-1.5 bg-turmeric/15 text-turmeric rounded-md text-xs font-bold border border-turmeric/30">HDFC</span>
+          <span class="px-3 py-1.5 bg-turmeric/15 text-turmeric rounded-md text-xs font-bold border border-turmeric/30">INFY</span>
+        </div>
+        <p class="mt-4 text-sm text-cream/60 italic">→ इसमें digital form में shares रहते हैं</p>
+      </div>
+    </div>
+
+    <!-- Key takeaway -->
+    <div class="mt-6 pop-card bg-turmeric rounded-2xl p-6 flex items-start gap-4">
+      <div class="w-12 h-12 rounded-full bg-night grid place-items-center shrink-0">
+        <i class="fa-solid fa-lightbulb text-turmeric text-lg"></i>
+      </div>
+      <div>
+        <p class="display text-xl font-extrabold text-night">तो याद रखो —</p>
+        <p class="text-night/85 mt-1 text-[15px] leading-relaxed">
+          <span class="hindi-bold">पैसे के लिए → Bank Account</span> &nbsp;•&nbsp;
+          <span class="hindi-bold">Shares के लिए → Demat Account</span>
+        </p>
+        <p class="text-night/70 text-sm mt-1">बस इतना ही। और कुछ नहीं!</p>
+      </div>
+    </div>
+
+    <!-- 4 features -->
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="pop-card bg-cream rounded-2xl p-5">
+        <div class="w-12 h-12 rounded-xl bg-coral grid place-items-center mb-3">
+          <i class="fa-solid fa-vault text-cream text-lg"></i>
+        </div>
+        <h4 class="display text-lg font-extrabold">Safe Storage</h4>
+        <p class="text-sm text-night/65 mt-1">Digital form में, खोने का डर नहीं</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-5">
+        <div class="w-12 h-12 rounded-xl bg-marigold grid place-items-center mb-3">
+          <i class="fa-solid fa-bolt text-night text-lg"></i>
+        </div>
+        <h4 class="display text-lg font-extrabold">तुरंत Buy/Sell</h4>
+        <p class="text-sm text-night/65 mt-1">एक tap में shares ख़रीदो या बेचो</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-5">
+        <div class="w-12 h-12 rounded-xl bg-mint grid place-items-center mb-3">
+          <i class="fa-solid fa-mobile-screen text-cream text-lg"></i>
+        </div>
+        <h4 class="display text-lg font-extrabold">Phone से सब</h4>
+        <p class="text-sm text-night/65 mt-1">Portfolio देखो, profit track करो</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-5">
+        <div class="w-12 h-12 rounded-xl bg-night grid place-items-center mb-3">
+          <i class="fa-solid fa-shield-halved text-turmeric text-lg"></i>
+        </div>
+        <h4 class="display text-lg font-extrabold">SEBI Regulated</h4>
+        <p class="text-sm text-night/65 mt-1">सरकार के नियमों के अंदर</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== DEMAT vs TRADING (CONFUSION KILLER) =================== -->
+<section class="py-20 sm:py-28 bg-night text-cream relative overflow-hidden">
+  <!-- Decorative pattern -->
+  <svg class="absolute inset-0 w-full h-full opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="cross" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M20 16 L20 24 M16 20 L24 20" stroke="#FFC857" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cross)"/>
+  </svg>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+
+    <div class="text-center mb-12">
+      <span class="inline-block bg-coral text-cream px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">CONFUSION TIME</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4 text-cream">
+        Demat <span class="text-turmeric">vs</span> Trading
+        <span class="block tiro italic text-turmeric mt-1">— दोनों अलग हैं?</span>
+      </h2>
+      <p class="mt-4 text-cream/70 text-lg max-w-2xl mx-auto">
+        90% beginners यहीं confuse होते हैं। चलो एक मज़ेदार example से clear करते हैं।
+      </p>
+    </div>
+
+    <!-- Big analogy box -->
+    <div class="bg-cream text-night rounded-3xl pop-card p-6 sm:p-10 relative overflow-hidden">
+      <!-- house emoji big -->
+      <div class="absolute top-6 right-6 text-6xl opacity-10">🏠</div>
+
+      <div class="relative">
+        <p class="display text-2xl sm:text-3xl font-extrabold">
+          सोचो आप एक <span class="marker">कपड़े की दुकान</span> पर हो...
+        </p>
+        <p class="mt-3 text-night/70 text-base sm:text-lg">
+          जो कपड़े आप ख़रीदते हो वो आपकी <span class="hindi-bold">अलमारी</span> में जाते हैं। और ख़रीदने का काम <span class="hindi-bold">caunter</span> पर होता है।
+        </p>
+
+        <!-- Two boxes side by side -->
+        <div class="mt-8 grid md:grid-cols-2 gap-4 sm:gap-5">
+
+          <div class="rounded-2xl border-2 border-night p-5 bg-milk">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-12 h-12 rounded-xl bg-coral border-2 border-night grid place-items-center text-2xl">🏪</div>
+              <div>
+                <p class="text-[10px] tracking-widest text-night/50 font-bold">CAUNTER पर</p>
+                <p class="display text-xl font-extrabold">Trading Account</p>
+              </div>
+            </div>
+            <p class="text-sm text-night/75">यहाँ shares <span class="hindi-bold">ख़रीदते-बेचते</span> हो</p>
+            <ul class="mt-3 space-y-1.5 text-sm">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>Order place करना</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>Bank से जुड़ा</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>Action का काम</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border-2 border-night p-5 bg-milk">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-12 h-12 rounded-xl bg-mint border-2 border-night grid place-items-center text-2xl">🗄️</div>
+              <div>
+                <p class="text-[10px] tracking-widest text-night/50 font-bold">अलमारी में</p>
+                <p class="display text-xl font-extrabold">Demat Account</p>
+              </div>
+            </div>
+            <p class="text-sm text-night/75">यहाँ shares <span class="hindi-bold">रखे</span> जाते हैं</p>
+            <ul class="mt-3 space-y-1.5 text-sm">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>Storage का काम</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>NSDL/CDSL में safe</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-deepmint mt-1"></i>Ownership का proof</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom line -->
+        <div class="mt-6 bg-night text-cream rounded-2xl p-5 flex items-start gap-4">
+          <i class="fa-solid fa-circle-info text-turmeric text-xl mt-0.5"></i>
+          <p class="text-[15px] text-cream/85">
+            <span class="hindi-bold text-turmeric">Tension मत लो</span> — आजकल सब brokers दोनों <span class="hindi-bold">साथ में free</span> देते हैं। एक बार खोलो, दोनों मिल जाते हैं।
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA INTERLUDE -->
+<section class="py-12 bg-cream">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <p class="display text-2xl sm:text-3xl font-extrabold">समझ आ रहा है? <span class="tiro italic text-coral">बहुत बढ़िया!</span></p>
+    <p class="text-night/70 mt-2">अब देखते हैं कि stock market actually काम कैसे करता है</p>
+    <a href="#open" class="pop-btn bg-night text-cream inline-flex items-center gap-2 mt-5 px-6 py-3 rounded-full font-bold text-sm">
+      <i class="fa-solid fa-bolt text-turmeric"></i>
+      अभी Account खोलें
+    </a>
+  </div>
+</section>
+
+<!-- =================== STOCK MARKET FLOW =================== -->
+<section id="kaise-kaam" class="py-20 sm:py-28 bg-milk relative overflow-hidden grain">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+
+    <div class="text-center mb-16">
+      <span class="inline-block bg-marigold text-night px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">अंदर का खेल</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Stock Market
+        <span class="block tiro italic text-coral">कैसे काम करता है?</span>
+      </h2>
+      <p class="mt-4 text-night/70 text-lg max-w-2xl mx-auto">
+        जब आप "Buy" button दबाते हो, <span class="hindi-bold">2 second</span> में ये सब होता है। चलो step-by-step देखें।
+      </p>
+    </div>
+
+    <!-- Flow diagram - 4 steps with hand-drawn arrows -->
+    <div class="relative">
+
+      <!-- Steps -->
+      <div class="grid md:grid-cols-4 gap-4 sm:gap-6 relative z-10">
+
+        <!-- Step 1: You -->
+        <div class="text-center">
+          <div class="pop-card bg-cream rounded-3xl p-5 sm:p-6">
+            <div class="w-16 h-16 mx-auto rounded-full bg-coral border-2 border-night grid place-items-center text-3xl">
+              👤
+            </div>
+            <p class="num text-2xl text-coral mt-3">01</p>
+            <h4 class="display text-xl font-extrabold mt-1">आप</h4>
+            <p class="text-sm text-night/70 mt-2">App में "TCS के 5 shares ख़रीदो" tap करते हो</p>
+          </div>
+          <i class="fa-solid fa-arrow-down md:hidden text-coral text-2xl mt-3"></i>
+        </div>
+
+        <!-- Step 2: Broker -->
+        <div class="text-center md:mt-6">
+          <div class="pop-card bg-cream rounded-3xl p-5 sm:p-6">
+            <div class="w-16 h-16 mx-auto rounded-full bg-marigold border-2 border-night grid place-items-center text-3xl">
+              🎧
+            </div>
+            <p class="num text-2xl text-marigold mt-3">02</p>
+            <h4 class="display text-xl font-extrabold mt-1">Broker</h4>
+            <p class="text-sm text-night/70 mt-2">आपका order तुरंत exchange को भेजता है</p>
+          </div>
+          <i class="fa-solid fa-arrow-down md:hidden text-coral text-2xl mt-3"></i>
+        </div>
+
+        <!-- Step 3: Exchange -->
+        <div class="text-center">
+          <div class="pop-card bg-cream rounded-3xl p-5 sm:p-6">
+            <div class="w-16 h-16 mx-auto rounded-full bg-mint border-2 border-night grid place-items-center text-3xl">
+              🏛️
+            </div>
+            <p class="num text-2xl text-mint mt-3">03</p>
+            <h4 class="display text-xl font-extrabold mt-1">Exchange</h4>
+            <p class="text-sm text-night/70 mt-2">NSE/BSE आपको seller से match करता है</p>
+          </div>
+          <i class="fa-solid fa-arrow-down md:hidden text-coral text-2xl mt-3"></i>
+        </div>
+
+        <!-- Step 4: Demat -->
+        <div class="text-center md:mt-6">
+          <div class="pop-card bg-night text-cream rounded-3xl p-5 sm:p-6">
+            <div class="w-16 h-16 mx-auto rounded-full bg-turmeric border-2 border-night grid place-items-center text-3xl">
+              🎉
+            </div>
+            <p class="num text-2xl text-turmeric mt-3">04</p>
+            <h4 class="display text-xl font-extrabold mt-1 text-cream">Demat</h4>
+            <p class="text-sm text-cream/70 mt-2">Shares आ गए! आप shareholder हो</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hand-drawn arrow connector for desktop -->
+      <svg class="hidden md:block absolute top-12 left-0 w-full h-12 z-0" viewBox="0 0 1000 50" preserveAspectRatio="none">
+        <path class="draw-line" d="M120,25 Q200,5 300,25 Q400,45 500,25 Q600,5 700,25 Q800,45 880,25"
+              fill="none" stroke="#FF6B47" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5,5"/>
+      </svg>
+    </div>
+
+    <!-- Bottom note -->
+    <div class="mt-12 max-w-2xl mx-auto text-center">
+      <div class="inline-flex items-center gap-3 bg-cream pop-card rounded-full px-5 py-3">
+        <i class="fa-solid fa-stopwatch text-coral text-xl"></i>
+        <p class="text-night font-semibold text-sm">कुल समय: <span class="hindi-bold text-coral">2 second से कम!</span> सब automated है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== KYU CHAHIYE (BENEFITS) =================== -->
+<section class="py-20 sm:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center mb-14">
+      <span class="inline-block bg-mint text-cream px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">फ़ायदे</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Demat Account के
+        <span class="block tiro italic text-coral">5 बड़े फ़ायदे</span>
+      </h2>
+      <p class="mt-4 text-night/70 text-lg max-w-2xl mx-auto">
+        सिर्फ technical बात नहीं — आपके पैसे और भविष्य के लिए ये actually क्या unlock करता है।
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Benefit 1 -->
+      <div class="pop-card bg-milk rounded-3xl p-6 relative overflow-hidden">
+        <span class="absolute top-3 right-4 num text-7xl text-coral/15">01</span>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-coral border-2 border-night grid place-items-center mb-4">
+            <i class="fa-solid fa-fire text-cream text-xl"></i>
+          </div>
+          <h3 class="display text-xl font-extrabold">महंगाई को हराओ</h3>
+          <p class="text-sm text-night/70 mt-2 leading-relaxed">Savings में रखा पैसा महंगाई से हार जाता है। Stocks long-term में आगे निकल जाते हैं।</p>
+        </div>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="pop-card bg-milk rounded-3xl p-6 relative overflow-hidden">
+        <span class="absolute top-3 right-4 num text-7xl text-marigold/15">02</span>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-marigold border-2 border-night grid place-items-center mb-4">
+            <i class="fa-solid fa-chart-line text-night text-xl"></i>
+          </div>
+          <h3 class="display text-xl font-extrabold">Wealth बनाओ</h3>
+          <p class="text-sm text-night/70 mt-2 leading-relaxed">Compounding का जादू। ₹500/month भी जल्दी शुरू करो तो सालों में लाखों बन सकते हैं।</p>
+        </div>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="pop-card bg-milk rounded-3xl p-6 relative overflow-hidden">
+        <span class="absolute top-3 right-4 num text-7xl text-mint/20">03</span>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-mint border-2 border-night grid place-items-center mb-4">
+            <i class="fa-solid fa-hand-holding-dollar text-cream text-xl"></i>
+          </div>
+          <h3 class="display text-xl font-extrabold">Dividend Bonus</h3>
+          <p class="text-sm text-night/70 mt-2 leading-relaxed">कई companies अपने profit का हिस्सा shareholders को देती हैं — सीधे bank में।</p>
+        </div>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div class="pop-card bg-milk rounded-3xl p-6 relative overflow-hidden">
+        <span class="absolute top-3 right-4 num text-7xl text-turmeric/30">04</span>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-turmeric border-2 border-night grid place-items-center mb-4">
+            <i class="fa-solid fa-gauge-high text-night text-xl"></i>
+          </div>
+          <h3 class="display text-xl font-extrabold">पैसा Lock नहीं</h3>
+          <p class="text-sm text-night/70 mt-2 leading-relaxed">पैसे चाहिए? Market hours में कभी भी sell करो। 1 working day में bank में।</p>
+        </div>
+      </div>
+
+      <!-- Benefit 5 -->
+      <div class="pop-card bg-milk rounded-3xl p-6 relative overflow-hidden">
+        <span class="absolute top-3 right-4 num text-7xl text-deepmint/20">05</span>
+        <div class="relative">
+          <div class="w-14 h-14 rounded-2xl bg-deepmint border-2 border-night grid place-items-center mb-4">
+            <i class="fa-solid fa-coins text-cream text-xl"></i>
+          </div>
+          <h3 class="display text-xl font-extrabold">सिर्फ ₹100 से</h3>
+          <p class="text-sm text-night/70 mt-2 leading-relaxed">लाखों का tension नहीं। ₹100 से शुरू करो। अपनी रफ़्तार से आगे बढ़ो।</p>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <a href="#open" class="pop-card bg-night text-cream rounded-3xl p-6 relative overflow-hidden flex flex-col justify-between min-h-[200px] hover:bg-midnight transition">
+        <div>
+          <i class="fa-solid fa-arrow-up-right-from-square text-turmeric text-xl"></i>
+          <h3 class="display text-xl font-extrabold mt-3 text-cream">शुरू करने को तैयार?</h3>
+          <p class="text-sm text-cream/70 mt-2">15 मिनट में अपना free account खोलो</p>
+        </div>
+        <div class="mt-4 inline-flex items-center gap-2 text-turmeric font-bold">
+          अभी खोलें <i class="fa-solid fa-arrow-right text-xs"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ACCOUNT KAISE KHOLE =================== -->
+<section class="py-20 sm:py-28 bg-night text-cream relative overflow-hidden">
+  <div class="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-coral/15 blur-3xl"></div>
+  <div class="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-turmeric/15 blur-3xl"></div>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+
+    <div class="text-center mb-14">
+      <span class="inline-block bg-turmeric text-night px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">Setup Process</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4 text-cream">
+        Account कैसे खोलें?
+        <span class="block tiro italic text-turmeric">— सिर्फ 5 छोटे steps</span>
+      </h2>
+      <p class="mt-4 text-cream/70 text-lg max-w-2xl mx-auto">
+        न line, न paperwork, न branch जाना। सब कुछ phone पर — <span class="hindi-bold text-turmeric">10-15 मिनट में</span>।
+      </p>
+    </div>
+
+    <!-- Documents needed -->
+    <div class="bg-cream/10 backdrop-blur border border-cream/20 rounded-3xl p-5 sm:p-6 mb-10 max-w-3xl mx-auto">
+      <p class="text-sm font-bold flex items-center gap-2 text-turmeric mb-3">
+        <i class="fa-solid fa-id-card"></i> ये documents तैयार रखो
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="bg-cream/5 border border-cream/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🪪</div>
+          <p class="text-xs text-cream/80 mt-1 font-medium">PAN Card</p>
+        </div>
+        <div class="bg-cream/5 border border-cream/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">📱</div>
+          <p class="text-xs text-cream/80 mt-1 font-medium">Aadhaar (mobile linked)</p>
+        </div>
+        <div class="bg-cream/5 border border-cream/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🏦</div>
+          <p class="text-xs text-cream/80 mt-1 font-medium">Bank details</p>
+        </div>
+        <div class="bg-cream/5 border border-cream/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">✍️</div>
+          <p class="text-xs text-cream/80 mt-1 font-medium">Signature</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid md:grid-cols-2 gap-4 sm:gap-5 max-w-4xl mx-auto">
+
+      <div class="bg-cream text-night rounded-2xl p-5 pop-card">
+        <div class="flex items-start gap-4">
+          <span class="num text-4xl text-coral leading-none shrink-0">01</span>
+          <div>
+            <h4 class="display text-lg font-extrabold">Mobile + Email डालो</h4>
+            <p class="text-sm text-night/70 mt-1">OTP से verify करो। बस 30 second लगते हैं।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cream text-night rounded-2xl p-5 pop-card">
+        <div class="flex items-start gap-4">
+          <span class="num text-4xl text-marigold leading-none shrink-0">02</span>
+          <div>
+            <h4 class="display text-lg font-extrabold">PAN + Aadhaar</h4>
+            <p class="text-sm text-night/70 mt-1">DigiLocker से auto-fetch। Type नहीं करना पड़ेगा।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cream text-night rounded-2xl p-5 pop-card">
+        <div class="flex items-start gap-4">
+          <span class="num text-4xl text-mint leading-none shrink-0">03</span>
+          <div>
+            <h4 class="display text-lg font-extrabold">Bank Link करो</h4>
+            <p class="text-sm text-night/70 mt-1">कोई भी savings account जोड़ो — पैसा आने-जाने के लिए।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-cream text-night rounded-2xl p-5 pop-card">
+        <div class="flex items-start gap-4">
+          <span class="num text-4xl text-turmeric leading-none shrink-0">04</span>
+          <div>
+            <h4 class="display text-lg font-extrabold">Selfie + e-Sign</h4>
+            <p class="text-sm text-night/70 mt-1">छोटा video verification + Aadhaar OTP। बस!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-coral text-cream rounded-2xl p-5 pop-card md:col-span-2">
+        <div class="flex items-start gap-4">
+          <span class="num text-4xl text-cream leading-none shrink-0">05</span>
+          <div class="flex-1">
+            <h4 class="display text-lg font-extrabold">हो गया! 🎉 Investing शुरू</h4>
+            <p class="text-sm text-cream/85 mt-1">कुछ घंटों में account active। ₹100 add करो → पहला share ख़रीदो।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+         class="pop-btn bg-turmeric text-night inline-flex items-center gap-2 px-8 py-4 rounded-full font-extrabold text-base">
+        <i class="fa-solid fa-bolt"></i>
+        अभी Account खोलें — Free है
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== KYA CHECK KARE =================== -->
+<section class="py-20 sm:py-28 bg-milk grain">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center mb-14">
+      <span class="inline-block bg-night text-turmeric px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">Smart Choice</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Broker चुनने से पहले
+        <span class="block tiro italic text-coral">4 चीज़ें ज़रूर देखो</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="pop-card bg-cream rounded-2xl p-6">
+        <div class="w-14 h-14 rounded-2xl bg-coral border-2 border-night grid place-items-center mb-4">
+          <i class="fa-solid fa-indian-rupee-sign text-cream text-xl"></i>
+        </div>
+        <h3 class="display text-lg font-extrabold">Charges</h3>
+        <p class="text-sm text-night/65 mt-2 leading-relaxed">₹0 opening, low brokerage, कोई hidden fee नहीं — ये देखो।</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-6">
+        <div class="w-14 h-14 rounded-2xl bg-marigold border-2 border-night grid place-items-center mb-4">
+          <i class="fa-solid fa-mobile-screen-button text-night text-xl"></i>
+        </div>
+        <h3 class="display text-lg font-extrabold">Easy App</h3>
+        <p class="text-sm text-night/65 mt-2 leading-relaxed">Beginner के लिए simple, complicated नहीं।</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-6">
+        <div class="w-14 h-14 rounded-2xl bg-mint border-2 border-night grid place-items-center mb-4">
+          <i class="fa-solid fa-headset text-cream text-xl"></i>
+        </div>
+        <h3 class="display text-lg font-extrabold">Support</h3>
+        <p class="text-sm text-night/65 mt-2 leading-relaxed">Problem में तुरंत असली इंसान से बात — जल्दी।</p>
+      </div>
+      <div class="pop-card bg-cream rounded-2xl p-6">
+        <div class="w-14 h-14 rounded-2xl bg-deepmint border-2 border-night grid place-items-center mb-4">
+          <i class="fa-solid fa-shield-halved text-cream text-xl"></i>
+        </div>
+        <h3 class="display text-lg font-extrabold">Security</h3>
+        <p class="text-sm text-night/65 mt-2 leading-relaxed">SEBI registered, NSDL/CDSL, 2-factor auth — ज़रूरी है।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== RECOMMENDATION (Affiliate) =================== -->
+<section id="open" class="py-20 sm:py-28 bg-cream relative overflow-hidden">
+  <div class="absolute top-20 -left-20 w-72 h-72 rounded-full bg-marigold/20 blur-3xl"></div>
+  <div class="absolute bottom-20 -right-20 w-72 h-72 rounded-full bg-coral/20 blur-3xl"></div>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 relative">
+
+    <div class="text-center mb-12">
+      <span class="inline-block bg-coral text-cream px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">हमारी Suggestion</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Beginner के लिए
+        <span class="block tiro italic text-coral">सबसे आसान option</span>
+      </h2>
+      <p class="mt-4 text-night/70 text-lg max-w-2xl mx-auto">
+        India के सारे major brokers को fees, app, और beginner experience के basis पर compare करने के बाद — <span class="hindi-bold">Upstox</span> first-time investors के लिए सबसे आगे है।
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-8 items-center">
+
+      <!-- Benefits list -->
+      <div class="lg:col-span-7">
+        <div class="space-y-3.5">
+
+          <div class="pop-card bg-milk rounded-2xl p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-coral border-2 border-night grid place-items-center shrink-0">
+              <span class="text-cream text-base font-extrabold">₹0</span>
+            </div>
+            <div>
+              <p class="display font-extrabold text-night">Account Opening — बिल्कुल Free</p>
+              <p class="text-sm text-night/65 mt-0.5">कोई commitment नहीं, कोई trick नहीं।</p>
+            </div>
+          </div>
+
+          <div class="pop-card bg-milk rounded-2xl p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-marigold border-2 border-night grid place-items-center shrink-0">
+              <i class="fa-solid fa-arrow-down text-night text-sm"></i>
+            </div>
+            <div>
+              <p class="display font-extrabold text-night">कम Brokerage हर trade पे</p>
+              <p class="text-sm text-night/65 mt-0.5">आपकी जेब में ज़्यादा पैसा रहता है।</p>
+            </div>
+          </div>
+
+          <div class="pop-card bg-milk rounded-2xl p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-mint border-2 border-night grid place-items-center shrink-0">
+              <i class="fa-solid fa-mobile-screen text-cream text-sm"></i>
+            </div>
+            <div>
+              <p class="display font-extrabold text-night">Beginner-First App</p>
+              <p class="text-sm text-night/65 mt-0.5">Simple design, कोई confusing jargon नहीं।</p>
+            </div>
+          </div>
+
+          <div class="pop-card bg-milk rounded-2xl p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-turmeric border-2 border-night grid place-items-center shrink-0">
+              <i class="fa-solid fa-bolt text-night text-sm"></i>
+            </div>
+            <div>
+              <p class="display font-extrabold text-night">10-मिनट Setup</p>
+              <p class="text-sm text-night/65 mt-0.5">Aadhaar e-KYC के साथ fully digital।</p>
+            </div>
+          </div>
+
+          <div class="pop-card bg-milk rounded-2xl p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-deepmint border-2 border-night grid place-items-center shrink-0">
+              <i class="fa-solid fa-shield-halved text-cream text-sm"></i>
+            </div>
+            <div>
+              <p class="display font-extrabold text-night">SEBI Registered + Trusted</p>
+              <p class="text-sm text-night/65 mt-0.5">Ratan Tata + Tiger Global का backing। 1Cr+ users।</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+             class="pop-btn bg-coral text-cream inline-flex items-center gap-2 px-7 py-4 rounded-full font-extrabold text-base">
+            <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            Free Demat Account खोलें
+          </a>
+          <p class="text-xs text-night/55 max-w-[220px]">* Disclosure: हमारे link से sign up करने पर हमें small referral मिलता है — आपको कोई extra cost नहीं।</p>
+        </div>
+      </div>
+
+      <!-- Stats card -->
+      <div class="lg:col-span-5">
+        <div class="pop-card bg-night text-cream rounded-3xl p-6 sm:p-7 relative overflow-hidden">
+          <!-- Decoration -->
+          <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-coral/30 blur-2xl"></div>
+
+          <div class="relative">
+            <div class="flex items-center justify-between mb-5">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-coral border-2 border-cream/20 grid place-items-center">
+                  <i class="fa-solid fa-bolt text-cream"></i>
+                </div>
+                <div>
+                  <p class="display text-xl font-extrabold">Upstox</p>
+                  <p class="text-xs text-cream/55">Demat + Trading</p>
+                </div>
+              </div>
+              <span class="px-2 py-1 rounded-full bg-turmeric text-night text-[10px] font-extrabold tracking-widest">PICK</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5">
+              <div class="bg-cream/5 border border-cream/10 rounded-xl p-3">
+                <p class="text-[10px] tracking-widest text-cream/50 font-bold">OPENING</p>
+                <p class="display text-2xl font-extrabold text-turmeric">₹ 0</p>
+              </div>
+              <div class="bg-cream/5 border border-cream/10 rounded-xl p-3">
+                <p class="text-[10px] tracking-widest text-cream/50 font-bold">SETUP</p>
+                <p class="display text-2xl font-extrabold text-turmeric">10 min</p>
+              </div>
+              <div class="bg-cream/5 border border-cream/10 rounded-xl p-3">
+                <p class="text-[10px] tracking-widest text-cream/50 font-bold">DELIVERY</p>
+                <p class="display text-2xl font-extrabold text-turmeric">₹ 20*</p>
+              </div>
+              <div class="bg-cream/5 border border-cream/10 rounded-xl p-3">
+                <p class="text-[10px] tracking-widest text-cream/50 font-bold">USERS</p>
+                <p class="display text-2xl font-extrabold text-turmeric">1Cr+</p>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center gap-2 text-[11px] text-cream/55">
+              <i class="fa-solid fa-shield-halved text-mint"></i>
+              SEBI Reg • NSDL/CDSL • NSE, BSE, MCX
+            </div>
+
+            <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+               class="pop-btn bg-turmeric text-night mt-5 inline-flex w-full justify-center items-center gap-2 px-5 py-3 rounded-full font-extrabold text-sm">
+              अभी Start करो — Free
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Floating tag -->
+        <div class="hidden sm:block relative">
+          <div class="absolute -top-4 -right-4 bg-mint text-cream pop-card rounded-2xl px-4 py-2 rotate-[6deg]">
+            <p class="text-[10px] tracking-widest font-extrabold">JOIN</p>
+            <p class="display text-sm font-extrabold">1Cr+ Indians</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FAQ =================== -->
+<section id="faq" class="py-20 sm:py-28 bg-milk">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+
+    <div class="text-center mb-12">
+      <span class="inline-block bg-marigold text-night px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">सवाल जवाब</span>
+      <h2 class="display text-4xl sm:text-6xl font-extrabold mt-4">
+        Beginners के
+        <span class="block tiro italic text-coral">Common सवाल</span>
+      </h2>
+    </div>
+
+    <div class="space-y-3">
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">क्या ये safe है? पैसा डूब तो नहीं जाएगा?</span>
+          <span class="chev w-9 h-9 rounded-full bg-coral border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-cream"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          हाँ, platform बिल्कुल safe है — Demat account SEBI के under regulated है, और आपके shares NSDL/CDSL (government-backed depositories) में रहते हैं। Stock prices ऊपर-नीचे होते हैं, लेकिन long-term में अच्छी companies में invest करने वालों के लिए history अच्छी रही है। शुरू में छोटी रक़म से start करो।
+        </div>
+      </details>
+
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">कितना पैसा चाहिए शुरू करने के लिए?</span>
+          <span class="chev w-9 h-9 rounded-full bg-marigold border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-night"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          सिर्फ <span class="hindi-bold">₹100 से</span>। कई shares का price इससे कम है। या ₹500/month की SIP mutual funds में — same demat app से। जितनी जल्दी शुरू, compounding का फ़ायदा उतना ज़्यादा।
+        </div>
+      </details>
+
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">Free है या paisa लगेगा?</span>
+          <span class="chev w-9 h-9 rounded-full bg-mint border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-cream"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          हाँ — top brokers (Upstox जैसे) account opening के लिए <span class="hindi-bold">₹0</span> charge करते हैं। एक छोटा annual maintenance fee (AMC) दूसरे साल से लगता है, और trades पे brokerage — सब पहले से clear बताया जाता है। कोई surprise नहीं।
+        </div>
+      </details>
+
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">Hidden charges तो नहीं हैं?</span>
+          <span class="chev w-9 h-9 rounded-full bg-turmeric border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-night"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          Reputable SEBI-registered brokers हर fee transparently दिखाते हैं — brokerage, AMC, GST, STT (govt tax), exchange charges। Pricing page एक बार ज़रूर देख लो। Established platforms में "surprise" deduction नहीं होते।
+        </div>
+      </details>
+
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">क्या beginner शुरू कर सकता है?</span>
+          <span class="chev w-9 h-9 rounded-full bg-deepmint border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-cream"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          बिल्कुल। Modern apps beginners के लिए ही बने हैं — clean design, simple words, in-app learning। Finance की degree नहीं चाहिए। पहले 1 share ख़रीदो किसी company का जो आप already use करते हो (Reliance, ITC, HDFC Bank) — और साथ-साथ सीखो।
+        </div>
+      </details>
+
+      <details class="group bg-cream rounded-2xl pop-card open:shadow-pop">
+        <summary class="flex items-center justify-between p-5 sm:p-6">
+          <span class="display text-lg font-extrabold pr-6">अगर पैसे loss हो गए तो?</span>
+          <span class="chev w-9 h-9 rounded-full bg-coral border-2 border-night grid place-items-center shrink-0">
+            <i class="fa-solid fa-plus text-cream"></i>
+          </span>
+        </summary>
+        <div class="px-5 sm:px-6 pb-6 text-night/70 leading-relaxed text-[15px] border-t-2 border-night/10 pt-4">
+          Short-term में ऊपर-नीचे normal है — pros के साथ भी होता है। Trick: long-term के लिए invest करो (5+ साल), पैसा अलग-अलग companies में spread करो, panic में sell मत करो। छोटी रक़म से शुरू करो जिसका ऊपर-नीचे होना आप emotionally handle कर सको।
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FINAL CTA =================== -->
+<section class="py-20 sm:py-28 bg-coral text-cream relative overflow-hidden">
+  <!-- Decorative shapes -->
+  <svg class="absolute top-10 left-10 w-32 h-32 opacity-30" viewBox="0 0 100 100">
+    <path d="M50,5 L61,38 L95,38 L67,58 L78,90 L50,70 L22,90 L33,58 L5,38 L39,38 Z" fill="#FFC857"/>
+  </svg>
+  <svg class="absolute bottom-10 right-10 w-40 h-40 opacity-20 sun-rotate" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="20" fill="none" stroke="#FFC857" stroke-width="2"/>
+    <g stroke="#FFC857" stroke-width="2">
+      <line x1="50" y1="5" x2="50" y2="20"/>
+      <line x1="50" y1="80" x2="50" y2="95"/>
+      <line x1="5" y1="50" x2="20" y2="50"/>
+      <line x1="80" y1="50" x2="95" y2="50"/>
+      <line x1="20" y1="20" x2="30" y2="30"/>
+      <line x1="70" y1="70" x2="80" y2="80"/>
+      <line x1="20" y1="80" x2="30" y2="70"/>
+      <line x1="70" y1="30" x2="80" y2="20"/>
+    </g>
+  </svg>
+
+  <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center relative">
+
+    <span class="inline-block bg-night text-turmeric px-3 py-1 rounded-full text-[11px] tracking-widest font-bold">आपका पहला कदम</span>
+
+    <h2 class="display text-4xl sm:text-6xl lg:text-7xl font-extrabold mt-5 leading-[1.02]">
+      Best time था <span class="line-through opacity-60">5 साल पहले</span>।
+      <span class="tiro italic text-turmeric block mt-2">अगला best time? आज!</span>
+    </h2>
+
+    <p class="mt-6 text-cream/85 text-lg max-w-2xl mx-auto">
+      अगले 10 मिनट में अपना free demat account खोलो — और आज ही पहला share ख़रीदो। Future में ख़ुद को धन्यवाद बोलोगे।
+    </p>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+         class="pop-btn bg-cream text-coral inline-flex items-center gap-2 px-8 py-4 rounded-full font-extrabold text-base">
+        <i class="fa-solid fa-rocket"></i>
+        Free Account खोलें
+      </a>
+      <a href="#kya-hai"
+         class="pop-btn bg-night text-cream inline-flex items-center gap-2 px-8 py-4 rounded-full font-extrabold text-base">
+        Guide फिर पढ़ें
+      </a>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-sm text-cream/85">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-turmeric"></i> SEBI Approved</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-lock text-turmeric"></i> 100% Safe</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-indian-rupee-sign text-turmeric"></i> ₹0 Charges</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-turmeric"></i> 1Cr+ Investors</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="bg-night text-cream/60 border-t-2 border-coral">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
+    <div class="grid sm:grid-cols-2 gap-8 items-start">
+      <div>
+        <a href="#" class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-coral border-2 border-cream/20 grid place-items-center">
+            <i class="fa-solid fa-chart-line text-cream text-sm"></i>
+          </div>
+          <span class="display text-xl font-extrabold text-cream">निवेशक<span class="text-coral">.</span></span>
+        </a>
+        <p class="mt-4 text-sm max-w-md leading-relaxed">
+          First-time Indian investors को confidence के साथ शुरू करवाने के लिए। Education, clarity, और zero confusion — यही हमारा वादा।
+        </p>
+      </div>
+      <div class="text-sm sm:text-right">
+        <p class="text-turmeric text-[11px] tracking-widest font-extrabold mb-2">DISCLAIMER</p>
+        <p class="leading-relaxed">
+          Stock market में investment market risks के अधीन है। Returns guaranteed नहीं हैं। Past performance future का indicator नहीं। Invest करने से पहले scheme-related सभी documents ज़रूर पढ़ें। यह page affiliate links use करता है।
+        </p>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-cream/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <p>© 2026 निवेशक. Indian beginners के लिए बनाया गया।</p>
+      <div class="flex items-center gap-5">
+        <a href="#" class="hover:text-cream">Privacy</a>
+        <a href="#" class="hover:text-cream">Terms</a>
+        <a href="#" class="hover:text-cream">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =================== STICKY BOTTOM CTA =================== -->
+<div id="stickyCta" class="sticky-cta px-2">
+  <div class="bg-night text-cream rounded-full pop-card border-2 border-coral flex items-center gap-2 sm:gap-3 pl-3 pr-2 py-2">
+    <div class="flex items-center gap-2.5 min-w-0 flex-1">
+      <span class="relative flex shrink-0 w-2.5 h-2.5">
+        <span class="absolute inset-0 rounded-full bg-coral pulse-dot"></span>
+      </span>
+      <div class="min-w-0">
+        <p class="text-[13px] sm:text-sm font-extrabold leading-tight truncate">
+          Free Demat Account <span class="hidden sm:inline">— 10 मिनट में</span>
+        </p>
+        <p class="text-[11px] text-cream/60 leading-tight truncate">₹0 opening · SEBI approved</p>
+      </div>
+    </div>
+
+    <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored"
+       class="pop-btn bg-coral text-cream inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full text-[13px] sm:text-sm font-extrabold shrink-0">
+      खोलें
+      <i class="fa-solid fa-arrow-right text-[10px]"></i>
+    </a>
+
+    <button id="stickyClose" aria-label="Dismiss"
+            class="w-7 h-7 rounded-full grid place-items-center text-cream/50 hover:text-cream hover:bg-cream/10 shrink-0 transition">
+      <i class="fa-solid fa-xmark text-xs"></i>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const cta = document.getElementById('stickyCta');
+    const closeBtn = document.getElementById('stickyClose');
+    const body = document.body;
+    let dismissed = sessionStorage.getItem('sticky_cta_dismissed') === '1';
+
+    function update() {
+      if (dismissed) return;
+      const scrolled = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const shouldShow = scrolled > 600 && scrolled < (docH - 400);
+      if (shouldShow) {
+        cta.classList.add('show');
+        body.classList.add('sticky-on');
+      } else {
+        cta.classList.remove('show');
+        body.classList.remove('sticky-on');
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+
+    closeBtn.addEventListener('click', function () {
+      dismissed = true;
+      sessionStorage.setItem('sticky_cta_dismissed', '1');
+      cta.classList.remove('show');
+      body.classList.remove('sticky-on');
+    });
+  })();
+</script>
+
+</body>
+</html>
