@@ -1014,12 +1014,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- Mobile View - Card stack -->
     <div class="lg:hidden space-y-5">
-      <!-- Our Platform Card -->
+      <!-- Upstox Card -->
       <div class="pop-card bg-coral rounded-3xl p-6 text-cream relative">
         <div class="absolute -top-3 left-6 bg-turmeric border-2 border-night text-night text-xs font-extrabold px-3 py-1 rounded-full">
-          BEST VALUE
+          OUR RECOMMENDATION
         </div>
-        <h3 class="display text-2xl font-extrabold mt-2">Our Platform (Upstox)</h3>
+        <h3 class="display text-2xl font-extrabold mt-2">Upstox</h3>
+        <p class="text-cream/85 text-xs mt-1">SEBI Reg. INZ000185137 · Backed by Ratan Tata</p>
         <div class="mt-5 space-y-3 text-sm">
           <div class="flex justify-between items-center pb-2 border-b border-cream/20">
             <span>Account Opening</span>
@@ -1027,62 +1028,75 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
           <div class="flex justify-between items-center pb-2 border-b border-cream/20">
             <span>AMC (1st Year)</span>
-            <span class="font-extrabold text-turmeric">₹0</span>
+            <span class="font-extrabold text-turmeric">₹0*</span>
+          </div>
+          <div class="flex justify-between items-center pb-2 border-b border-cream/20">
+            <span>AMC (2nd Year+)</span>
+            <span class="font-extrabold text-cream/85">₹300 + GST</span>
           </div>
           <div class="flex justify-between items-center pb-2 border-b border-cream/20">
             <span>Equity Delivery</span>
-            <span class="font-extrabold text-turmeric">₹0</span>
+            <span class="font-extrabold text-turmeric">₹20 / 0.1%*</span>
           </div>
           <div class="flex justify-between items-center pb-2 border-b border-cream/20">
             <span>Intraday & F&O</span>
-            <span class="font-extrabold text-turmeric">₹20/order</span>
+            <span class="font-extrabold text-turmeric">₹20 max</span>
           </div>
           <div class="flex justify-between items-center pb-2 border-b border-cream/20">
             <span>Mutual Funds</span>
             <span class="font-extrabold text-turmeric">₹0</span>
           </div>
           <div class="flex justify-between items-center">
-            <span>IPO</span>
+            <span>IPO Application</span>
             <span class="font-extrabold text-turmeric">₹0</span>
           </div>
         </div>
+        <p class="text-cream/65 text-[10px] mt-3 italic">*Whichever is lower per executed order</p>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-4">
         <div class="pop-card bg-milk rounded-2xl p-5">
-          <h4 class="display text-lg font-extrabold mb-3">Broker A</h4>
+          <h4 class="display text-lg font-extrabold mb-1">Zerodha</h4>
+          <p class="text-night/50 text-[10px] mb-3">Discount broker</p>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span class="text-night/70">Account</span><span class="font-bold text-rose">₹200</span></li>
-            <li class="flex justify-between"><span class="text-night/70">AMC</span><span class="font-bold text-rose">₹300</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Opening</span><span class="font-bold text-deepmint">₹0</span></li>
+            <li class="flex justify-between"><span class="text-night/70">AMC/yr</span><span class="font-bold text-rose">₹300</span></li>
             <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-deepmint">₹0</span></li>
-            <li class="flex justify-between"><span class="text-night/70">F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Intraday/F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Mutual Funds</span><span class="font-bold text-deepmint">₹0</span></li>
           </ul>
         </div>
         <div class="pop-card bg-milk rounded-2xl p-5">
-          <h4 class="display text-lg font-extrabold mb-3">Broker B</h4>
+          <h4 class="display text-lg font-extrabold mb-1">Groww</h4>
+          <p class="text-night/50 text-[10px] mb-3">Beginner-focused</p>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span class="text-night/70">Account</span><span class="font-bold text-rose">₹444</span></li>
-            <li class="flex justify-between"><span class="text-night/70">AMC</span><span class="font-bold text-rose">₹240</span></li>
-            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-deepmint">₹0</span></li>
-            <li class="flex justify-between"><span class="text-night/70">F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Opening</span><span class="font-bold text-deepmint">₹0</span></li>
+            <li class="flex justify-between"><span class="text-night/70">AMC/yr</span><span class="font-bold text-deepmint">₹0 lifetime</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-marigold">₹20/0.1%</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Intraday/F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Mutual Funds</span><span class="font-bold text-deepmint">₹0</span></li>
           </ul>
         </div>
         <div class="pop-card bg-milk rounded-2xl p-5">
-          <h4 class="display text-lg font-extrabold mb-3">Broker C</h4>
+          <h4 class="display text-lg font-extrabold mb-1">Angel One</h4>
+          <p class="text-night/50 text-[10px] mb-3">Hybrid broker</p>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span class="text-night/70">Account</span><span class="font-bold text-deepmint">₹0</span></li>
-            <li class="flex justify-between"><span class="text-night/70">AMC</span><span class="font-bold text-rose">₹300</span></li>
-            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-deepmint">₹0</span></li>
-            <li class="flex justify-between"><span class="text-night/70">F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Opening</span><span class="font-bold text-deepmint">₹0</span></li>
+            <li class="flex justify-between"><span class="text-night/70">AMC/yr</span><span class="font-bold text-rose">₹240*</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-marigold">₹20/0.1%</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Intraday/F&O</span><span class="font-bold text-marigold">₹20</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Mutual Funds</span><span class="font-bold text-deepmint">₹0</span></li>
           </ul>
         </div>
         <div class="pop-card bg-milk rounded-2xl p-5">
-          <h4 class="display text-lg font-extrabold mb-3">Bank Broker</h4>
+          <h4 class="display text-lg font-extrabold mb-1">ICICI Direct</h4>
+          <p class="text-night/50 text-[10px] mb-3">Bank broker</p>
           <ul class="space-y-2 text-sm">
-            <li class="flex justify-between"><span class="text-night/70">Account</span><span class="font-bold text-rose">₹975</span></li>
-            <li class="flex justify-between"><span class="text-night/70">AMC</span><span class="font-bold text-rose">₹600</span></li>
-            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-rose">0.55%</span></li>
-            <li class="flex justify-between"><span class="text-night/70">F&O</span><span class="font-bold text-rose">0.05%</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Opening</span><span class="font-bold text-deepmint">₹0</span></li>
+            <li class="flex justify-between"><span class="text-night/70">AMC/yr</span><span class="font-bold text-rose">₹700</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Delivery</span><span class="font-bold text-rose">0.29%</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Intraday/F&O</span><span class="font-bold text-rose">0.029%</span></li>
+            <li class="flex justify-between"><span class="text-night/70">Mutual Funds</span><span class="font-bold text-deepmint">₹0</span></li>
           </ul>
         </div>
       </div>
