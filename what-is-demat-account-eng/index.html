@@ -1675,8 +1675,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- =================== FOOTER =================== -->
 <footer class="bg-night text-cream/60 border-t-2 border-coral">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12">
-    <div class="grid sm:grid-cols-2 gap-8 items-start">
-      <div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="sm:col-span-2">
         <a href="#" class="flex items-center gap-2.5">
           <div class="w-10 h-10 rounded-xl bg-coral border-2 border-cream/20 grid place-items-center">
             <i class="fa-solid fa-chart-line text-cream text-sm"></i>
@@ -1686,20 +1686,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="mt-4 text-sm max-w-md leading-relaxed">
           Helping first-time Indian investors take the leap with confidence. Education, clarity, and zero confusion — that's our promise.
         </p>
+        <div class="mt-5 flex gap-2">
+          <a href="#" class="w-9 h-9 rounded-full bg-cream/10 border border-cream/20 hover:bg-coral hover:border-coral grid place-items-center transition">
+            <i class="fa-brands fa-facebook text-cream/80 text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-cream/10 border border-cream/20 hover:bg-coral hover:border-coral grid place-items-center transition">
+            <i class="fa-brands fa-twitter text-cream/80 text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-cream/10 border border-cream/20 hover:bg-coral hover:border-coral grid place-items-center transition">
+            <i class="fa-brands fa-linkedin text-cream/80 text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-cream/10 border border-cream/20 hover:bg-coral hover:border-coral grid place-items-center transition">
+            <i class="fa-brands fa-instagram text-cream/80 text-sm"></i>
+          </a>
+        </div>
       </div>
-      <div class="text-sm sm:text-right">
-        <p class="text-turmeric text-[11px] tracking-widest font-extrabold mb-2">DISCLAIMER</p>
-        <p class="leading-relaxed">
-          Investments in the stock market are subject to market risks. Returns are not guaranteed. Past performance does not predict future results. Read all scheme-related documents before investing. This page contains affiliate links.
-        </p>
+
+      <div>
+        <p class="text-turmeric text-[11px] tracking-widest font-extrabold mb-4">QUICK LINKS</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#what-is" class="hover:text-cream">What is a Demat Account?</a></li>
+          <li><a href="#how-it-works" class="hover:text-cream">How It Works</a></li>
+          <li><a href="#open" class="hover:text-cream">How to Open an Account</a></li>
+          <li><a href="#faq" class="hover:text-cream">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-turmeric text-[11px] tracking-widest font-extrabold mb-4">LEGAL</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/contact-us/" class="hover:text-cream">Contact Us</a></li>
+          <li><a href="/privacy-policy/" class="hover:text-cream">Privacy Policy</a></li>
+          <li><a href="/disclaimer/" class="hover:text-cream">Disclaimer</a></li>
+          <li><a href="/terms-of-use/" class="hover:text-cream">Terms of Use</a></li>
+        </ul>
       </div>
     </div>
-    <div class="mt-10 pt-6 border-t border-cream/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-      <p>© 2026 DematOpen. Built for Indian beginners.</p>
-      <div class="flex items-center gap-5">
-        <a href="https://dematopen.com/privacy-policy/" class="hover:text-cream">Privacy</a>
-        <a href="#" class="hover:text-cream">Terms</a>
-        <a href="#" class="hover:text-cream">Contact</a>
+
+    <!-- Disclaimer -->
+    <div class="mt-10 pt-6 border-t border-cream/10">
+      <div class="bg-cream/5 border border-cream/10 rounded-2xl p-5 mb-6">
+        <div class="text-cream/65 text-xs leading-relaxed">
+          <p><strong class="text-cream">Disclaimer:</strong> This platform operates in the capacity of an Authorized Person associated with Upstox (RKSV Securities India Private Limited), a SEBI-regulated stockbroker. This website is an independent platform created for informational and facilitation purposes only and is not owned, operated, or maintained by Upstox.</p>
+          <p class="mt-2">The services described herein are limited to assisting users with the account opening process in association with the aforesaid broker. Any account opened through this platform is subject to the terms, conditions, and verification processes of Upstox.</p>
+          <p class="mt-2">No investment advice, recommendations, or portfolio management services are provided through this website. Users are advised to exercise their own judgment and discretion.</p>
+          <p class="mt-2">Investments in securities markets are subject to market risks. Past performance is not indicative of future results. Users should carefully read all relevant documents before making any investment decisions.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <p>© 2026 DematOpen. Built for Indian beginners.</p>
+        <p class="text-cream/40">Trading involves risks. Invest wisely.</p>
       </div>
     </div>
   </div>
