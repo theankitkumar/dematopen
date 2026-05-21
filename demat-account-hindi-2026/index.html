@@ -20,6 +20,82 @@
   }}};
 </script>
 <style>
+
+  
+:root {
+  /* ---- Paper (warm cream — inviting, readable, not cold white) ---- */
+  --color-paper:      oklch(97.5% 0.012 80);
+  --color-paper-2:    oklch(94% 0.015 78);
+  --color-paper-3:    oklch(89% 0.014 75);
+
+  /* ---- Ink (deep navy — universal financial trust signal) ---- */
+  --color-ink:        oklch(18% 0.012 260);
+  --color-ink-2:      oklch(32% 0.010 255);
+  --color-muted:      oklch(48% 0.008 250);
+
+  /* ---- Rules ---- */
+  --color-rule:       oklch(82% 0.010 85);
+  --color-rule-strong:oklch(68% 0.012 80);
+
+  /* ---- Accent (coral-saffron — highest CTA contrast, Indian cultural resonance) ---- */
+  --color-accent:     oklch(58% 0.17 40);
+  --color-accent-soft:oklch(72% 0.14 42);
+  --color-accent-ink: oklch(97.5% 0.012 80);
+  --color-accent-bg:  oklch(95% 0.04 48);
+
+  /* ---- Focus ---- */
+  --color-focus:      oklch(55% 0.19 45);
+
+  /* ---- Surface (dark cards on cream) ---- */
+  --color-surface:    oklch(16% 0.012 255);
+  --color-surface-ink:oklch(95% 0.005 90);
+
+  /* ---- Typography (Latin-optimized for Hinglish) ---- */
+  --font-display:     'Fraunces', 'Source Serif 4', ui-serif, Georgia, serif;
+  --font-body:        'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-outlier:     'JetBrains Mono', 'Geist Mono', ui-monospace, monospace;
+
+  /* ---- Type scale (major third, 1.25) ---- */
+  --text-xs:    0.64rem;
+  --text-sm:   0.8rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+  --text-3xl:  3.0518rem;
+  --text-4xl:  3.8147rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2rem, 4vw + 0.5rem, 3.5rem);
+  --text-display-l: clamp(3.5rem, 7vw + 1rem, 7rem);
+
+  /* ---- Spacing (4pt scale) ---- */
+  --space-3xs: 0.125rem; --space-2xs: 0.25rem; --space-xs: 0.5rem;
+  --space-sm:  0.75rem;  --space-md:  1rem;     --space-lg: 1.5rem;
+  --space-xl:  2.5rem;   --space-2xl: 4rem;     --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --page-gutter: clamp(1rem, 4vw, 2rem);
+
+  /* ---- Easings ---- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-micro:  120ms; --dur-short: 220ms; --dur-long: 420ms;
+
+  /* ---- Radii ---- */
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 18px;
+  --radius-xl: 24px; --radius-pill: 9999px;
+
+  /* ---- Rules ---- */
+  --rule-hair: 1px; --rule-thin: 2px;
+
+  /* ---- z-index ---- */
+  --z-base: 1; --z-raised: 10; --z-sticky: 200; --z-overlay: 400;
+}
+
+   
   /* ===== RESET ===== */
   html { overflow-x: clip; scroll-behavior: smooth; }
   body { overflow-x: clip; margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-weight: 400; font-size: var(--text-base); line-height: 1.6; -webkit-font-smoothing: antialiased; }
@@ -235,26 +311,6 @@
     padding: var(--space-xs) var(--space-lg);
     flex-shrink: 0;
   }
-  .cta-sticky__close {
-    position: absolute;
-    top: var(--space-xs);
-    right: var(--space-xs);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: oklch(55% 0.006 80);
-    font-size: var(--text-lg);
-    padding: var(--space-2xs);
-    min-width: 32px;
-    min-height: 32px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    transition: color var(--dur-short) var(--ease-out);
-    line-height: 1;
-  }
-  .cta-sticky__close:hover { color: var(--color-surface-ink); }
-  .cta-sticky__close:focus-visible { outline: 2px solid var(--color-accent-soft); outline-offset: 1px; }
 
   /* ===== REDUCED MOTION ===== */
   @media (prefers-reduced-motion: reduce) {
@@ -286,97 +342,6 @@
     .foot-stmt__meta { flex-direction: column; gap: var(--space-md); }
     .foot-stmt__links { flex-direction: column; gap: var(--space-xs); }
   }
-
-
-  :root {
-  /* ---- Paper ---- */
-  --color-paper:      oklch(97% 0.012 80);
-  --color-paper-2:    oklch(94% 0.014 78);
-  --color-paper-3:    oklch(90% 0.012 76);
-
-  /* ---- Ink ---- */
-  --color-ink:        oklch(18% 0.012 70);
-  --color-ink-2:      oklch(32% 0.010 68);
-  --color-muted:      oklch(50% 0.008 65);
-
-  /* ---- Rules ---- */
-  --color-rule:       oklch(84% 0.010 78);
-  --color-rule-strong:oklch(70% 0.010 75);
-
-  /* ---- Accent (coral-saffron — used at < 5% of any viewport) ---- */
-  --color-accent:     oklch(58% 0.17 40);
-  --color-accent-soft:oklch(72% 0.14 42);
-  --color-accent-ink: oklch(97% 0.012 80);
-  --color-accent-bg:  oklch(95% 0.04 48);
-
-  /* ---- Focus ---- */
-  --color-focus:      oklch(55% 0.19 45);
-
-  /* ---- Surface (dark cards on cream) ---- */
-  --color-surface:    oklch(16% 0.010 60);
-  --color-surface-ink:oklch(94% 0.006 80);
-
-  /* ---- Typography ---- */
-  --font-display:     'Tiro Devanagari Hindi', 'Noto Serif Devanagari', ui-serif, serif;
-  --font-body:        'Hind', 'Noto Sans Devanagari', system-ui, sans-serif;
-  --font-outlier:     'Bricolage Grotesque', system-ui, sans-serif;
-
-  /* ---- Type scale (major third, 1.25) ---- */
-  --text-xs:    0.64rem;
-  --text-sm:    0.8rem;
-  --text-base:  1rem;
-  --text-md:    1.25rem;
-  --text-lg:    1.5625rem;
-  --text-xl:    1.9531rem;
-  --text-2xl:   2.4414rem;
-  --text-3xl:   3.0518rem;
-  --text-4xl:   3.8147rem;
-  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
-  --text-display-s: clamp(2rem, 4vw + 0.5rem, 3.5rem);
-  --text-hero-stat: clamp(5rem, 14vw + 1rem, 12rem);
-
-  /* ---- Spacing (4pt scale) ---- */
-  --space-3xs: 0.125rem;
-  --space-2xs: 0.25rem;
-  --space-xs:  0.5rem;
-  --space-sm:  0.75rem;
-  --space-md:  1rem;
-  --space-lg:  1.5rem;
-  --space-xl:  2.5rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  --space-4xl: 9rem;
-
-  /* ---- Page gutter ---- */
-  --page-gutter: clamp(1rem, 4vw, 2rem);
-
-  /* ---- Easings ---- */
-  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-
-  /* ---- Durations ---- */
-  --dur-micro:  120ms;
-  --dur-short:  220ms;
-  --dur-long:   420ms;
-
-  /* ---- Radii ---- */
-  --radius-sm:  6px;
-  --radius-md:  10px;
-  --radius-lg:  16px;
-  --radius-pill: 9999px;
-
-  /* ---- Rules ---- */
-  --rule-hair: 1px;
-  --rule-thin: 2px;
-
-  /* ---- z-index ---- */
-  --z-base:     1;
-  --z-raised:   10;
-  --z-sticky:   200;
-  --z-overlay:  400;
-}
-
 </style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MSJJXZ5V');</script>
@@ -670,16 +635,12 @@
     <p class="cta-sticky__sub">Upstox पर मुफ्त Demat खाता — 10 मिनट में</p>
   </div>
   <a href="https://upstox.com/open-account/?f=xMlY" target="_blank" rel="noopener sponsored" class="btn-primary">Free Account खोलें &rarr;</a>
-  <button id="stickyClose" class="cta-sticky__close" aria-label="Dismiss">&times;</button>
 </aside>
 
 <script>
 (function(){
   var cta=document.getElementById('stickyCta');
-  var closeBtn=document.getElementById('stickyClose');
-  var dismissed=sessionStorage.getItem('sticky_cta_dismissed')==='1';
   function update(){
-    if(dismissed)return;
     var scrolled=window.scrollY;
     var docH=document.documentElement.scrollHeight-window.innerHeight;
     var show=scrolled>600&&scrolled<(docH-400);
@@ -687,11 +648,6 @@
   }
   window.addEventListener('scroll',update,{passive:true});
   window.addEventListener('resize',update);
-  closeBtn.addEventListener('click',function(){
-    dismissed=true;
-    sessionStorage.setItem('sticky_cta_dismissed','1');
-    cta.classList.remove('show');
-  });
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7fbae612da904e8097ac649081152318","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>

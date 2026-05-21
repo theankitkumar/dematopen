@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stock Market Start Karna Hai? — Demat Account Kya Hai, Kaise Khole | Beginner Guide</title>
+<meta name="description" content="Demat account kya hai, kaise kaam karta hai, aur free me kaise khole — Hinglish me simple explainer. Sirf 5 minute me samjhe, 10 minute me account khole." />
+<link rel="stylesheet" href="tokens.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{display:['Fraunces','ui-serif','serif'],sans:['Plus Jakarta Sans','system-ui','sans-serif'],mono:['JetBrains Mono','ui-monospace','monospace']}}}};</script>
+<style>
+
+    
+:root {
+  /* ---- Paper (warm cream — inviting, readable, not cold white) ---- */
+  --color-paper:      oklch(97.5% 0.012 80);
+  --color-paper-2:    oklch(94% 0.015 78);
+  --color-paper-3:    oklch(89% 0.014 75);
+
+  /* ---- Ink (deep navy — universal financial trust signal) ---- */
+  --color-ink:        oklch(18% 0.012 260);
+  --color-ink-2:      oklch(32% 0.010 255);
+  --color-muted:      oklch(48% 0.008 250);
+
+  /* ---- Rules ---- */
+  --color-rule:       oklch(82% 0.010 85);
+  --color-rule-strong:oklch(68% 0.012 80);
+
+  /* ---- Accent (coral-saffron — highest CTA contrast, Indian cultural resonance) ---- */
+  --color-accent:     oklch(58% 0.17 40);
+  --color-accent-soft:oklch(72% 0.14 42);
+  --color-accent-ink: oklch(97.5% 0.012 80);
+  --color-accent-bg:  oklch(95% 0.04 48);
+
+  /* ---- Focus ---- */
+  --color-focus:      oklch(55% 0.19 45);
+
+  /* ---- Surface (dark cards on cream) ---- */
+  --color-surface:    oklch(16% 0.012 255);
+  --color-surface-ink:oklch(95% 0.005 90);
+
+  /* ---- Typography (Latin-optimized for Hinglish) ---- */
+  --font-display:     'Fraunces', 'Source Serif 4', ui-serif, Georgia, serif;
+  --font-body:        'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-outlier:     'JetBrains Mono', 'Geist Mono', ui-monospace, monospace;
+
+  /* ---- Type scale (major third, 1.25) ---- */
+  --text-xs:    0.64rem;
+  --text-sm:   0.8rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+  --text-3xl:  3.0518rem;
+  --text-4xl:  3.8147rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2rem, 4vw + 0.5rem, 3.5rem);
+  --text-display-l: clamp(3.5rem, 7vw + 1rem, 7rem);
+
+  /* ---- Spacing (4pt scale) ---- */
+  --space-3xs: 0.125rem; --space-2xs: 0.25rem; --space-xs: 0.5rem;
+  --space-sm:  0.75rem;  --space-md:  1rem;     --space-lg: 1.5rem;
+  --space-xl:  2.5rem;   --space-2xl: 4rem;     --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --page-gutter: clamp(1rem, 4vw, 2rem);
+
+  /* ---- Easings ---- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-micro:  120ms; --dur-short: 220ms; --dur-long: 420ms;
+
+  /* ---- Radii ---- */
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 18px;
+  --radius-xl: 24px; --radius-pill: 9999px;
+
+  /* ---- Rules ---- */
+  --rule-hair: 1px; --rule-thin: 2px;
+
+  /* ---- z-index ---- */
+  --z-base: 1; --z-raised: 10; --z-sticky: 200; --z-overlay: 400;
+}
+
+
+  /* ===== RESET ===== */
+  html { overflow-x: clip; scroll-behavior: smooth; }
+  body { overflow-x: clip; margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-weight: 400; font-size: var(--text-base); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; letter-spacing: -0.02em; margin: 0; }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  em, i { font-style: italic; }
+
+  /* ===== CONTAINERS ===== */
+  .container { max-width: 72rem; margin-inline: auto; padding-inline: var(--page-gutter); }
+
+  /* ===== NAV (N9 Edge-aligned minimal) ===== */
+  .nav-edge { display: flex; justify-content: space-between; align-items: center; padding: var(--space-md) var(--page-gutter); max-width: 72rem; margin-inline: auto; position: sticky; top: 0; z-index: var(--z-sticky); background: oklch(97.5% 0.012 80 / 0.88); backdrop-filter: blur(12px); }
+  .nav-edge__wordmark { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: -0.025em; color: var(--color-ink); }
+  .nav-edge__wordmark span { color: var(--color-accent); }
+  .nav-edge__cta { font-family: var(--font-body); font-weight: 600; font-size: var(--text-sm); color: var(--color-accent-ink); background: var(--color-accent); padding: var(--space-xs) var(--space-lg); border-radius: var(--radius-pill); transition: transform var(--dur-micro) var(--ease-out); white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; }
+  .nav-edge__cta:hover { transform: translateY(-1px); }
+  .nav-edge__cta:active { transform: translateY(0); }
+  .nav-edge__cta:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+  /* ===== MARQUEE HERO (H1) ===== */
+  .marquee-hero { padding-block: var(--space-3xl) var(--space-2xl); min-height: 85vh; display: flex; align-items: center; }
+  .marquee-hero__inner { max-width: 72rem; margin-inline: auto; padding-inline: var(--page-gutter); width: 100%; }
+  .marquee-hero__badge { display: inline-flex; align-items: center; gap: var(--space-2xs); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-block-end: var(--space-lg); }
+  .marquee-hero__badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+  .marquee-hero h1 { font-family: var(--font-display); font-size: var(--text-display-l); font-weight: 600; line-height: 1.03; letter-spacing: -0.03em; max-width: 16ch; }
+  .marquee-hero h1 i { color: var(--color-accent); }
+  .marquee-hero__sub { margin-block-start: var(--space-lg); font-size: var(--text-md); color: var(--color-muted); max-width: 44ch; line-height: 1.6; font-family: var(--font-body); letter-spacing: 0; }
+  .marquee-hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-block-start: var(--space-xl); }
+
+  hr.marquee-rule { border: none; border-top: var(--rule-thin) solid var(--color-ink); margin: 0; opacity: 0.12; }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); color: var(--color-accent-ink); background: var(--color-accent); padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); border: none; cursor: pointer; transition: transform var(--dur-micro) var(--ease-out), background var(--dur-short) var(--ease-out); white-space: nowrap; min-height: 48px; text-decoration: none; }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  .btn-ghost { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); color: var(--color-ink); background: transparent; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); border: var(--rule-hair) solid var(--color-rule-strong); cursor: pointer; transition: border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); white-space: nowrap; min-height: 48px; text-decoration: none; }
+  .btn-ghost:hover { border-color: var(--color-ink); transform: translateY(-1px); }
+  .btn-ghost:active { transform: translateY(0); }
+  .btn-ghost:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+  /* ===== STAT STRIP (T4) ===== */
+  .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); padding-block: var(--space-xl); }
+  .stat-strip__item { text-align: center; }
+  .stat-strip__value { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 600; color: var(--color-accent); line-height: 1; letter-spacing: -0.02em; }
+  .stat-strip__label { font-size: var(--text-xs); color: var(--color-muted); margin-block-start: var(--space-2xs); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+
+  /* ===== SECTION HEADS ===== */
+  .section-head { padding-block-end: var(--space-lg); }
+  .section-head__tag { font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin-block-end: var(--space-sm); }
+  .section-head h2 { font-size: var(--text-display-s); max-width: 18ch; }
+  .section-head h2 i { font-style: italic; color: var(--color-accent); }
+  .section-head__sub { font-size: var(--text-md); color: var(--color-muted); margin-block-start: var(--space-md); max-width: 44ch; line-height: 1.55; }
+  .section-head--center { text-align: center; }
+  .section-head--center h2, .section-head--center .section-head__sub { margin-inline: auto; }
+
+  /* ===== STEP SEQUENCE (F4) ===== */
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-md); }
+  .steps--4col { grid-template-columns: repeat(4, 1fr); }
+  .steps__item { padding: var(--space-lg); border-radius: var(--radius-lg); background: var(--color-paper-2); position: relative; }
+  .steps__item--dark { background: var(--color-surface); color: var(--color-surface-ink); }
+  .steps__num { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 600; font-style: italic; color: var(--color-accent); line-height: 1; display: block; margin-block-end: var(--space-sm); }
+  .steps__item--dark .steps__num { color: var(--color-accent-soft); }
+  .steps__item h4 { font-size: var(--text-lg); margin-block-end: var(--space-2xs); }
+  .steps__item p { font-size: var(--text-sm); color: var(--color-muted); }
+  .steps__item--dark p { color: oklch(76% 0.006 85); }
+  .steps__item--highlight { background: var(--color-accent); color: var(--color-accent-ink); }
+  .steps__item--highlight .steps__num { color: var(--color-accent-ink); }
+  .steps__item--highlight p { color: oklch(90% 0.015 55); }
+
+  /* ===== ANALOGY CARDS ===== */
+  .card-duo { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+  .card-duo__card { padding: var(--space-xl); border-radius: var(--radius-xl); border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); }
+  .card-duo__card--dark { background: var(--color-surface); color: var(--color-surface-ink); border-color: var(--color-surface); }
+  .card-duo__emoji { font-size: 2rem; margin-block-end: var(--space-sm); display: block; }
+  .card-duo h3 { font-size: var(--text-xl); margin-block-end: var(--space-sm); }
+  .card-duo ul { list-style: none; padding: 0; margin: 0; margin-block-start: var(--space-md); display: grid; gap: var(--space-xs); }
+  .card-duo li { font-size: var(--text-sm); display: flex; align-items: flex-start; gap: var(--space-xs); }
+  .card-duo li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; margin-block-start: 0.55em; }
+  .card-duo__card--dark li::before { background: var(--color-accent-soft); }
+  .card-duo__card--dark li { color: oklch(82% 0.008 85); }
+  .card-duo p { color: var(--color-muted); font-size: var(--text-sm); }
+
+  /* ===== TAKEWAY ===== */
+  .insight-box { display: flex; align-items: flex-start; gap: var(--space-md); padding: var(--space-lg); border-radius: var(--radius-lg); background: var(--color-accent-bg); border: var(--rule-hair) solid oklch(86% 0.06 50); margin-block-start: var(--space-lg); }
+  .insight-box__icon { font-size: var(--text-lg); flex-shrink: 0; }
+  .insight-box h4 { font-size: var(--text-md); margin-block-end: var(--space-2xs); }
+  .insight-box p { font-size: var(--text-sm); color: var(--color-ink-2); }
+
+  /* ===== BENEFIT GRID (asymmetric) ===== */
+  .benefit-grid { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr; gap: var(--space-md); }
+  .benefit-card { padding: var(--space-lg); border-radius: var(--radius-lg); border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); }
+  .benefit-card__icon { font-size: var(--text-xl); margin-block-end: var(--space-sm); display: block; }
+  .benefit-card h4 { font-size: var(--text-lg); }
+  .benefit-card p { font-size: var(--text-sm); color: var(--color-muted); margin-block-start: var(--space-sm); line-height: 1.5; }
+  .benefit-cta { grid-column: 1 / -1; padding: var(--space-xl); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-surface-ink); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); }
+  .benefit-cta h4 { font-size: var(--text-xl); color: var(--color-surface-ink); }
+  .benefit-cta p { color: oklch(78% 0.008 85); font-size: var(--text-sm); }
+
+  /* ===== VERTICAL STEPS (account opening) ===== */
+  .vsteps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+  .vsteps__item { display: flex; gap: var(--space-lg); padding-block: var(--space-lg); padding-inline-start: var(--space-md); border-inline-start: var(--rule-thin) solid var(--color-rule); position: relative; }
+  .vsteps__item:last-child { border-inline-start-color: transparent; }
+  .vsteps__num { position: absolute; left: -18px; top: var(--space-lg); width: 34px; height: 34px; border-radius: 50%; background: var(--color-paper-2); border: var(--rule-thin) solid var(--color-rule); display: grid; place-items: center; font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; font-style: italic; color: var(--color-accent); }
+  .vsteps__item--done .vsteps__num { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+  .vsteps__body h4 { font-size: var(--text-md); margin-block-end: var(--space-2xs); }
+  .vsteps__body p { font-size: var(--text-sm); color: var(--color-muted); }
+
+  /* ===== RECO CARD ===== */
+  .reco-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-xl); align-items: start; }
+  .reco-points { display: grid; gap: var(--space-sm); }
+  .reco-point { display: flex; align-items: flex-start; gap: var(--space-md); padding: var(--space-md); border-radius: var(--radius-md); background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); }
+  .reco-point__check { width: 28px; height: 28px; border-radius: 50%; background: var(--color-accent); color: var(--color-accent-ink); display: grid; place-items: center; flex-shrink: 0; font-size: var(--text-xs); font-weight: 700; }
+  .reco-point h4 { font-size: var(--text-base); }
+  .reco-point p { font-size: var(--text-sm); color: var(--color-muted); margin-block-start: var(--space-2xs); }
+  .reco-card { padding: var(--space-xl); border-radius: var(--radius-xl); background: var(--color-surface); color: var(--color-surface-ink); }
+  .reco-card__badge { display: inline-block; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: var(--color-accent); color: var(--color-accent-ink); padding: var(--space-2xs) var(--space-sm); border-radius: var(--radius-pill); margin-block-end: var(--space-md); }
+  .reco-card__brand { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 600; letter-spacing: -0.02em; }
+  .reco-card__sub { font-size: var(--text-xs); color: oklch(72% 0.006 90); margin-block-start: var(--space-2xs); }
+  .reco-card__stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xs); margin-block-start: var(--space-lg); }
+  .reco-card__stat { padding: var(--space-sm); border-radius: var(--radius-sm); background: oklch(24% 0.010 250); }
+  .reco-card__stat dt { font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: oklch(72% 0.006 90); }
+  .reco-card__stat dd { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 600; color: var(--color-accent-soft); margin: 0; margin-block-start: var(--space-2xs); }
+  .reco-disclosure { font-size: var(--text-xs); color: var(--color-muted); margin-block-start: var(--space-md); }
+
+  /* ===== FAQ ===== */
+  .faq-list { display: grid; gap: var(--space-sm); }
+  .faq-item { border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-md); background: var(--color-paper); overflow: hidden; }
+  .faq-item summary { display: flex; justify-content: space-between; align-items: center; padding: var(--space-lg); cursor: pointer; font-family: var(--font-display); font-size: var(--text-md); font-weight: 400; letter-spacing: -0.01em; list-style: none; user-select: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-accent); transition: transform var(--dur-short) var(--ease-in-out); flex-shrink: 0; margin-inline-start: var(--space-md); }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item .faq-answer { padding: 0 var(--space-lg) var(--space-lg); font-size: var(--text-base); color: var(--color-ink-2); line-height: 1.6; }
+
+  /* ===== FINAL CTA ===== */
+  .cta-final { text-align: center; padding-block: var(--space-3xl); background: var(--color-accent); color: var(--color-accent-ink); }
+  .cta-final h2 { font-size: var(--text-display-s); max-width: 16ch; margin-inline: auto; color: var(--color-accent-ink); }
+  .cta-final h2 i { font-style: italic; color: oklch(90% 0.08 55); }
+  .cta-final p { font-size: var(--text-md); margin-block-start: var(--space-md); max-width: 40ch; margin-inline: auto; color: oklch(90% 0.015 55); line-height: 1.55; }
+  .cta-final__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-block-start: var(--space-xl); }
+  .btn-invert { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); color: var(--color-accent); background: var(--color-accent-ink); padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); border: none; cursor: pointer; transition: transform var(--dur-micro) var(--ease-out); white-space: nowrap; min-height: 48px; text-decoration: none; }
+  .btn-invert:hover { transform: translateY(-1px); }
+  .btn-invert:active { transform: translateY(0); }
+  .btn-invert:focus-visible { outline: 2px solid oklch(90% 0.08 55); outline-offset: 2px; }
+  .cta-final__disclosure { font-size: var(--text-xs); color: oklch(86% 0.025 55); max-width: 48ch; margin-inline: auto; margin-block-start: var(--space-lg); }
+
+  /* ===== FOOTER (Ft5 Statement) ===== */
+  .foot-stmt { padding: var(--space-2xl) var(--page-gutter) var(--space-xl); max-width: 72rem; margin-inline: auto; }
+  .foot-stmt__line { font-family: var(--font-display); font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.05; letter-spacing: -0.02em; max-width: 22ch; margin: 0; }
+  .foot-stmt__meta { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: var(--space-sm); padding-block-start: var(--space-md); margin-block-start: var(--space-lg); border-top: var(--rule-hair) solid var(--color-rule); }
+  .foot-stmt__wordmark { font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); letter-spacing: -0.025em; }
+  .foot-stmt__wordmark span { color: var(--color-accent); }
+  .foot-stmt__links { display: flex; flex-wrap: wrap; gap: var(--space-lg); font-size: var(--text-sm); color: var(--color-muted); }
+  .foot-stmt__links a:hover { color: var(--color-ink); }
+  .foot-stmt__copy { font-size: var(--text-xs); color: var(--color-muted); width: 100%; margin-block-start: var(--space-sm); }
+  .disclaimer-box { padding: var(--space-lg); border-radius: var(--radius-md); background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); font-size: var(--text-xs); color: var(--color-muted); line-height: 1.6; margin-block-start: var(--space-xl); }
+
+  /* ===== STICKY CTA (C4 floating card) ===== */
+  .cta-sticky { position: fixed; left: 50%; bottom: var(--space-md); transform: translateX(-50%) translateY(160%); z-index: var(--z-sticky); max-width: 560px; width: calc(100% - var(--space-lg) * 2); background: var(--color-surface); color: var(--color-surface-ink); border-radius: var(--radius-lg); box-shadow: 0 10px 40px oklch(12% 0.01 255 / 0.40); padding: var(--space-md) var(--space-lg); display: flex; align-items: center; gap: var(--space-md); transition: transform 0.4s var(--ease-out), opacity 0.3s var(--ease-out); opacity: 0; }
+  .cta-sticky.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+  .cta-sticky__content { flex: 1; min-width: 0; }
+  .cta-sticky__heading { font-family: var(--font-display); font-size: var(--text-base); font-weight: 400; color: var(--color-surface-ink); line-height: 1.2; letter-spacing: -0.01em; }
+  .cta-sticky__sub { font-size: var(--text-xs); color: oklch(70% 0.006 85); margin-block-start: var(--space-2xs); }
+
+  /* ===== REDUCED MOTION ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 150ms !important; animation-iteration-count: 1 !important; transition-duration: 150ms !important; }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .marquee-hero { min-height: 70vh; padding-block: var(--space-2xl); }
+    .marquee-hero h1 { font-size: var(--text-display); }
+    .card-duo, .reco-grid, .benefit-grid { grid-template-columns: 1fr; }
+    .steps--4col { grid-template-columns: 1fr 1fr; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); }
+    .section-head h2, .cta-final h2 { font-size: var(--text-2xl); }
+    .foot-stmt__line { font-size: var(--text-xl); }
+    .cta-sticky { width: calc(100% - var(--space-md) * 2); padding: var(--space-md); gap: var(--space-sm); }
+  }
+  @media (max-width: 480px) {
+    .marquee-hero { min-height: 60vh; }
+    .marquee-hero h1 { font-size: var(--text-3xl); }
+    .marquee-hero__sub { font-size: var(--text-base); }
+    .steps--4col { grid-template-columns: 1fr; }
+    .vsteps__item { flex-direction: column; gap: var(--space-sm); padding-inline-start: var(--space-xl); }
+    .btn-primary, .btn-ghost, .btn-invert { width: 100%; justify-content: center; }
+    .marquee-hero__actions, .cta-final__actions { flex-direction: column; align-items: stretch; }
+    .foot-stmt__meta { flex-direction: column; gap: var(--space-md); }
+    .foot-stmt__links { flex-direction: column; gap: var(--space-xs); }
+    .cta-sticky { flex-wrap: wrap; }
+    .cta-sticky .btn-primary { width: 100%; justify-content: center; }
+  }
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MSJJXZ5V');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSJJXZ5V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- NAV (N9) -->
+<header class="nav-edge">
+  <a href="#" class="nav-edge__wordmark">Niveshak<span>.</span></a>
+  <a href="#basics" class="nav-edge__cta">Pehle Seekhe &darr;</a>
+</header>
+
+<!-- MARQUEE HERO (H1) -->
+<section class="marquee-hero">
+  <div class="marquee-hero__inner">
+    <div class="marquee-hero__badge"><span class="dot"></span> BEGINNER GUIDE · HINGLISH ME</div>
+    <h1>Stock market <i>start</i> karna hai? Sahi jagah aaye ho.</h1>
+    <p class="marquee-hero__sub">Na koi paperwork, na bada amount chahiye. <strong>5 minute me sab samjho</strong>, phir chahe toh 10 minute me apna demat account kholo — bilkul free.</p>
+    <div class="marquee-hero__actions">
+      <a href="#basics" class="btn-primary">Samajhna Shuru Kare &darr;</a>
+      <a href="#open" class="btn-ghost">Seedha Account Khole &rarr;</a>
+    </div>
+  </div>
+</section>
+<hr class="marquee-rule" />
+
+<!-- TRUST STRIP (T4) — educational, not broker claims -->
+<div class="container">
+  <div class="stat-strip">
+    <div class="stat-strip__item"><div class="stat-strip__value">15Cr+</div><div class="stat-strip__label">Indians Already Invest</div></div>
+    <div class="stat-strip__item"><div class="stat-strip__value">₹100</div><div class="stat-strip__label">Se Start Kare</div></div>
+    <div class="stat-strip__item"><div class="stat-strip__value">5 min</div><div class="stat-strip__label">Read Time</div></div>
+    <div class="stat-strip__item"><div class="stat-strip__value">100%</div><div class="stat-strip__label">Online Process</div></div>
+  </div>
+</div>
+
+<!-- DEMAT KYA HAI -->
+<section id="basics" style="padding-block: var(--space-3xl);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Step 01 — Basics Samjhe</p>
+      <h2>Demat account <i>kya hota hai?</i></h2>
+      <p class="section-head__sub">Simple bole toh — yeh ek <strong>digital locker</strong> hai jisme aapke shares safe rakhe jaate hain. Bilkul bank account jaisa — bas paise ki jagah shares store hote hain.</p>
+    </div>
+    <div class="card-duo" style="margin-block-start: var(--space-xl);">
+      <div class="card-duo__card">
+        <span class="card-duo__emoji"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+        <h3>Bank Account</h3>
+        <p>Paise rakhne ke liye hota hai. Jab chaho daalo, jab chaho nikalo.</p>
+        <ul><li>Cash / digital paisa rehta hai</li><li>Withdraw kabhi bhi kar sakte ho</li></ul>
+      </div>
+      <div class="card-duo__card card-duo__card--dark">
+        <span class="card-duo__emoji"><i class="fa-solid fa-chart-line"></i></span>
+        <h3>Demat Account</h3>
+        <p>Bilkul vaisa hi — lekin isme <strong>shares</strong> rakhe jaate hain, paise nahi.</p>
+        <ul><li>Digital form me shares rehte hain</li><li>NSDL / CDSL me secure</li></ul>
+      </div>
+    </div>
+    <div class="insight-box">
+      <span class="insight-box__icon"><i class="fa-solid fa-lightbulb"></i></span>
+      <div><h4>Bas itna hi. Aur kuch nahi.</h4><p><strong>Paise ke liye → Bank Account</strong> &bull; <strong>Shares ke liye → Demat Account</strong></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMAT vs TRADING -->
+<section style="padding-block: var(--space-3xl); background: var(--color-surface); color: var(--color-surface-ink);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag" style="color: var(--color-accent-soft);">Confusion Door Kare</p>
+      <h2 style="color: var(--color-surface-ink);">Demat <i style="color: var(--color-accent-soft);">vs</i> Trading Account?</h2>
+      <p class="section-head__sub" style="color: oklch(78% 0.006 85);">Yeh do alag cheezein hain — aur aapko <strong>dono</strong> chahiye. Tension nahi, dono saath me free milte hain.</p>
+    </div>
+    <div class="card-duo" style="margin-block-start: var(--space-xl);">
+      <div class="card-duo__card card-duo__card--dark">
+        <span class="card-duo__emoji"><i class="fa-solid fa-store"></i></span>
+        <h3>Trading Account</h3>
+        <p>Yeh <strong>action</strong> wala account hai. Shares buy aur sell karne ke liye.</p>
+        <ul><li>Order place karta hai</li><li>Bank account se linked</li><li>Buy / sell ka kaam</li></ul>
+      </div>
+      <div class="card-duo__card card-duo__card--dark">
+        <span class="card-duo__emoji"><i class="fa-solid fa-box-archive"></i></span>
+        <h3>Demat Account</h3>
+        <p>Yeh <strong>storage</strong> wala account hai. Shares rakhne ke liye.</p>
+        <ul><li>Shares store karta hai</li><li>NSDL / CDSL me safe</li><li>Ownership ka proof</li></ul>
+      </div>
+    </div>
+    <div class="insight-box" style="background: oklch(24% 0.025 50); border-color: oklch(34% 0.04 48);">
+      <span class="insight-box__icon" style="color: var(--color-accent-soft);"><i class="fa-solid fa-circle-info"></i></span>
+      <div><h4 style="color: var(--color-surface-ink);">Ek line me samjho</h4><p style="color: oklch(84% 0.015 55);">Trading account <em>dukaan ka counter</em> hai — Demat account <em>dukaan ki almari</em>. Aajkal har broker dono saath me free deta hai.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KAISE KAAM KARTA HAI (F4 Step Sequence) -->
+<section style="padding-block: var(--space-3xl);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Andar Ki Baat</p>
+      <h2>Stock market <i>kaise</i> kaam karta hai?</h2>
+      <p class="section-head__sub">Jab aap "Buy" button dabate ho, <strong>2 second</strong> me yeh sab hota hai.</p>
+    </div>
+    <ol class="steps steps--4col" style="margin-block-start: var(--space-xl);">
+      <li class="steps__item"><span class="steps__num">01</span><h4>Aap</h4><p>App me "TCS ke 5 shares kharide" tap karte ho.</p></li>
+      <li class="steps__item"><span class="steps__num">02</span><h4>Broker</h4><p>Aapka order turant exchange ko bhejta hai.</p></li>
+      <li class="steps__item"><span class="steps__num">03</span><h4>Exchange</h4><p>NSE / BSE seller se match karta hai.</p></li>
+      <li class="steps__item steps__item--highlight"><span class="steps__num">04</span><h4>Demat Me Aa Gaye!</h4><p>Shares aapke account me. Ab aap shareholder ho.</p></li>
+    </ol>
+    <p style="text-align: center; margin-block-start: var(--space-xl); font-size: var(--text-sm); color: var(--color-muted);">Total time: <strong style="color: var(--color-accent);">2 second se kam.</strong> Sab automated aur regulated hai.</p>
+  </div>
+</section>
+
+<!-- BENEFITS (asymmetric) -->
+<section style="padding-block: var(--space-3xl); background: var(--color-paper-2);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Faayde Kya Hain</p>
+      <h2>Demat account <i>kyu</i> chahiye?</h2>
+      <p class="section-head__sub">Sirf technical baat nahi — yeh aapke paise aur future ke liye kya unlock karta hai.</p>
+    </div>
+    <div class="benefit-grid" style="margin-block-start: var(--space-xl);">
+      <div class="benefit-card"><span class="benefit-card__icon"><i class="fa-solid fa-arrow-trend-up"></i></span><h4>Inflation ko beat kare</h4><p>Savings account me paisa mehengai se haar jata hai. Stocks long-term me aage nikal jaate hain.</p></div>
+      <div class="benefit-card"><span class="benefit-card__icon"><i class="fa-solid fa-seedling"></i></span><h4>Wealth banaye</h4><p>Compounding ka jaadu. ₹500/month bhi jaldi shuru kare toh saalo me lakhs ban sakte hain.</p></div>
+      <div class="benefit-card"><span class="benefit-card__icon"><i class="fa-solid fa-hand-holding-dollar"></i></span><h4>Dividend bonus</h4><p>Bahut companies apne profit ka hissa shareholders ko deti hain — direct bank me credit.</p></div>
+      <div class="benefit-card"><span class="benefit-card__icon"><i class="fa-solid fa-lock-open"></i></span><h4>Paise lock nahi</h4><p>Paisa chahiye? Market hours me kabhi bhi sell kare. 1 working day me bank me.</p></div>
+      <div class="benefit-card"><span class="benefit-card__icon"><i class="fa-solid fa-coins"></i></span><h4>Sirf ₹100 se shuru</h4><p>Lakhs ka tension nahi. Apne pace pe start kare, dheere-dheere badhao.</p></div>
+      <div class="benefit-cta">
+        <div><h4>Ready to start?</h4><p>10 minute me apna free account khole.</p></div>
+        <a href="#open" class="btn-primary" style="background: var(--color-accent-soft); color: var(--color-surface);">Account Khole &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNT KAISE KHOLE (F4 vertical steps) -->
+<section style="padding-block: var(--space-3xl);">
+  <div class="container" style="max-width: 48rem;">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Setup Process</p>
+      <h2>Account <i>kaise</i> khole — 5 chhote steps</h2>
+      <p class="section-head__sub">Na koi line, na paperwork, na branch jaane ki zaroorat. Sab kuch phone par — <strong>10 se 15 minute me.</strong></p>
+    </div>
+    <!-- Docs needed -->
+    <div class="stat-strip" style="margin-block: var(--space-xl); border: none;">
+      <div class="stat-strip__item"><div class="stat-strip__value"><i class="fa-solid fa-id-card"></i></div><div class="stat-strip__label">PAN Card</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__value"><i class="fa-solid fa-mobile-screen-button"></i></div><div class="stat-strip__label">Aadhaar</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__value"><i class="fa-solid fa-building-columns"></i></div><div class="stat-strip__label">Bank Details</div></div>
+      <div class="stat-strip__item"><div class="stat-strip__value"><i class="fa-solid fa-signature"></i></div><div class="stat-strip__label">Signature</div></div>
+    </div>
+    <ol class="vsteps">
+      <li class="vsteps__item"><span class="vsteps__num">1</span><div class="vsteps__body"><h4>Mobile aur email daale</h4><p>OTP se verify kare. Bas 30 second.</p></div></li>
+      <li class="vsteps__item"><span class="vsteps__num">2</span><div class="vsteps__body"><h4>PAN aur Aadhaar add kare</h4><p>DigiLocker se auto-fetch. Type karne ki zaroorat nahi.</p></div></li>
+      <li class="vsteps__item"><span class="vsteps__num">3</span><div class="vsteps__body"><h4>Bank link kare</h4><p>Koi bhi savings account jode — paisa aane-jaane ke liye.</p></div></li>
+      <li class="vsteps__item"><span class="vsteps__num">4</span><div class="vsteps__body"><h4>Selfie aur e-sign</h4><p>Ek chhota video verification + Aadhaar OTP. Bas ho gaya.</p></div></li>
+      <li class="vsteps__item vsteps__item--done"><span class="vsteps__num">✓</span><div class="vsteps__body"><h4>Ho gaya! Investing shuru</h4><p>Kuch ghanton me account active. ₹100 add kare → pehla share kharide.</p></div></li>
+    </ol>
+    <div style="text-align: center; margin-block-start: var(--space-xl);">
+      <a href="#open" class="btn-primary">Abhi Account Khole — Free Hai &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- BROKER CHECKLIST -->
+<section style="padding-block: var(--space-3xl); background: var(--color-paper-2);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Smart Choice</p>
+      <h2>Broker chunne se pehle <i>4 cheezein</i> dekhe</h2>
+    </div>
+    <div class="benefit-grid" style="margin-block-start: var(--space-xl);">
+      <div class="benefit-card"><h4>₹0 Opening, Low Brokerage</h4><p>Account opening free honi chahiye. Har trade pe brokerage kam — jeb me zyada paisa.</p></div>
+      <div class="benefit-card"><h4>Simple App, No Jargon</h4><p>Beginner ke liye app pilot ke cockpit jaisi nahi — simple aur saaf honi chahiye.</p></div>
+      <div class="benefit-card"><h4>Real Human Support</h4><p>Problem aaye toh asli insaan se baat ho — chat, call, email — jaldi se.</p></div>
+      <div class="benefit-card"><h4>SEBI × NSDL/CDSL Backed</h4><p>Broker SEBI-registered ho, 2-factor auth ho — yeh basic security hai, optional nahi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATION (Upstox as preferred broker) -->
+<section id="open" style="padding-block: var(--space-3xl);">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Hamari Preferred Broker</p>
+      <h2>Beginner ke liye <i>sabse easy</i> option</h2>
+      <p class="section-head__sub">India ke major brokers ko fees, app simplicity, aur beginner experience ke basis pe compare karne ke baad — <strong>Upstox</strong> first-time investors ke liye best fit hai. <em>Hum iske Authorized Partner hain.</em></p>
+    </div>
+    <div class="reco-grid" style="margin-block-start: var(--space-xl);">
+      <div class="reco-points">
+        <div class="reco-point"><div class="reco-point__check">✓</div><div><h4>₹0 account opening</h4><p>Bilkul free me start. Koi commitment nahi, koi trick nahi.</p></div></div>
+        <div class="reco-point"><div class="reco-point__check">✓</div><div><h4>Low brokerage har trade pe</h4><p>Aapki jeb me zyada paisa rehta hai — simple pricing, no surprises.</p></div></div>
+        <div class="reco-point"><div class="reco-point__check">✓</div><div><h4>Beginner-first app</h4><p>Clean design, koi confusing jargon nahi. Pehli baar wale ke liye perfect.</p></div></div>
+        <div class="reco-point"><div class="reco-point__check">✓</div><div><h4>10 minute setup</h4><p>Fully digital, Aadhaar e-KYC ke saath. Paperwork — zero.</p></div></div>
+        <div class="reco-point"><div class="reco-point__check">✓</div><div><h4>SEBI registered, trusted</h4><p>Ratan Tata + Tiger Global backed. 1Cr+ Indians use karte hain.</p></div></div>
+      </div>
+      <div class="reco-card">
+        <span class="reco-card__badge">Recommended</span>
+        <p class="reco-card__brand">Upstox</p>
+        <p class="reco-card__sub">Demat + Trading — ek saath, ek app me</p>
+        <dl class="reco-card__stats">
+          <div class="reco-card__stat"><dt>Opening Fee</dt><dd>₹0</dd></div>
+          <div class="reco-card__stat"><dt>Setup Time</dt><dd>10 min</dd></div>
+          <div class="reco-card__stat"><dt>Delivery</dt><dd>₹20*</dd></div>
+          <div class="reco-card__stat"><dt>Users</dt><dd>1Cr+</dd></div>
+        </dl>
+        <p style="font-size: var(--text-xs); color: oklch(64% 0.006 85); margin-block-start: var(--space-sm);">SEBI Reg. · NSDL/CDSL · NSE, BSE, MCX</p>
+        <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored" class="btn-primary" style="background: var(--color-accent-soft); color: var(--color-surface); width: 100%; justify-content: center; margin-block-start: var(--space-lg);">Abhi Start Kare — Free Hai &rarr;</a>
+        <p class="reco-disclosure">* Disclosure: Hum Upstox ke Authorized Partner hain. Hamare link se sign up karne pe humein referral milta hai — aapko koi extra cost nahi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-block: var(--space-3xl); background: var(--color-paper-2);">
+  <div class="container" style="max-width: 48rem;">
+    <div class="section-head section-head--center">
+      <p class="section-head__tag">Common Doubts</p>
+      <h2>Beginner ke <i>sabse common</i> sawaal</h2>
+    </div>
+    <div class="faq-list" style="margin-block-start: var(--space-xl);">
+      <details class="faq-item"><summary>Kya yeh safe hai? Paisa doob toh nahi jayega?</summary><div class="faq-answer">Bilkul safe hai. Demat account SEBI ke under regulated hai, aur aapke shares NSDL/CDSL (government-backed depositories) me rehte hain. Stock <em>prices</em> upar-neeche hote hain, lekin long-term me achhi companies me invest karne walo ke liye history achhi rahi hai. Tension kam karne ke liye — chhote amount se start kare.</div></details>
+      <details class="faq-item"><summary>Kitna paisa chahiye start karne ke liye?</summary><div class="faq-answer">Sirf <strong>₹100</strong> se. Bahut shares ka price isse kam hota hai. Ya ₹500/month ki SIP mutual funds me — same demat app se. Jitni jaldi shuru, compounding ka faayda utna zyada.</div></details>
+      <details class="faq-item"><summary>Free hai ya charge lagta hai?</summary><div class="faq-answer">Top brokers (jaise Upstox) account opening ke liye <strong>₹0</strong> charge karte hain. Ek chhota annual maintenance fee (AMC) doosre saal se lagta hai, aur trades pe brokerage — sab pehle se clearly likha hota hai. Koi surprise nahi.</div></details>
+      <details class="faq-item"><summary>Hidden charges toh nahi hain?</summary><div class="faq-answer">Reputable SEBI-registered brokers har fee transparently dikhate hain — brokerage, AMC, GST, STT (govt tax), exchange charges. Pricing page ek baar zaroor padhe. Established platforms me "surprise" deduction nahi hote.</div></details>
+      <details class="faq-item"><summary>Kya beginner really start kar sakta hai?</summary><div class="faq-answer">Bilkul. Modern apps beginners ke liye hi banaye gaye hain — clean design, simple words, in-app learning. Finance degree nahi chahiye. Pehle 1 share kharide kisi company ka jo aap already use karte ho (Reliance, ITC, HDFC Bank) — aur saath-saath seekhe.</div></details>
+      <details class="faq-item"><summary>Agar loss ho gaya toh?</summary><div class="faq-answer">Short-term me upar-neeche normal hai — pros ke saath bhi hota hai. Trick: long-term ke liye invest kare (5+ saal), paisa alag-alag companies me spread kare, panic me sell na kare. Chhote amount se shuru kare jiska risk aap emotionally handle kar sako.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final">
+  <div style="max-width: 36rem; margin-inline: auto; padding-inline: var(--page-gutter);">
+    <p class="section-head__tag" style="color: oklch(90% 0.08 55);">Aapki Baari</p>
+    <h2>Best time tha 5 saal pehle. <i>Doosra best time? Aaj.</i></h2>
+    <p>Agle 10 minute me Upstox ke saath apna free demat account khole — aur aaj hi apna pehla share kharide.</p>
+    <div class="cta-final__actions">
+      <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored" class="btn-invert">Upstox Pe Free Account Khole &rarr;</a>
+      <a href="#basics" style="display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-body); font-weight: 600; font-size: var(--text-base); color: var(--color-accent-ink); background: transparent; padding: var(--space-sm) var(--space-xl); border-radius: var(--radius-pill); border: var(--rule-hair) solid oklch(90% 0.015 55); cursor: pointer; transition: border-color var(--dur-short) var(--ease-out); white-space: nowrap; min-height: 48px; text-decoration: none;"
+         onmouseover="this.style.borderColor='var(--color-accent-ink)'" onmouseout="this.style.borderColor='oklch(90% 0.015 55)'">Guide Phir Se Padhe</a>
+    </div>
+    <p class="cta-final__disclosure">Niveshak Upstox (RKSV Securities) ka Authorized Partner hai. Hum seekhate hain — account Upstox kholta hai. Hum broker nahi hain.</p>
+  </div>
+</section>
+
+<!-- FOOTER (Ft5) -->
+<footer class="foot-stmt">
+  <p class="foot-stmt__line">Chhota start karo. Lamba socho. Aaj shuru karo.</p>
+  <div class="foot-stmt__meta">
+    <span class="foot-stmt__wordmark">Niveshak<span>.</span></span>
+    <div class="foot-stmt__links">
+      <a href="#basics">Demat Kya Hai</a>
+      <a href="#open">Account Khole</a>
+      <a href="#faq">FAQ</a>
+      <a href="/privacy-policy/">Privacy</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/terms-of-use/">Terms</a>
+    </div>
+  </div>
+  <div class="disclaimer-box">
+    <p><strong>Disclaimer:</strong> Niveshak operates as an Authorized Person associated with Upstox (RKSV Securities India Private Limited), a SEBI-regulated stockbroker. This is an independent educational platform — NOT a stockbroker, NOT a financial advisor. We provide information and facilitate account opening referrals. All accounts are opened and maintained by Upstox. Investments in securities markets are subject to market risks. Past performance is not indicative of future results.</p>
+  </div>
+  <p class="foot-stmt__copy">&copy; 2026 Niveshak. Made for Indian beginners. Trading involves risk — invest wisely.</p>
+</footer>
+
+<!-- STICKY CTA (C4 floating card) -->
+<aside id="stickyCta" class="cta-sticky">
+  <div class="cta-sticky__content">
+    <p class="cta-sticky__heading">Samajh gaye? Ab start karne ki baari.</p>
+    <p class="cta-sticky__sub">Upstox pe free demat account — 10 min me</p>
+  </div>
+  <a href="https://upstox.com/open-demat-account/?f=54EE" target="_blank" rel="noopener sponsored" class="btn-primary">Free Account Khole &rarr;</a>
+</aside>
+
+<script>
+(function(){
+  var cta=document.getElementById('stickyCta');
+  function update(){
+    var scrolled=window.scrollY;
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    if(scrolled>700&&scrolled<(docH-400)){cta.classList.add('show');}else{cta.classList.remove('show');}
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7fbae612da904e8097ac649081152318","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ff4bd527fe8efd5',t:'MTc3OTM3ODY1NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
